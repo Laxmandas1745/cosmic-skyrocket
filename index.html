@@ -1,0 +1,2525 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Document Title -->
+    <title>Cosmic Skyrocket | Elevate Spaces, Inspire Designs</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/cs-favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Stylesheets -->
+    <link href="assets/css/brand-colors.css" rel="stylesheet" />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/3d-cards.css" rel="stylesheet" />
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Glass morphism video effect for COSMIC SKYROCKET text */
+      #cosmicBrand {
+        position: relative;
+      }
+      
+      #cosmicBrand .fw-bold {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        font-family: 'Cinzel', serif !important;
+        font-weight: normal !important;
+        transition: color 0.7s ease;
+      }
+      
+      #tagline {
+        color: #856D46 !important;
+      }
+
+      /* Hamburger Menu Styles */
+      .hamburger-menu-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 20000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .hamburger-menu-overlay.active {
+        opacity: 1;
+      }
+
+      .hamburger-menu-panel {
+        position: absolute;
+        top: 0;
+        right: -400px;
+        width: 400px;
+        max-width: 90%;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        transition: right 0.3s ease;
+        padding: 2rem;
+      }
+
+      .hamburger-menu-overlay.active .hamburger-menu-panel {
+        right: 0;
+      }
+
+      .hamburger-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f0f0f0;
+      }
+
+      .hamburger-menu-header h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #000;
+      }
+
+      .hamburger-menu-content {
+        margin-top: 1rem;
+      }
+
+      .menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-item {
+        margin-bottom: 0.5rem;
+      }
+
+      .menu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        color: #000;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+
+      .menu-link:hover {
+        background-color: #f8f9fa;
+        color: #856D46;
+      }
+
+      .dropdown-icon {
+        transition: transform 0.3s ease;
+      }
+
+      .menu-item-has-children.active > .menu-link .dropdown-icon,
+      .submenu-item-has-children.active > .submenu-link .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .submenu,
+      .sub-submenu {
+        list-style: none;
+        padding-left: 1.5rem;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .menu-item-has-children.active > .submenu,
+      .submenu-item-has-children.active > .sub-submenu {
+        max-height: 500px;
+        margin-top: 0.5rem;
+      }
+
+      .submenu-item {
+        margin-bottom: 0.25rem;
+      }
+
+      .submenu-link,
+      .sub-submenu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 1rem;
+        color: #666;
+        text-decoration: none;
+        font-size: 1rem;
+        border-radius: 6px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+
+      .submenu-link:hover,
+      .sub-submenu-link:hover {
+        background-color: #f8f9fa;
+        color: #856D46;
+      }
+
+      .sub-submenu {
+        padding-left: 1rem;
+      }
+
+      .sub-submenu-item {
+        margin-bottom: 0.25rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .hamburger-menu-panel {
+          width: 320px;
+        }
+      }
+
+      /* Search Overlay Styles */
+      .search-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 30000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+
+      .search-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .search-container {
+        position: relative;
+        width: 90%;
+        max-width: 800px;
+        transform: translateY(-50px);
+        transition: transform 0.4s ease;
+      }
+
+      .search-overlay.active .search-container {
+        transform: translateY(0);
+      }
+
+      .search-close-btn {
+        position: absolute;
+        top: -60px;
+        right: 0;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: transform 0.3s ease, color 0.3s ease;
+        padding: 0;
+        line-height: 1;
+      }
+
+      .search-close-btn:hover {
+        transform: rotate(90deg);
+        color: #856D46;
+      }
+
+      .search-input-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      .search-input-wrapper input {
+        width: 100%;
+        padding: 25px 70px 25px 30px;
+        font-size: 1.5rem;
+        border: 3px solid #856D46;
+        border-radius: 50px;
+        background: #fff;
+        color: #151515;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 40px rgba(133, 109, 70, 0.3);
+      }
+
+      .search-input-wrapper input:focus {
+        border-color: #856D46;
+        box-shadow: 0 15px 60px rgba(133, 109, 70, 0.5);
+        transform: scale(1.02);
+      }
+
+      .search-input-wrapper input::placeholder {
+        color: rgba(21, 21, 21, 0.4);
+      }
+
+      .search-submit-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, #856D46, #6d5a38);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .search-submit-btn:hover {
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 5px 20px rgba(255, 161, 92, 0.6);
+      }
+
+      .search-submit-btn i {
+        font-size: 1.2rem;
+      }
+
+      .search-suggestions {
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      .search-suggestions p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .search-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .search-tag {
+        padding: 8px 20px;
+        background: rgba(133, 109, 70, 0.2);
+        border: 1px solid rgba(133, 109, 70, 0.5);
+        border-radius: 20px;
+        color: #856D46;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .search-tag:hover {
+        background: #856D46;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(133, 109, 70, 0.4);
+      }
+
+      /* Responsive search overlay */
+      @media (max-width: 768px) {
+        .search-input-wrapper input {
+          font-size: 1.2rem;
+          padding: 20px 60px 20px 20px;
+        }
+
+        .search-close-btn {
+          font-size: 2rem;
+          top: -50px;
+        }
+
+        .search-submit-btn {
+          width: 45px;
+          height: 45px;
+        }
+
+        .search-suggestions {
+          margin-top: 1.5rem;
+        }
+      }
+
+      /* Stats Section Styles */
+      .stats-section {
+        padding: 60px 0;
+        background-color: #ffffff;
+      }
+
+      .stats .stats-item {
+        padding: 10px;
+      }
+
+      .stats .stats-item i {
+        font-size: 44px;
+        color: #856D46;
+        line-height: 0;
+        margin-right: 15px;
+      }
+
+      .stats .stats-item .purecounter {
+        color: #151515;
+        font-size: 40px;
+        display: block;
+        font-weight: 700;
+        line-height: 40px;
+      }
+
+      .stats .stats-item .purecounter::after {
+        content: '+';
+        color: #856D46;
+      }
+
+      .stats .stats-item p {
+        color: rgba(68, 68, 68, 0.6);
+        padding: 15px 0 0 0;
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .stats .stats-item p strong {
+        color: #151515;
+        font-weight: 600;
+      }
+
+      /* About Section Styles */
+      .about-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+      }
+
+      .about .content h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 1rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .about .content h3::first-letter {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #856D46;
+      }
+
+      .about .content h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: #856D46;
+        transition: width 0.3s ease;
+      }
+
+      .about .content h3:hover::after {
+        width: 120px;
+      }
+
+      .about .content .fst-italic {
+        color: #6b6666;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .about .content ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+      }
+
+      .about .content ul li {
+        padding: 10px 0 0 0;
+        display: flex;
+        align-items: flex-start;
+        transition: transform 0.3s ease, padding-left 0.3s ease;
+      }
+
+      .about .content ul li:hover {
+        transform: translateX(10px);
+        padding-left: 10px;
+      }
+
+      .about .content ul i {
+        color: #856D46;
+        margin-right: 0.5rem;
+        line-height: 1.2;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .about .content ul li:hover i {
+        transform: scale(1.2);
+        color: #856D46;
+      }
+
+      .about .content p:last-child {
+        margin-bottom: 0;
+      }
+
+      .about .content p {
+        color: #444444;
+        line-height: 1.8;
+      }
+
+      .about img {
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(255, 161, 92, 0.3);
+      }
+
+      /* Section Title Styles */
+      .section-title-wrapper {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .section-title-wrapper h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 1rem;
+      }
+
+      .section-title-wrapper h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, #856D46, transparent);
+        border-radius: 2px;
+      }
+
+      .section-title-wrapper h2 span {
+        color: #856D46;
+      }
+
+      .section-title-wrapper p {
+        color: rgba(68, 68, 68, 0.7);
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      /* Decorative elements */
+      .section-title-wrapper::before,
+      .section-title-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, #856D46, transparent);
+      }
+
+      .section-title-wrapper::before {
+        left: 0;
+      }
+
+      .section-title-wrapper::after {
+        right: 0;
+        transform: rotate(180deg);
+      }
+
+      @media (max-width: 992px) {
+        .section-title-wrapper h2 {
+          font-size: 2.5rem;
+        }
+
+        .section-title-wrapper::before,
+        .section-title-wrapper::after {
+          display: none;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .section-title-wrapper h2 {
+          font-size: 2rem;
+        }
+
+        .section-title-wrapper {
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      /* FAQ Section Styles */
+      .faq {
+        padding: 60px 0;
+        background-color: #ffffff;
+      }
+
+      .faq .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .faq .section-title h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 1rem;
+      }
+
+      .faq .section-title p {
+        color: rgba(68, 68, 68, 0.7);
+        font-size: 1.1rem;
+      }
+
+      .faq .faq-container .faq-item {
+        background-color: #ffffff;
+        position: relative;
+        padding: 20px;
+        margin-bottom: 15px;
+        border: 1px solid rgba(68, 68, 68, 0.15);
+        border-radius: 5px;
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+      }
+
+      .faq .faq-container .faq-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .faq .faq-container .faq-item h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 30px 0 0;
+        transition: 0.3s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #151515;
+      }
+
+      .faq .faq-container .faq-item h3:hover {
+        color: #856D46;
+      }
+
+      .faq .faq-container .faq-item .faq-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .faq .faq-container .faq-item .faq-content p {
+        margin-bottom: 0;
+        overflow: hidden;
+        color: #444444;
+        line-height: 1.8;
+      }
+
+      .faq .faq-container .faq-item .faq-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 16px;
+        line-height: 0;
+        transition: 0.3s;
+        cursor: pointer;
+        color: #151515;
+      }
+
+      .faq .faq-container .faq-item .faq-toggle:hover {
+        color: #856D46;
+      }
+
+      .faq .faq-container .faq-active {
+        border-color: #856D46;
+      }
+
+      .faq .faq-container .faq-active h3 {
+        color: #856D46;
+      }
+
+      .faq .faq-container .faq-active .faq-content {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        opacity: 1;
+        padding-top: 10px;
+      }
+
+      .faq .faq-container .faq-active .faq-toggle {
+        transform: rotate(90deg);
+        color: #856D46;
+      }
+
+      /* Service Section Styles */
+      .service-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+      }
+
+      .service-title {
+        height: 100%;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(255, 161, 92, 0.95) 0%, rgba(255, 140, 60, 0.95) 100%);
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(255, 161, 92, 0.3);
+      }
+
+      .service-title h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .service-title p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 0;
+        line-height: 1.8;
+      }
+
+      .service-item {
+        overflow: hidden;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 10px;
+        border: 1px solid rgba(68, 68, 68, 0.1);
+        transition: all 0.4s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-item:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 15px 40px rgba(133, 109, 70, 0.25);
+        border-color: #856D46;
+      }
+
+      .service-item .btn-square {
+        width: 65px;
+        height: 65px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(133, 109, 70, 0.1);
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .service-item:hover .btn-square {
+        background-color: #856D46;
+        transform: scale(1.1);
+      }
+
+      .service-item .btn-square i {
+        color: #856D46;
+        transition: color 0.3s ease;
+      }
+
+      .service-item:hover .btn-square i {
+        color: #fff;
+      }
+
+      .service-item h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .service-item:hover h3 {
+        color: #856D46;
+      }
+
+      .service-item p {
+        color: #444444;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        flex-grow: 1;
+      }
+
+      .service-item a {
+        position: relative;
+        padding: 0;
+        font-size: 14px;
+        line-height: 14px;
+        text-transform: uppercase;
+        color: #856D46;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+        display: inline-block;
+      }
+
+      .service-item a:hover {
+        color: #856D46;
+        padding-left: 5px;
+      }
+
+      .service-item a::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -3px;
+        background-color: #856D46;
+        transition: width 0.3s ease;
+      }
+
+      .service-item a:hover::after {
+        width: 100%;
+      }
+
+      /* Responsive adjustments for service section */
+      @media (max-width: 992px) {
+        .service-title {
+          margin-bottom: 2rem;
+        }
+
+        .service-title h1 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .service-item {
+          padding: 20px;
+        }
+
+        .service-title h1 {
+          font-size: 1.75rem;
+        }
+
+        .service-title p {
+          font-size: 1rem;
+        }
+      }
+      
+      /* Interactive Map Section Styles */
+      .map-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .map-section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .map-section-title h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .map-section-title h2 span {
+        color: #856D46;
+        font-weight: 900;
+      }
+
+      .map-section-title p {
+        color: rgba(68, 68, 68, 0.7);
+        font-size: 1.1rem;
+        margin-top: 1rem;
+      }
+
+      /* Distribution Map Container */
+      .distribution-map {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .distribution-map > img {
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+      }
+
+      /* Map Hotspot Points */
+      .distribution-map .map-point {
+        position: absolute;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 3px solid #856D46;
+        background-color: rgba(133, 109, 70, 0.3);
+        cursor: pointer;
+        box-shadow: 0 0 0 rgba(133, 109, 70, 0.7);
+        animation: pulse 2s infinite;
+        transition: all 0.25s ease-in-out;
+        overflow: hidden;
+        padding: 0;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 161, 92, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(255, 161, 92, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 161, 92, 0);
+        }
+      }
+
+      /* Hover/Active State */
+      .distribution-map .map-point:hover,
+      .distribution-map .map-point:focus {
+        width: 280px;
+        height: auto;
+        min-height: 140px;
+        border-radius: 12px;
+        z-index: 10;
+        animation: none;
+        background-color: #fff;
+        border: 2px solid #856D46;
+        box-shadow: 0 10px 40px rgba(133, 109, 70, 0.3);
+        padding: 20px;
+      }
+
+      /* Content Inside Hotspots */
+      .distribution-map .map-point .content {
+        display: none;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: opacity 0.25s ease-in-out 0.25s,
+                    height 0.25s ease-in-out;
+      }
+
+      .distribution-map .map-point:hover .content,
+      .distribution-map .map-point:focus .content {
+        display: block;
+        height: auto;
+        opacity: 1;
+        overflow: visible;
+      }
+
+      .distribution-map .map-point .content .centered-y {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+      }
+
+      .distribution-map .map-point .content h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #151515;
+        margin: 0 0 8px 0;
+        line-height: 1.3;
+      }
+
+      .distribution-map .map-point .content p {
+        font-size: 0.9rem;
+        color: #444444;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .distribution-map .map-point .content .region-label {
+        display: inline-block;
+        background-color: rgba(133, 109, 70, 0.1);
+        color: #856D46;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-top: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .map-section-title h2 {
+          font-size: 2.5rem;
+        }
+
+        .distribution-map .map-point:hover,
+        .distribution-map .map-point:focus {
+          width: 240px;
+          min-height: 120px;
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .map-section {
+          padding: 60px 0;
+        }
+
+        .map-section-title h2 {
+          font-size: 2rem;
+          letter-spacing: 1px;
+        }
+
+        .distribution-map {
+          padding: 10px;
+        }
+
+        .distribution-map .map-point {
+          width: 25px;
+          height: 25px;
+        }
+
+        .distribution-map .map-point:hover,
+        .distribution-map .map-point:focus {
+          width: 200px;
+          min-height: 100px;
+          padding: 12px;
+        }
+
+        .distribution-map .map-point .content h3 {
+          font-size: 1rem;
+        }
+
+        .distribution-map .map-point .content p {
+          font-size: 0.85rem;
+        }
+      }
+      
+      /* Business Categories Section */
+      .business-categories {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .business-categories .categories-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: nowrap;
+      }
+
+      .business-categories .category-item {
+        position: relative;
+        padding: 0 1.5rem;
+        flex: 0 1 auto;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .business-categories .category-item:first-child {
+        animation-delay: 0.2s;
+      }
+
+      .business-categories .category-item:last-child {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .business-categories .category-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .business-categories .category-item:hover .category-title {
+        color: #856D46;
+        transform: scale(1.05);
+      }
+
+      .business-categories .category-subtitle {
+        font-size: 0.95rem;
+        color: #856D46;
+        font-weight: 600;
+        font-style: italic;
+        transition: transform 0.3s ease;
+      }
+
+      .business-categories .category-item:hover .category-subtitle {
+        transform: translateY(-3px);
+      }
+
+      .business-categories .divider {
+        width: 3px;
+        height: 80px;
+        background: linear-gradient(180deg, transparent, #856D46 20%, #856D46 80%, transparent);
+        position: relative;
+        flex-shrink: 0;
+        opacity: 0;
+        animation: fadeIn 0.8s ease forwards 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .business-categories .divider::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        background: #856D46;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(133, 109, 70, 0.2);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          box-shadow: 0 0 0 4px rgba(255, 161, 92, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 0 8px rgba(255, 161, 92, 0.1);
+        }
+      }
+
+      .business-categories .common-text {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #151515;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+        padding: 0 2rem;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards 0.6s;
+      }
+
+      .business-categories .common-text::before,
+      .business-categories .common-text::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #856D46);
+        animation: expandWidth 0.8s ease forwards 1s;
+        width: 0;
+      }
+
+      @keyframes expandWidth {
+        from {
+          width: 0;
+        }
+        to {
+          width: 50px;
+        }
+      }
+
+      .business-categories .common-text::before {
+        left: 0;
+      }
+
+      .business-categories .common-text::after {
+        right: 0;
+        transform: rotate(180deg);
+      }
+
+      @media (max-width: 768px) {
+        .business-categories .categories-row {
+          flex-direction: column;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+        }
+
+        .business-categories .divider {
+          width: 60px;
+          height: 3px;
+          transform: rotate(90deg);
+        }
+
+        .business-categories .category-title {
+          font-size: 1.1rem;
+        }
+
+        .business-categories .category-subtitle {
+          font-size: 0.85rem;
+        }
+
+        .business-categories .common-text {
+          font-size: 1rem;
+          padding: 0 1rem;
+        }
+
+        .business-categories .common-text::before,
+        .business-categories .common-text::after {
+          width: 30px;
+        }
+      }
+      
+      /* Blog Section Title Styles */
+      .blog-section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+        padding-top: 3rem;
+        position: relative;
+      }
+
+      .blog-section-title h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .blog-section-title h2 span {
+        color: #856D46;
+        font-weight: 900;
+      }
+
+      .blog-section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, #856D46, transparent);
+        border-radius: 2px;
+      }
+
+      .blog-section-title p {
+        color: rgba(68, 68, 68, 0.7);
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+        line-height: 1.8;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Decorative blog title elements */
+      .blog-section-title::before,
+      .blog-section-title::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, #856D46, transparent);
+        opacity: 0.5;
+      }
+
+      .blog-section-title::before {
+        left: 10%;
+      }
+
+      .blog-section-title::after {
+        right: 10%;
+        transform: rotate(180deg);
+      }
+
+      @media (max-width: 992px) {
+        .blog-section-title h2 {
+          font-size: 2.5rem;
+        }
+
+        .blog-section-title::before,
+        .blog-section-title::after {
+          display: none;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .blog-section-title h2 {
+          font-size: 2rem;
+          letter-spacing: 1px;
+        }
+
+        .blog-section-title {
+          margin-bottom: 2.5rem;
+          padding-top: 2rem;
+        }
+      }
+      
+      /* Urban Stories Section - Image Zoom Effect */
+      .card-span {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-span .card-img {
+        transition: transform 0.6s ease;
+        transform-origin: center center;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-span:hover .card-img {
+        transform: scale(1.1);
+      }
+
+      .card-span .card-img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .card-span .stretched-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- PRELOADER -->
+    <img id="preloader" src="assets/img/cosmic-icons/preloader.gif" alt="Loading..." />
+    <!-- //PRELOADER -->
+
+    <div class="preloader_hide">
+      <!-- Main Content -->
+      <main class="main" id="top">
+        
+        <!-- NAVBAR -->
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top d-block" data-navbar-on-scroll="data-navbar-on-scroll" style="transition: all 0.7s ease; padding-top: 16rem; padding-bottom: 3rem;">
+          <div class="container d-flex flex-column justify-content-center align-items-center">
+            <a id="cosmicBrand" class="navbar-brand d-inline-flex text-center" href="index.html" style="transition: all 0.7s ease; font-size: 7rem; margin: 0;">
+              <span class="fw-bold">COSMIC SKYROCKET</span>
+            </a>
+            <p id="tagline" class="text-center mb-0" style="font-size: 3rem; margin-top: 0.1rem; color: black;">Elevate Spaces, Inspire Designs</p>
+          </div>
+        </nav>
+        
+        <!-- Fixed Icons in top-right corner -->
+        <div class="position-fixed d-flex align-items-center" style="top: 1.5rem; right: 2rem; z-index: 10000; gap: 1.5rem;">
+          <a class="text-1000" href="index.html" title="Home">
+            <svg class="feather feather-home" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </a>
+          <button id="searchBtn" class="btn btn-link text-1000 p-0" title="Search" style="border: none; background: none;">
+            <svg class="feather feather-search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <button id="hamburgerMenuBtn" class="btn btn-link text-1000 p-0" title="Menu" style="border: none; background: none;">
+            <svg class="feather feather-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Hamburger Menu Overlay -->
+        <div id="hamburgerMenuOverlay" class="hamburger-menu-overlay" style="display: none;">
+          <div class="hamburger-menu-panel">
+            <div class="hamburger-menu-header">
+              <h3 class="mb-0">Cosmic Skyrocket</h3>
+              <button id="closeMenuBtn" class="btn btn-link text-dark p-0" style="font-size: 2rem; border: none; background: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <nav class="hamburger-menu-content">
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <a href="#!" class="menu-link">About us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link">Blogs</a>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#!" class="menu-link menu-dropdown-toggle">
+                    Natural Stone
+                    <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </a>
+                  <ul class="submenu">
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Sandstone</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Limestone</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#!" class="menu-link menu-dropdown-toggle">
+                    Tiles
+                    <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </a>
+                  <ul class="submenu">
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Italian</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Material</a>
+                    </li>
+                    <li class="submenu-item submenu-item-has-children">
+                      <a href="#!" class="submenu-link submenu-dropdown-toggle">
+                        Other Stone
+                        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </a>
+                      <ul class="sub-submenu">
+                        <li class="sub-submenu-item">
+                          <a href="#!" class="sub-submenu-link">Morrocan</a>
+                        </li>
+                        <li class="sub-submenu-item">
+                          <a href="#!" class="sub-submenu-link">Wooden</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link">Packaging</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div id="searchOverlay" class="search-overlay">
+          <div class="search-container">
+            <button id="closeSearchBtn" class="search-close-btn" aria-label="Close Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            
+            <div class="search-input-wrapper">
+              <form id="searchForm" action="#" method="get">
+                <input 
+                  type="text" 
+                  id="searchInput" 
+                  placeholder="Search for tiles, stones, products..." 
+                  autocomplete="off"
+                  autofocus
+                />
+                <button type="submit" class="search-submit-btn" aria-label="Search">
+                  <i class="bi bi-search"></i>
+                </button>
+              </form>
+            </div>
+            
+            <div class="search-suggestions">
+              <p>Popular Searches</p>
+              <div class="search-tags">
+                <a href="#!" class="search-tag">Natural Stone</a>
+                <a href="#!" class="search-tag">Sandstone</a>
+                <a href="#!" class="search-tag">Limestone</a>
+                <a href="#!" class="search-tag">Italian Tiles</a>
+                <a href="#!" class="search-tag">Moroccan Tiles</a>
+                <a href="#!" class="search-tag">Ceramic Tiles</a>
+                <a href="#!" class="search-tag">Porcelain</a>
+                <a href="#!" class="search-tag">Wooden Finish</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- HERO BANNER WITH VIDEO BACKGROUND -->
+        <section class="py-11 bg-light-gradient border-bottom border-white border-5" style="position: relative; overflow: hidden; min-height: 90vh; padding-top: 8rem !important; padding-bottom: 8rem !important;">
+          <!-- Video Background -->
+          <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover;">
+            <source src="assets/img/cosmic-video/background-video-mines.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!-- Gray Overlay -->
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(215, 215, 215, 0.809); z-index: 1;"></div>
+          
+          <div class="container" style="position: relative; z-index: 2;">
+            <div class="row flex-center">
+              <div class="col-12 mb-10">
+                <div class="d-flex align-items-center flex-column">
+                  <!-- Hero content can be added here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3D CARDS SECTION - STONES AND TILES -->
+        <section class="py-0" id="header" style="margin-top: -5rem !important; transition: margin-top 0.7s ease;">
+          <div class="container">
+            <div class="row g-0 justify-content-center" style="gap: 20px;">
+              <div class="col-md-5 col-lg-4 d-flex justify-content-center">
+                <div class="card-3d">
+                  <div class="wrapper">
+                    <img src="assets/img/cosmic-fe/Stone.jpg" class="cover-image" alt="Stone" />
+                  </div>
+                  <div class="title">
+                    <h2 class="title-text">Stones</h2>
+                  </div>
+                  <img src="assets/img/cosmic-fe/stone3D.PNG" class="character" alt="Stone 3D" />
+                </div>
+              </div>
+              <div class="col-md-5 col-lg-4 d-flex justify-content-center">
+                <div class="card-3d">
+                  <div class="wrapper">
+                    <img src="assets/img/cosmic-fe/Tile.jpg" class="cover-image" alt="Tile" />
+                  </div>
+                  <div class="title">
+                    <h2 class="title-text">Tiles</h2>
+                  </div>
+                  <img src="assets/img/cosmic-fe/tile3D.PNG" class="character" alt="Tile 3D" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        <br>
+        <br>
+        <br>
+        <br>
+    <!-- ABOUT SECTION -->
+        <section id="about" class="about about-section">
+          <div class="container">
+            
+            <!-- Business Categories -->
+            <div class="business-categories" data-aos="fade-up" data-aos-delay="0">
+              <div class="categories-row">
+                <!-- Natural Stone Category -->
+                <div class="category-item">
+                  <div class="category-title">Natural Stone</div>
+                  <div class="category-subtitle">( quarry owner )</div>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider"></div>
+
+                <!-- Ceramic & Porcelain Tiles Category -->
+                <div class="category-item">
+                  <div class="category-title">Ceramic & Porcelain Tiles</div>
+                  <div class="category-subtitle">( manufacturers )</div>
+                </div>
+              </div>
+
+              <!-- Common Text Below -->
+              <div class="common-text">
+                Wholesalers, Distributors and Market Breakers
+              </div>
+            </div>
+
+            <div class="row gy-4 align-items-center">
+              
+              <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="0">
+                <img src="assets/img/gallery/tiler-working-renovation-apartment.jpg" class="img-fluid rounded" alt="Cosmic Skyrocket - Premium Natural Stones & Tiles">
+              </div>
+
+              <div class="col-lg-6 order-2 order-lg-1 content">
+                <h3 data-aos="fade-right" data-aos-delay="0">Transforming Spaces with Premium Natural Stones & Tiles</h3>
+                <p class="fst-italic" data-aos="fade-right" data-aos-delay="30">
+                  At Cosmic Skyrocket, we believe every space tells a story. Our mission is to help you create yours 
+                  with the finest natural stones and tiles sourced from around the world.
+                </p>
+                <ul>
+                  <li data-aos="fade-right" data-aos-delay="60">
+                    <i class="bi bi-check2-all"></i> 
+                    <span>Premium quality natural stones including sandstone, limestone, and exclusive varieties hand-picked from the best quarries.</span>
+                  </li>
+                  <li data-aos="fade-right" data-aos-delay="90">
+                    <i class="bi bi-check2-all"></i> 
+                    <span>Extensive tile collection featuring Italian, Moroccan, and wooden designs to suit every aesthetic.</span>
+                  </li>
+                  <li data-aos="fade-right" data-aos-delay="120">
+                    <i class="bi bi-check2-all"></i> 
+                    <span>Expert guidance and professional support throughout your project, from selection to installation, ensuring perfect results every time.</span>
+                  </li>
+                </ul>
+                <p data-aos="fade-right" data-aos-delay="150">
+                  With over 28+ years of experience in the industry, we've built lasting relationships with our clients 
+                  by delivering exceptional quality, competitive pricing, and unmatched customer service. Whether you're 
+                  designing a residential space or a commercial project, we have the perfect materials to bring your vision to life.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section><!-- /About Section -->
+
+        <!-- Services start -->
+
+        <!-- SERVICE SECTION -->
+        <section id="services" class="service-section">
+          <div class="container">
+            <div class="row g-5">
+              
+              <!-- Service Title Column -->
+              <div class="col-md-12 col-lg-4 col-xl-3" data-aos="fade-right" data-aos-delay="0">
+                <div class="service-title">
+                  <h1>Our Services</h1>
+                  <p>Comprehensive solutions from sourcing to delivery, tailored to elevate your architectural vision.</p>
+                </div>
+              </div>
+
+              <!-- Service Items Column -->
+              <div class="col-md-12 col-lg-8 col-xl-9">
+                <div class="row g-4">
+                  
+                  <!-- Service Item 1: Global Tile & Natural Stone Sourcing -->
+                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-item">
+                      <div class="btn-square">
+                        <i class="bi bi-gem" style="font-size: 2rem;"></i>
+                      </div>
+                      <h3>Global Tile & Natural Stone Sourcing</h3>
+                      <p>We provide a premium selection of ceramic tiles, porcelain tiles, and Indian natural stones such as sandstone and limestone, sourced and crafted with uncompromising quality standards.</p>
+                      <a href="#!">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 2: Customized Design & Manufacturing -->
+                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item">
+                      <div class="btn-square">
+                        <i class="bi bi-palette" style="font-size: 2rem;"></i>
+                      </div>
+                      <h3>Customized Design & Manufacturing</h3>
+                      <p>From unique sizes to exclusive finishes and tailored textures, we offer fully customized tile and stone solutions to match the exact requirements of architects, designers, and builders.</p>
+                      <a href="#!">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 3: End-to-End Export & Logistics Support -->
+                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item">
+                      <div class="btn-square">
+                        <i class="bi bi-truck" style="font-size: 2rem;"></i>
+                      </div>
+                      <h3>End-to-End Export & Logistics Support</h3>
+                      <p>We handle the complete export process—including documentation, packing, port handling, and coordination—ensuring smooth, timely, and hassle-free global deliveries.</p>
+                      <a href="#!">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 4: Quality Assurance & Inspection -->
+                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-item">
+                      <div class="btn-square">
+                        <i class="bi bi-shield-check" style="font-size: 2rem;"></i>
+                      </div>
+                      <h3>Quality Assurance & Inspection</h3>
+                      <p>Each product undergoes strict quality checks at every stage of production and packaging to ensure durability, aesthetic excellence, and international compliance.</p>
+                      <a href="#!">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 5: Sustainable & Ethical Production -->
+                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item">
+                      <div class="btn-square">
+                        <i class="bi bi-flower3" style="font-size: 2rem;"></i>
+                      </div>
+                      <h3>Sustainable & Ethical Production</h3>
+                      <p>We follow environmentally responsible manufacturing practices, using eco-friendly materials and sustainable extraction methods to minimize environmental impact.</p>
+                      <a href="#!">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Service Item 6: Dedicated Client Support & Consultation -->
+                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item">
+                      <div class="btn-square">
+                        <i class="bi bi-headset" style="font-size: 2rem;"></i>
+                      </div>
+                      <h3>Dedicated Client Support & Consultation</h3>
+                      <p>Our team provides personalized guidance, seamless communication, and continuous support from material selection to shipment, making us a trusted long-term partner worldwide.</p>
+                      <a href="#!">Learn More</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <!-- END SERVICE SECTION -->
+
+        <!-- Services end -->
+
+        <!-- MAP SECTION -->
+        <section class="map-section" id="global-presence">
+          <div class="container">
+            
+            <!-- Map Section Title -->
+            <div class="map-section-title" data-aos="fade-up">
+              <h2>COSMIC SKYROCKET AROUND THE <span>WORLD</span></h2>
+              <p>Delivering premium natural stones and tiles across 6 major regions globally</p>
+            </div>
+
+            <!-- Interactive Map -->
+            <div class="distribution-map" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/img/gallery/map.png" alt="World Map - Cosmic Skyrocket Global Presence" />
+              
+              <!-- Schengen Region (Europe) -->
+              <button class="map-point" style="top:25%;left:48%">
+                <div class="content">
+                  <div class="centered-y">
+                    <h3>Schengen Region</h3>
+                    <p>Serving European markets with premium tiles and natural stones, ensuring seamless cross-border trade.</p>
+                    <span class="region-label">Europe</span>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Gulf Region (Middle East - Saudi, UAE, etc.) -->
+              <button class="map-point" style="top:35%;left:58%">
+                <div class="content">
+                  <div class="centered-y">
+                    <h3>Gulf Region</h3>
+                    <p>Supplying high-quality stones and tiles to Saudi Arabia, UAE, Kuwait, and surrounding Gulf nations.</p>
+                    <span class="region-label">Gulf</span>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Middle East (Broader Middle East) -->
+              <button class="map-point" style="top:32%;left:55%">
+                <div class="content">
+                  <div class="centered-y">
+                    <h3>Middle East</h3>
+                    <p>Extensive reach across Jordan, Lebanon, Israel, and other Middle Eastern countries with premium materials.</p>
+                    <span class="region-label">Middle East</span>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Mediterranean Region -->
+              <button class="map-point" style="top:28%;left:50%">
+                <div class="content">
+                  <div class="centered-y">
+                    <h3>Mediterranean Region</h3>
+                    <p>Delivering to Mediterranean coastal nations including Greece, Turkey, Spain, and North African countries.</p>
+                    <span class="region-label">Mediterranean</span>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Asia-Pacific Region -->
+              <button class="map-point" style="top:38%;left:75%">
+                <div class="content">
+                  <div class="centered-y">
+                    <h3>Asia-Pacific</h3>
+                    <p>Strong presence in Southeast Asia, Australia, and Pacific islands with diverse stone and tile collections.</p>
+                    <span class="region-label">Asia-Pacific</span>
+                  </div>
+                </div>
+              </button>
+
+              <!-- Latin America -->
+              <button class="map-point" style="top:55%;left:22%">
+                <div class="content">
+                  <div class="centered-y">
+                    <h3>Latin America</h3>
+                    <p>Serving Central and South American markets with premium natural stones and customized tile solutions.</p>
+                    <span class="region-label">Latin America</span>
+                  </div>
+                </div>
+              </button>
+
+            </div>
+
+          </div>
+        </section>
+        <!-- END MAP SECTION -->
+
+        <!-- STATS SECTION -->
+        <section id="stats" class="stats stats-section">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4 align-items-center justify-content-between">
+
+              <div class="col-lg-5">
+                <img src="assets/img/gallery/factory-workers-work-wear-yellow-helmets-walking-through-industrial-production-hall-sharing-ideas-about-organization.jpg" alt="Cosmic Skyrocket Excellence" class="img-fluid rounded">
+              </div>
+
+              <div class="col-lg-6">
+                <h3 class="fw-bold fs-2 mb-3">Excellence in Natural Stone & Tiles</h3>
+                <p class="mb-4">
+                  With years of expertise in sourcing and delivering premium natural stones and tiles, 
+                  we've built a reputation for quality, reliability, and exceptional customer service. 
+                  Our commitment to excellence drives everything we do.
+                </p>
+
+                <div class="row gy-4">
+
+                  <div class="col-lg-6">
+                    <div class="stats-item d-flex">
+                      <i class="bi bi-people flex-shrink-0"></i>
+                      <div>
+                        <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>Skilled Manpower</strong> <span>delivering expert craftsmanship and operational excellence</span></p>
+                      </div>
+                    </div>
+                  </div><!-- End Stats Item -->
+
+                  <div class="col-lg-6">
+                    <div class="stats-item d-flex">
+                      <i class="bi bi-grid-3x3 flex-shrink-0"></i>
+                      <div>
+                        <span data-purecounter-start="0" data-purecounter-end="37000" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>sq. m/day Tile Production</strong> <span>ensuring large-scale and timely supply</span></p>
+                      </div>
+                    </div>
+                  </div><!-- End Stats Item -->
+
+                  <div class="col-lg-6">
+                    <div class="stats-item d-flex">
+                      <i class="bi bi-gem flex-shrink-0"></i>
+                      <div>
+                        <span data-purecounter-start="0" data-purecounter-end="230" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>cu. m/day Stone Extraction</strong> <span>for consistent premium-quality supply</span></p>
+                      </div>
+                    </div>
+                  </div><!-- End Stats Item -->
+
+                  <div class="col-lg-6">
+                    <div class="stats-item d-flex">
+                      <i class="bi bi-globe flex-shrink-0"></i>
+                      <div>
+                        <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>Countries Served</strong> <span>across Schengen, Gulf, Asia-Pacific, Latin America, Middle East & Mediterranean</span></p>
+                      </div>
+                    </div>
+                  </div><!-- End Stats Item -->
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </section><!-- /Stats Section -->
+
+        <!-- URBAN STORIES SECTION -->
+        <section class="py-0" id="collection" style="padding-top: 5rem !important; padding-bottom: 5rem !important;">
+          <div class="container">
+            <div class="row h-100 gx-2">
+              <div class="col-md-6">
+                <div class="card card-span h-100 text-white"><img class="card-img h-100" src="assets/img/gallery/index4.png" alt="..." />
+                  <div class="card-img-overlay bg-dark-gradient">
+                    <div class="p-5 p-md-2 p-xl-5">
+                      <h1 class="fs-md-4 fs-lg-7 text-light">Natural Stones </h1>
+                      <h5 class="fs-2 text-light">collection</h5>
+                    </div>
+                  </div><a class="stretched-link" href="#!"></a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card card-span h-100 text-white"><img class="card-img h-100" src="assets/img/gallery/int2.jpg" alt="..." />
+                  <div class="card-img-overlay bg-dark-gradient">
+                    <div class="p-5 p-md-2 p-xl-5 d-flex flex-column flex-end-center align-items-baseline h-100">
+                      <h1 class="fs-md-4 fs-lg-7 text-light">Ceramic and porcelain Tiles </h1>
+                      <h5 class="fs-2 text-light">collection</h5>
+                    </div>
+                  </div><a class="stretched-link" href="#!"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        <!-- BLOG SECTION -->
+        <section class="py-0 pb-8">
+          <div class="container-fluid container-lg">
+            
+            <!-- Blog Section Title -->
+            <div class="blog-section-title" data-aos="fade-up">
+              <h2>OUR <span>BLOGS</span></h2>
+              <p>Discover insights, trends, and expert advice on tiles, natural stones, and architectural design</p>
+            </div>
+
+            <div class="row h-100 g-2 justify-content-center">
+              <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
+                <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog.jpeg" alt="..." />
+                  <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
+                    <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
+                      <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
+                    </div>
+                    
+                    <h3 class="fw-bold text-1000 mt-5 text-truncate">How much impact do surfaces have on a space?</h3>
+                    <p class="text-900 mt-3">More than we realize. The tiles and natural stones we choose speak volumes about our taste, lifestyle, and the ambience we want to create. From subtle textures to bold patterns, every finish tells a story — one that shapes how people experience your home, office...</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
+                      <svg class="bi bi-arrow-right-short hover-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
+                <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog-2.jpg" alt="..." />
+                  <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
+                    <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
+                      <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
+                    </div>
+                    
+                    <h3 class="fw-bold text-1000 mt-5 text-truncate">Can a tile transform the way a space feels?</h3>
+                    <p class="text-900 mt-3">Absolutely. The surfaces around us silently express who we are — our style, personality, and vision. From premium natural stones to intricate tile designs, these materials reflect craftsmanship and character.
+Every day, homeowners, architects, and designers rely on textures and surface...</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
+                      <svg class="bi bi-arrow-right-short hover-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
+                <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog-3.webp" alt="..." />
+                  <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
+                    <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
+                      <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
+                    </div>
+                    
+                    <h3 class="fw-bold text-1000 mt-5 text-truncate">How much do tiles influence the design of a &amp; space?</h3>
+                    <p class="text-900 mt-3">More than you think. Surfaces define mood, aesthetics, and even functionality. The colors, patterns, and finishes we choose become the first thing people notice — and often the detail they remember.
+In this blog, we explore global design trends, innovative materials....</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
+                      <svg class="bi bi-arrow-right-short hover-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq section">
+
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Frequently Asked Questions</h2>
+            <p>Learn more about Cosmic Skyrocket - your trusted partner in tiles and natural stone exports</p>
+          </div><!-- End Section Title -->
+
+          <div class="container">
+
+            <div class="row justify-content-center">
+
+              <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="faq-container">
+
+                  <!-- FAQ Item 1 -->
+                  <div class="faq-item">
+                    <h3>What does Cosmic Skyrocket do?</h3>
+                    <div class="faq-content">
+                      <p>Cosmic Skyrocket is a global exporter of tiles and natural stones, supplying premium ceramic, porcelain, sandstone, and limestone products crafted with high production standards.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 2 -->
+                  <div class="faq-item">
+                    <h3>How long has the company been in the industry?</h3>
+                    <div class="faq-content">
+                      <p>The company has 28+ years of experience in the building materials and natural stone/tile export segment.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 3 -->
+                  <div class="faq-item">
+                    <h3>Who are the typical clients or partners?</h3>
+                    <div class="faq-content">
+                      <p>They work closely with architects, designers, builders, manufacturers, and retailers across the world.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 4 -->
+                  <div class="faq-item">
+                    <h3>Which countries or regions does Cosmic Skyrocket export to?</h3>
+                    <div class="faq-content">
+                      <p>The company exports to Schengen, Gulf, Asia-Pacific, Latin America, Middle East, and Mediterranean regions and more than 26 countries globally.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 5 -->
+                  <div class="faq-item">
+                    <h3>What types of products does the company offer?</h3>
+                    <div class="faq-content">
+                      <p>Cosmic Skyrocket offers: Tiles (Ceramic, Porcelain), Indian Natural Stones (Sandstone, Limestone), and customized designs, sizes, and finishes based on project requirements.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 6 -->
+                  <div class="faq-item">
+                    <h3>What is the production capacity?</h3>
+                    <div class="faq-content">
+                      <p>Tiles: 37,000+ sq. meters/day | Natural Stone Extraction: 230+ cubic meters/day | Manpower: 300+ staff | Dealers in India: 32+ dealers nationwide</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 7 -->
+                  <div class="faq-item">
+                    <h3>Which ports in India do they use for export?</h3>
+                    <div class="faq-content">
+                      <p>Cosmic Skyrocket is registered at Mundra Port (INMUN) and Nhava Sheva Port (INNSA). These ports are used for handling all export shipments.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 8 -->
+                  <div class="faq-item">
+                    <h3>Does the company offer customization?</h3>
+                    <div class="faq-content">
+                      <p>Yes. Clients can request custom tile and natural stone sizes, finishes, and designs, tailored to specific architectural or commercial needs.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 9 -->
+                  <div class="faq-item">
+                    <h3>What makes Cosmic Skyrocket cost-competitive?</h3>
+                    <div class="faq-content">
+                      <p>Their India-based manufacturing units provide cost advantages due to: Abundant raw materials, Affordable manpower, and Favorable economic conditions. This allows global brands to import under their own name at competitive rates.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 10 -->
+                  <div class="faq-item">
+                    <h3>What are the company's core values?</h3>
+                    <div class="faq-content">
+                      <p>Cosmic Skyrocket focuses on: Quality & innovation, Sustainability, Transparency & integrity, Customer satisfaction, and Long-term partnerships.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 11 -->
+                  <div class="faq-item">
+                    <h3>What are the accepted payment methods?</h3>
+                    <div class="faq-content">
+                      <p>The company accepts: Electronic Funds Transfer, Wire / Telex / TT, and Irrevocable Letter of Credit (LC). Optional methods can be agreed upon separately.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 12 -->
+                  <div class="faq-item">
+                    <h3>Which Incoterms do they support?</h3>
+                    <div class="faq-content">
+                      <p>Preferred and supported shipping terms include: FOB, CIF, and CNF/CFR. Responsibilities under each Incoterm are clearly defined for buyers and sellers.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                  <!-- FAQ Item 13 -->
+                  <div class="faq-item">
+                    <h3>What documents are provided for export shipments?</h3>
+                    <div class="faq-content">
+                      <p>Shipments are supported with all essential documents, such as: Proforma Invoice, Commercial Invoice, Packing List, Certificate of Origin, Bill of Lading, and Insurance Certificate. All documents ensure smooth customs processing and compliance.</p>
+                    </div>
+                    <i class="faq-toggle bi bi-chevron-right"></i>
+                  </div><!-- End Faq item-->
+
+                </div>
+
+              </div><!-- End Faq Column-->
+
+            </div>
+
+          </div>
+
+        </section><!-- /Faq Section -->
+
+        
+
+        <!-- FOOTER -->
+        <section class="py-0 pt-7" style="background-color: #f9f9f9;">
+          <div class="container">
+            <div class="row">
+              
+              <!-- Company Info -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000">Company Info</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#about">About Us</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Our Story</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Careers</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Blog</a></li>
+                </ul>
+              </div>
+
+              <!-- Natural Stones -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000">Natural Stones</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Sandstone</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Limestone</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Marble</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Granite</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Quartzite</a></li>
+                </ul>
+              </div>
+
+              <!-- Tiles -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000">Tiles</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Italian Marble</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Ceramic Tiles</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Porcelain Tiles</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Moroccan Tiles</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Wooden Finish</a></li>
+                </ul>
+              </div>
+
+              <!-- Quick Links -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000">Quick Links</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#services">Services</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#global-presence">Global Presence</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#faq">FAQ</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Contact Us</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Request Quote</a></li>
+                </ul>
+              </div>
+
+              <!-- Legal & Policies -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000">Legal & Policies</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Terms & Conditions</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Privacy Policy</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">CSR Policy</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Shipping Policy</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Return Policy</a></li>
+                </ul>
+              </div>
+
+              <!-- Contact Information -->
+              <div class="col-12 col-md-6 col-lg-3 mb-3">
+                <h5 class="lh-lg fw-bold text-1000">Contact Us</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg mb-2">
+                    <a class="text-800 text-decoration-none d-flex align-items-center" href="tel:+918209851679">
+                      <i class="bi bi-telephone me-2 flex-shrink-0"></i><span>+91 82098 51679</span>
+                    </a>
+                  </li>
+                  <li class="lh-lg mb-2">
+                    <a class="text-800 text-decoration-none d-flex align-items-center" href="mailto:info@cosmicskyrocket.in">
+                      <i class="bi bi-envelope me-2 flex-shrink-0"></i><span class="text-break">info@cosmicskyrocket.in</span>
+                    </a>
+                  </li>
+                  <li class="lh-lg">
+                    <span class="text-800 d-flex align-items-center">
+                      <i class="bi bi-geo-alt me-2 flex-shrink-0"></i><span>Rajasthan, India</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+            
+            <div class="border-bottom border-3 mt-4"></div>
+            
+            <div class="row flex-center my-3">
+              <div class="col-md-6 order-1 order-md-0">
+                <p class="my-2 text-1000 text-center text-md-start"> 
+                  &copy; 2024 Cosmic Skyrocket. All Rights Reserved. Made with&nbsp;
+                  <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#856D46" viewBox="0 0 16 16">
+                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
+                  </svg>&nbsp;in India
+                </p>
+              </div>
+              <div class="col-md-6">
+                <div class="text-center text-md-end">
+                  <a href="#!" class="text-decoration-none me-3" title="Facebook"><span data-feather="facebook"></span></a>
+                  <a href="#!" class="text-decoration-none me-3" title="Instagram"><span data-feather="instagram"></span></a>
+                  <a href="#!" class="text-decoration-none me-3" title="LinkedIn"><span data-feather="linkedin"></span></a>
+                  <a href="#!" class="text-decoration-none me-3" title="Twitter"><span data-feather="twitter"></span></a>
+                  <a href="#!" class="text-decoration-none" title="YouTube"><span data-feather="youtube"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+    <!-- //preloader_hide -->
+
+    <!-- JavaScripts -->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/feather-icons/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="assets/js/theme.js"></script>
+
+    <!-- PureCounter JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS and PureCounter -->
+    <script>
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        offset: -200  // Trigger animations early - when element is 200px BEFORE entering viewport
+      });
+      new PureCounter();
+    </script>
+
+    <!-- Hamburger Menu Script -->
+    <script>
+      // Hamburger Menu Toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerBtn = document.getElementById('hamburgerMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const menuOverlay = document.getElementById('hamburgerMenuOverlay');
+        
+        // Open menu
+        hamburgerBtn.addEventListener('click', function() {
+          menuOverlay.style.display = 'block';
+          setTimeout(function() {
+            menuOverlay.classList.add('active');
+          }, 10);
+        });
+        
+        // Close menu
+        function closeMenu() {
+          menuOverlay.classList.remove('active');
+          setTimeout(function() {
+            menuOverlay.style.display = 'none';
+          }, 300);
+        }
+        
+        closeMenuBtn.addEventListener('click', closeMenu);
+        
+        // Close menu when clicking overlay
+        menuOverlay.addEventListener('click', function(e) {
+          if (e.target === menuOverlay) {
+            closeMenu();
+          }
+        });
+        
+        // Dropdown Toggle
+        const dropdownToggles = document.querySelectorAll('.menu-dropdown-toggle, .submenu-dropdown-toggle');
+        
+        dropdownToggles.forEach(function(toggle) {
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentItem = this.parentElement;
+            const wasActive = parentItem.classList.contains('active');
+            
+            // Close all sibling dropdowns
+            const siblings = Array.from(parentItem.parentElement.children);
+            siblings.forEach(function(sibling) {
+              if (sibling !== parentItem) {
+                sibling.classList.remove('active');
+              }
+            });
+            
+            // Toggle current dropdown
+            if (wasActive) {
+              parentItem.classList.remove('active');
+            } else {
+              parentItem.classList.add('active');
+            }
+          });
+        });
+        
+        // Search Overlay Functionality
+        const searchBtn = document.getElementById('searchBtn');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const closeSearchBtn = document.getElementById('closeSearchBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchForm = document.getElementById('searchForm');
+        
+        // Open search overlay
+        searchBtn.addEventListener('click', function() {
+          searchOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          setTimeout(() => {
+            searchInput.focus();
+          }, 400);
+        });
+        
+        // Close search overlay
+        closeSearchBtn.addEventListener('click', function() {
+          searchOverlay.classList.remove('active');
+          document.body.style.overflow = ''; // Restore scrolling
+          searchInput.value = ''; // Clear input
+        });
+        
+        // Close on overlay click (outside search container)
+        searchOverlay.addEventListener('click', function(e) {
+          if (e.target === searchOverlay) {
+            searchOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            searchInput.value = '';
+          }
+        });
+        
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+            searchOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            searchInput.value = '';
+          }
+        });
+        
+        // Handle search form submission
+        searchForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm) {
+            // Here you can implement your search logic
+            console.log('Searching for:', searchTerm);
+            // For now, just show an alert
+            alert('Searching for: ' + searchTerm);
+            // You can redirect to a search results page or perform AJAX search
+            // window.location.href = '/search?q=' + encodeURIComponent(searchTerm);
+          }
+        });
+        
+        // Handle search tag clicks
+        const searchTags = document.querySelectorAll('.search-tag');
+        searchTags.forEach(function(tag) {
+          tag.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tagText = this.textContent;
+            searchInput.value = tagText;
+            searchInput.focus();
+          });
+        });
+        
+        // Close menu on ESC key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+      document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
+        faqItem.addEventListener('click', () => {
+          faqItem.parentNode.classList.toggle('faq-active');
+        });
+      });
+    </script>
+
+    <!-- Preloader Styles -->
+    <style>
+      /* Preloader Styles */
+      .preloader_hide {
+        opacity: 0;
+      }
+
+      #preloader {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 32px;
+        height: 32px;
+        margin: -16px 0 0 -16px;
+        display: block;
+        z-index: 9999;
+        background-color: #f8f9fa;
+      }
+
+      body {
+        background-color: #f8f9fa;
+      }
+    </style>
+
+    <!-- jQuery (required for preloader) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Preloader Script -->
+    <script>
+      /* PRELOADER */
+      jQuery(window).on('load', function () {
+        // Preloader fade out after 800ms
+        setTimeout(() => {
+          jQuery('#preloader').animate({'opacity': '0'}, 300, function() {
+            jQuery('#preloader').hide();
+          });
+        }, 800);
+        
+        // Content fade in after 800ms
+        setTimeout(() => {
+          jQuery('.preloader_hide').animate({'opacity': '1'}, 500);
+        }, 800);
+        
+        // Footer fade in
+        setTimeout(() => {
+          jQuery('footer').animate({'opacity': '1'}, 500);
+        }, 2000);
+      });
+    </script>
+
+    <!-- Navbar Scroll Animation -->
+    <script>
+      let hasScrolled = false;
+      
+      window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('mainNavbar');
+        const brand = document.getElementById('cosmicBrand');
+        const brandText = brand.querySelector('.fw-bold');
+        const tagline = document.getElementById('tagline');
+        const cardsSection = document.getElementById('header');
+        
+        if (window.scrollY > 10 && !hasScrolled) {
+          hasScrolled = true;
+          // Shrink to normal size
+          navbar.style.paddingTop = '1rem';
+          navbar.style.paddingBottom = '1rem';
+          brand.style.fontSize = '1.5rem';
+          // Change text color to black and remove 3D effect
+          brandText.style.color = '#000';
+          brandText.style.textShadow = 'none';
+          // Hide tagline completely (remove from layout)
+          tagline.style.display = 'none';
+          // Move cards section up to fill the space
+          cardsSection.style.marginTop = '-23rem';
+        } else if (window.scrollY <= 10 && hasScrolled) {
+          hasScrolled = false;
+          // Return to large size
+          navbar.style.paddingTop = '16rem';
+          navbar.style.paddingBottom = '3rem';
+          brand.style.fontSize = '7rem';
+          // Change text color to white and restore 3D effect
+          brandText.style.color = '#fff';
+          brandText.style.textShadow = '0px 1px 0px rgba(0,0,0,0.4), 0px 2px 0px rgba(0,0,0,0.3), 0px 3px 0px rgba(0,0,0,0.2), 0px 4px 0px rgba(0,0,0,0.1), 0px 5px 0px rgba(0,0,0,0.05), 0px 6px 10px rgba(0,0,0,0.3)';
+          // Show tagline
+          tagline.style.display = 'block';
+          // Return cards section to original position
+          cardsSection.style.marginTop = '-5rem';
+        }
+        
+        // Always force transparent background when at top
+        if (window.scrollY <= 10) {
+          navbar.style.setProperty('background-color', 'transparent', 'important');
+          navbar.style.setProperty('background-image', 'none', 'important');
+          navbar.classList.remove('backdrop');
+          navbar.classList.remove('shadow-transition');
+        }
+      });
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  </body>
+
+</html>

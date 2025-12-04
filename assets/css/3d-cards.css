@@ -1,0 +1,154 @@
+/* 3D Card Hover Animation Styles */
+
+:root {
+  --card-3d-height: 400px;
+  --card-3d-width: calc(var(--card-3d-height) / 1.5);
+}
+
+.card-3d-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 50px 0;
+  flex-wrap: wrap;
+}
+
+.card-3d {
+  width: var(--card-3d-width);
+  height: var(--card-3d-height);
+  position: relative;
+  border-radius: 15px;
+  cursor: pointer;
+  perspective: 2500px;
+  margin: 0 5px;
+}
+
+.card-3d .wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-3d .wrapper .cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+
+.card-3d:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.card-3d:hover .wrapper .cover-image {
+  filter: grayscale(60%) brightness(0.7);
+}
+
+.card-3d .wrapper::before,
+.card-3d .wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+
+.card-3d .wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card-3d .wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card-3d:hover .wrapper::before,
+.card-3d .wrapper::after {
+  opacity: 1;
+}
+
+.card-3d:hover .wrapper::after {
+  height: 120px;
+}
+
+.card-3d .title {
+  width: 100%;
+  transition: transform 0.5s;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.card-3d:hover .title {
+  transform: translate3d(0%, -60px, 120px);
+}
+
+.card-3d .character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.card-3d:hover .character {
+  opacity: 1;
+  transform: translate3d(-50%, -60%, 150px);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8));
+}
+
+/* Title text styling */
+.card-3d .title-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0;
+  opacity: 0.9;
+  transition: all 0.5s;
+}
+
+.card-3d:hover .title-text {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Specific styling for tile3D image - make it larger */
+.card-3d .character[alt="Tile 3D"] {
+  width: 115%;
+  max-width: 115%;
+}
+
+.card-3d:hover .character[alt="Tile 3D"] {
+  width: 115%;
+  transform: translate3d(-50%, -60%, 150px) scale(1.05);
+}

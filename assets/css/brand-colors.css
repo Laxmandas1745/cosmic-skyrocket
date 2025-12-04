@@ -1,0 +1,44 @@
+/* -------------------------------------------------------------------------- */
+/*                        Cosmic Skyrocket Brand Colors                       */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Brand Color Palette */
+  --brand-white: #FFFFFF;
+  --brand-black: #000000;
+  --brand-brown: #856D46;
+  --brand-gray: #EEEDE9;
+  
+  /* Primary brand color */
+  --brand-primary: var(--brand-brown);
+  
+  /* Semantic colors using brand palette */
+  --brand-text-primary: var(--brand-black);
+  --brand-text-secondary: var(--brand-brown);
+  --brand-text-light: var(--brand-white);
+  --brand-bg-primary: var(--brand-white);
+  --brand-bg-secondary: var(--brand-gray);
+  --brand-bg-dark: var(--brand-black);
+  
+  /* Interactive states */
+  --brand-hover: #6d5a38; /* Darker brown for hover states */
+  --brand-active: #9a7f52; /* Lighter brown for active states */
+  
+  /* Borders and dividers */
+  --brand-border: var(--brand-gray);
+  --brand-border-dark: var(--brand-brown);
+}
+
+/* Utility classes for quick color application */
+.text-brand-brown { color: var(--brand-brown) !important; }
+.text-brand-white { color: var(--brand-white) !important; }
+.text-brand-black { color: var(--brand-black) !important; }
+.text-brand-gray { color: var(--brand-gray) !important; }
+
+.bg-brand-brown { background-color: var(--brand-brown) !important; }
+.bg-brand-white { background-color: var(--brand-white) !important; }
+.bg-brand-black { background-color: var(--brand-black) !important; }
+.bg-brand-gray { background-color: var(--brand-gray) !important; }
+
+.border-brand-brown { border-color: var(--brand-brown) !important; }
+.border-brand-gray { border-color: var(--brand-gray) !important; }
