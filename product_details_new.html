@@ -899,6 +899,77 @@
           font-size: 1.2rem;
         }
       }
+
+
+
+      /* Size Comparison Chart Styles */
+      .size-comparison-wrapper {
+        padding: 2rem 0;
+        overflow-x: auto;
+      }
+
+      .size-comparison-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 40px;
+        min-height: 300px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .size-item {
+        transition: transform 0.3s ease;
+      }
+
+      .size-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .tile-rectangle {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .tile-rectangle:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        background-color: #999 !important;
+      }
+
+      .size-label {
+        min-width: 100px;
+      }
+
+      @media (max-width: 768px) {
+        .size-comparison-container {
+          gap: 25px;
+        }
+
+        .size-visual {
+          transform: scale(0.8);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .size-comparison-container {
+          gap: 20px;
+          flex-direction: row;
+          justify-content: flex-start;
+        }
+
+        .size-visual {
+          transform: scale(0.7);
+        }
+
+        .size-label strong {
+          font-size: 0.75rem !important;
+        }
+
+        .size-label p {
+          font-size: 0.7rem !important;
+        }
+      }
+
     </style>
 
   </head>
@@ -1170,14 +1241,6 @@
                   </div>
                 </div>
 
-                <!-- Application and Surface finishes -->
-
-                
-                
-                
-
-
-                <!-- Application and Surface finishes -->
 
 
               </div>
@@ -1185,6 +1248,106 @@
             </div>
           </div>
         </section>
+
+        
+
+        <!-- SIZE COMPARISON CHART SECTION -->
+        <section class="py-8" style="background-color: #ffffff;">
+          <div class="container">
+            
+            <!-- Section Title -->
+            <div class="text-center mb-5" data-aos="fade-up">
+              <h2 class="fw-bold mb-2" style="font-size: 2.5rem; color: #1a1a1a;">Tiles Size Reference</h2>
+              <p class="text-muted" style="font-size: 1.1rem;">The sizes are customisable</p>
+            </div>
+
+            <!-- Size Comparison Chart -->
+            <div class="size-comparison-wrapper" data-aos="fade-up" data-aos-delay="100">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
+                
+                <!-- Left Side: Vertical Line with 04 and SIZES -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                  <!-- 04 Number -->
+                  <div style="font-size: 80px; font-weight: 700; line-height: 1; font-family: Georgia, 'Times New Roman', serif; color: #333;">04</div>
+                  
+                  <!-- Vertical Line and SIZES Text -->
+                  <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    <!-- SIZES Text (Vertical, bottom to top) -->
+                    <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: 13px; color: #333; height: 200px; display: flex; align-items: flex-end;">
+                      SIZES
+                    </div>
+                    <!-- Vertical Line -->
+                    <div style="width: 2px; height: 200px; background-color: #333;"></div>
+                  </div>
+                </div>
+
+                <!-- Size Comparison Container -->
+                <div class="size-comparison-container">
+                  
+                  <!-- Human Reference (170 cm) -->
+                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
+                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                    <img src="assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height: 170px; width: auto; max-width: 60px; object-fit: contain; object-position: bottom;">
+                  </div>
+                  <div class="size-label" style="margin-top: 10px; text-align: center;">
+                    <strong style="font-size: 0.9rem; color: #333;">170 cm</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Human Height</p>
+                  </div>
+                </div>
+
+                <!-- Tile 1: 160 x 320 cm -->
+                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
+                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                    <div class="tile-rectangle" style="width: 80px; height: 160px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
+                  </div>
+                  <div class="size-label" style="margin-top: 10px; text-align: center;">
+                    <strong style="font-size: 0.9rem; color: #333;">160 x 320 cm</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Large Format Tile</p>
+                  </div>
+                </div>
+
+                <!-- Tile 2: 120 x 280 cm -->
+                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
+                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                    <div class="tile-rectangle" style="width: 60px; height: 140px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
+                  </div>
+                  <div class="size-label" style="margin-top: 10px; text-align: center;">
+                    <strong style="font-size: 0.9rem; color: #333;">120 x 280 cm</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Extra Large Tile</p>
+                  </div>
+                </div>
+
+                <!-- Tile 3: 120 x 120 cm -->
+                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
+                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                    <div class="tile-rectangle" style="width: 60px; height: 60px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
+                  </div>
+                  <div class="size-label" style="margin-top: 10px; text-align: center;">
+                    <strong style="font-size: 0.9rem; color: #333;">120 x 120 cm</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Square Tile</p>
+                  </div>
+                </div>
+
+                <!-- Tile 4: 120 x 120 cm -->
+                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
+                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
+                    <div class="tile-rectangle" style="width: 30px; height: 60px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
+                  </div>
+                  <div class="size-label" style="margin-top: 10px; text-align: center;">
+                    <strong style="font-size: 0.9rem; color: #333;">120 x 120 cm</strong>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Square Tile</p>
+                  </div>
+                </div>
+
+              </div>
+
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!-- END SIZE COMPARISON CHART SECTION -->
+
 
         <!-- FOOTER -->
         <section class="py-0 pt-7" style="background-color: #f9f9f9;">
