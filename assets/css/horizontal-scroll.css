@@ -1,0 +1,683 @@
+/* ========================================
+   HORIZONTAL SCROLL SECTION STYLES
+   ======================================== */
+
+/* Main section wrapper */
+.horizontal-scroll-section {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Outer container with dynamic height */
+.tall-outer-container {
+  position: relative;
+  width: 100%;
+  /* Height is set dynamically via JavaScript */
+}
+
+/* Sticky container that stays in viewport */
+.sticky-inner-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Container that translates horizontally */
+.horizontal-translate-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  will-change: transform;
+  /* Transform is applied dynamically via JavaScript */
+}
+
+/* Content wrapper - horizontal layout */
+.horizontal-content-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 40px;
+  padding: 0 100px;
+}
+
+/* ========================================
+   LAYOUT GRID STRUCTURE
+   ======================================== */
+
+/* Container for tile-x1 (tall image on left) */
+.tile-x1-container {
+  height: 85vh;
+  flex-shrink: 0;
+}
+
+.tile-x1-container img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Column 2: Contains tile-xy1, tile-xy2 (top) and size comparison (bottom) */
+.column-2-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+  width: 750px;
+}
+
+/* Top half: Two small images stacked vertically */
+.top-tiles-container {
+  height: calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tile-xy1-container,
+.tile-xy2-container {
+  height: calc(50% - 10px);
+  flex-shrink: 0;
+}
+
+.tile-xy1-container img,
+.tile-xy2-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Bottom half: Size comparison section */
+.size-comparison-horizontal {
+  height: calc(50% - 10px);
+  background: white;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.size-comparison-horizontal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+}
+
+.size-comparison-horizontal .text-muted {
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+/* Column 3: Contains specifications (top) and tile-x2y1 (bottom) */
+.column-3-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+  width: 500px;
+}
+
+/* Specifications container - top 75% */
+.specifications-horizontal {
+  height: calc(75% - 10px);
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Tile x2y1 - bottom 25% */
+.tile-x2y1-container {
+  height: calc(25% - 10px);
+  flex-shrink: 0;
+}
+
+.tile-x2y1-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Column 4: Contains thickness section (top) and tile-x3y1 (bottom) */
+.column-4-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+  width: 400px;
+}
+
+/* Thickness section - top */
+.thickness-horizontal {
+  height: calc(50% - 10px);
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tile x3y1 - bottom */
+.tile-x3y1-container {
+  height: calc(50% - 10px);
+  flex-shrink: 0;
+}
+
+.tile-x3y1-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   SPECIFICATIONS CONTAINER STYLING
+   ======================================== */
+
+.specifications-container {
+  position: relative;
+  padding: 30px 0;
+  background: transparent;
+}
+
+.specifications-container .center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #333;
+  transform: translateX(-50%);
+}
+
+.specifications-container .upper-section,
+.specifications-container .lower-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 150px;
+  padding: 20px 0;
+}
+
+.specifications-container .upper-left,
+.specifications-container .lower-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 48%;
+}
+
+.specifications-container .upper-right,
+.specifications-container .lower-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 48%;
+}
+
+.specifications-container .lower-left {
+  justify-content: flex-end;
+}
+
+.specifications-container .big-num {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #333;
+}
+
+.specifications-container .vtext {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 11px;
+  color: #333;
+}
+
+.specifications-container .list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.specifications-container .list-items > div {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.specifications-container .lower-left .list-items {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* ========================================
+   THICKNESS SECTION STYLING
+   ======================================== */
+
+.thickness-section {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thickness-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.thickness-title .animated-number {
+  display: inline-block;
+  font-weight: 900;
+  animation: numberMorph 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes numberMorph {
+  0% {
+    transform: scale(1);
+    color: #333;
+  }
+  16.66% {
+    transform: scale(1.15);
+    color: #FFA15C;
+  }
+  33.33% {
+    transform: scale(1.25);
+    color: #FF8C3C;
+  }
+  50% {
+    transform: scale(1.3);
+    color: #FF6B1C;
+    font-weight: 900;
+  }
+  66.66% {
+    transform: scale(1.25);
+    color: #FF8C3C;
+  }
+  83.33% {
+    transform: scale(1.15);
+    color: #FFA15C;
+  }
+  100% {
+    transform: scale(1);
+    color: #333;
+  }
+}
+
+.thickness-tile-container {
+  margin-top: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.thickness-tile-list {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.thickness-tile-list li {
+  flex: 0 0 auto;
+  list-style: none;
+  margin: 0 5px;
+}
+
+.thickness-tile-list li a {
+  display: block;
+  width: 280px;
+  height: 140px;
+  background: #fff;
+  padding-left: 20px;
+  text-align: left;
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+  transition: 0.5s;
+  box-shadow: 2px 30px 10px rgba(0,0,0,0.5);
+  animation: growHeight 2s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+@keyframes growHeight {
+  0% {
+    transform: rotate(-30deg) skew(25deg) translate(0, 0);
+  }
+  100% {
+    transform: rotate(-30deg) skew(25deg) translate(-10px, -10px);
+  }
+}
+
+.thickness-tile-list li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.thickness-tile-list li a::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -6px;
+  height: 100%;
+  width: 6px;
+  background-color: #b1b1b1;
+  transition: 0.5s;
+  transform: rotate(0deg) skewY(-45deg);
+  animation: growLeft 2s ease-in-out infinite alternate;
+}
+
+@keyframes growLeft {
+  0% {
+    left: -6px;
+    width: 6px;
+  }
+  100% {
+    left: -16px;
+    width: 16px;
+  }
+}
+
+.thickness-tile-list li a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: -3px;
+  height: 6px;
+  width: 100%;
+  background: #b1b1b1;
+  transition: 0.5s;
+  transform: rotate(0deg) skewX(-45deg);
+  animation: growBottom 2s ease-in-out infinite alternate;
+}
+
+@keyframes growBottom {
+  0% {
+    bottom: -6px;
+    left: -3px;
+    height: 6px;
+  }
+  100% {
+    bottom: -16px;
+    left: -8px;
+    height: 16px;
+  }
+}
+
+.thickness-tile-list li a:hover {
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+  box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
+}
+
+.thickness-tile-list li:hover a {
+  background: #FFA15C;
+}
+
+.thickness-tile-list li:hover a::before {
+  background: #e67e00;
+}
+
+.thickness-tile-list li:hover a::after {
+  background: #ffa500;
+}
+
+/* ========================================
+   SIZE COMPARISON WRAPPER
+   ======================================== */
+
+.size-comparison-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.size-comparison-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.size-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.size-visual {
+  height: 110px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.size-label {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.size-label strong {
+  font-size: 0.7rem;
+  color: #333;
+  display: block;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.size-label p {
+  font-size: 0.6rem;
+  color: #666;
+  margin: 1px 0 0 0;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.tile-rectangle {
+  background-color: #b0b0b0;
+  border: 2px solid #888;
+  border-radius: 2px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .horizontal-content-wrapper {
+    padding: 0 60px;
+    gap: 30px;
+  }
+  
+  .column-3-container,
+  .column-4-container {
+    width: 400px;
+  }
+  
+  .specifications-container .big-num {
+    font-size: 50px;
+  }
+  
+  .size-comparison-horizontal h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Disable horizontal scroll on mobile */
+  .tall-outer-container {
+    height: auto !important;
+  }
+  
+  .sticky-inner-container {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .horizontal-translate-container {
+    position: relative;
+    transform: none !important;
+  }
+  
+  .horizontal-content-wrapper {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+  
+  .tile-x1-container,
+  .column-2-container,
+  .column-3-container,
+  .column-4-container {
+    width: 100%;
+    height: auto;
+  }
+  
+  .tile-x1-container {
+    height: 60vh;
+  }
+  
+  .column-2-container,
+  .column-3-container,
+  .column-4-container {
+    gap: 20px;
+  }
+  
+  .top-tiles-container,
+  .specifications-horizontal,
+  .size-comparison-horizontal,
+  .tile-x2y1-container,
+  .thickness-horizontal,
+  .tile-x3y1-container {
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+.horizontal-translate-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.tile-x1-container img,
+.tile-xy1-container img,
+.tile-xy2-container img,
+.tile-x2y1-container img,
+.tile-x3y1-container img {
+  transform: translateZ(0);
+}
+
+/* ========================================
+   SCROLL INDICATOR
+   ======================================== */
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(133, 109, 70, 0.9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: pulseIndicator 2s infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-indicator::after {
+  content: '→';
+  font-size: 1.2rem;
+  animation: arrowSlide 1.5s infinite;
+}
+
+@keyframes pulseIndicator {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+@keyframes arrowSlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.scroll-indicator.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}

@@ -20,6 +20,7 @@
 
     <!-- Stylesheets -->
     <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/horizontal-scroll.css" rel="stylesheet" />
     
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -461,70 +462,22 @@
         }
       }
 
-      /* Thickness Section Styles */
-      .thickness-section {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-      }
-
-      .thickness-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #151515;
-        margin-bottom: 2rem;
-        text-align: center;
-      }
-
-      .thickness-title .animated-number {
-        display: inline-block;
-        font-weight: 900;
-        animation: numberMorph 3s ease-in-out infinite;
-        transform-origin: center;
-      }
-
-      @keyframes numberMorph {
-        0% {
-          transform: scale(1);
-          color: #151515;
-        }
-        16.66% {
-          transform: scale(1.15);
-          color: #FFA15C;
-        }
-        33.33% {
-          transform: scale(1.25);
-          color: #FF8C3C;
-        }
-        50% {
-          transform: scale(1.3);
-          color: #FF6B1C;
-          font-weight: 900;
-        }
-        66.66% {
-          transform: scale(1.25);
-          color: #FF8C3C;
-        }
-        83.33% {
-          transform: scale(1.15);
-          color: #FFA15C;
-        }
-        100% {
-          transform: scale(1);
-          color: #151515;
-        }
-      }
-
-      .thickness-tile-container {
+      /* 3D Animated Tiles Styles */
+      /* Container fits within column-4 flexbox layout */
+      .column-4-container .animated-tiles-container {
+        height: calc(50% - 10px);
+        flex-shrink: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 300px;
-        background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
-        border-radius: 10px;
-        padding: 2rem;
+        padding: 1rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: visible;
       }
 
-      .thickness-tile-list {
+      .animated-tiles-list {
         position: relative;
         display: flex;
         margin: 0;
@@ -532,36 +485,55 @@
         list-style: none;
       }
 
-      .thickness-tile-list li {
+      .animated-tiles-list li {
         list-style: none;
-        margin: 0 5px;
+        margin: 0;
       }
 
-      .thickness-tile-list li a {
+      /* Main tile with 3D transform */
+      .animated-tiles-list li a {
         text-decoration: none;
         display: block;
-        width: 350px;
-        height: 180px;
+        width: 250px;
+        height: 125px;
         background: #fff;
-        padding-left: 20px;
         text-align: left;
+        position: relative;
+        /* REMOVED overflow: hidden to show pseudo-elements */
+        border-radius: 4px;
+        
+        /* 3D transformation */
         transform: rotate(-30deg) skew(25deg) translate(0, 0);
         transition: 0.5s;
-        box-shadow: 2px 30px 10px rgba(0,0,0,0.5);
-        animation: growHeight 2s ease-in-out infinite alternate;
-        position: relative;
+        
+        /* Multiple animations */
+        animation: 
+          growHeight3D 2s ease-in-out infinite alternate,
+          shadowChange3D 2s ease-in-out infinite alternate;
       }
 
-      @keyframes growHeight {
+      /* Shadow animation */
+      @keyframes shadowChange3D {
+        0% {
+          box-shadow: 2px 30px 10px rgba(0,0,0,0.5);
+        }
+        100% {
+          box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
+        }
+      }
+
+      /* Height growth animation */
+      @keyframes growHeight3D {
         0% {
           transform: rotate(-30deg) skew(25deg) translate(0, 0);
         }
         100% {
-          transform: rotate(-30deg) skew(25deg) translate(-14px, -14px);
+          transform: rotate(-30deg) skew(25deg) translate(-10px, -10px);
         }
       }
 
-      .thickness-tile-list li a img {
+      /* Image fills the tile */
+      .animated-tiles-list li a img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -569,72 +541,89 @@
         top: 0;
         left: 0;
         transition: 0.5s;
+        border-radius: 4px;
+        z-index: 1;
       }
 
-      .thickness-tile-list li a::before {
+      /* 3D Left Face (::before pseudo-element) */
+      .animated-tiles-list li a::before {
         content: '';
         position: absolute;
-        top: 10px;
-        left: -6px;
+        top: 3px;
+        right: 100%;           /* Positioned to the left of main tile */
         height: 100%;
-        width: 6px;
+        width: 5px;            /* Initial width */
         background-color: #b1b1b1;
         transition: 0.5s;
+        
+        /* Creates the left face angle */
         transform: rotate(0deg) skewY(-45deg);
-        animation: growLeft 2s ease-in-out infinite alternate;
+        transform-origin: right center;
+        
+        /* Animates the left face depth */
+        animation: growLeft3D 2s ease-in-out infinite alternate;
+        z-index: 0;
       }
 
-      @keyframes growLeft {
+      @keyframes growLeft3D {
         0% {
-          left: -6px;
-          width: 6px;
+          width: 5px;        /* Initial depth */
+          top: 0px;
         }
         100% {
-          left: -20px;
-          width: 20px;
+          width: 20px;       /* Extended depth */
+          top: 0px;
         }
       }
 
-      .thickness-tile-list li a::after {
+      /* 3D Bottom Face (::after pseudo-element) */
+      .animated-tiles-list li a::after {
         content: '';
         position: absolute;
-        bottom: -6px;
+        bottom: -6px;          /* Positioned below main tile */
         left: -3px;
-        height: 6px;
+        height: 6px;           /* Initial height */
         width: 100%;
         background: #b1b1b1;
         transition: 0.5s;
+        
+        /* Creates the bottom face angle */
         transform: rotate(0deg) skewX(-45deg);
-        animation: growBottom 2s ease-in-out infinite alternate;
+        
+        /* Animates the bottom face depth */
+        animation: growBottom3D 2s ease-in-out infinite alternate;
+        z-index: 0;
       }
 
-      @keyframes growBottom {
+      @keyframes growBottom3D {
         0% {
-          bottom: -6px;
+          bottom: -6px;      /* Initial depth */
           left: -3px;
           height: 6px;
         }
         100% {
-          bottom: -20px;
-          left: -10px;
-          height: 20px;
+          bottom: -18px;     /* Extended depth */
+          left: -9px;
+          height: 18px;
         }
       }
 
-      .thickness-tile-list li a:hover {
+      /* Hover Effects */
+      .animated-tiles-list li a:hover {
         transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
         box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
       }
 
-      .thickness-tile-list li:hover a {
+      /* Orange theme on hover */
+      .animated-tiles-list li:hover a {
         background: #FFA15C;
       }
 
-      .thickness-tile-list li:hover a::before {
+      .animated-tiles-list li:hover a::before {
         background: #e67e00;
       }
 
-      .thickness-tile-list li:hover a::after {
+      .animated-tiles-list li:hover a::after {
         background: #ffa500;
       }
 
@@ -706,12 +695,12 @@
 
       /* Applications and Surface Finishes Component */
       .specifications-container {
-        margin-top: 3rem;
+        margin-top: 1rem;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 500px;
+        min-height: 400px;
         width: 100%;
       }
 
@@ -721,7 +710,7 @@
         left: 50%;
         top: 0;
         bottom: 0;
-        width: 2px;
+        width: 1px;
         background: #333;
         transform: translateX(-50%);
       }
@@ -758,12 +747,12 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 20px;
-        padding-right: 40px;
+        gap: 10px;
+        padding-right: 20px;
       }
 
       .upper-left .big-num {
-        font-size: 120px;
+        font-size: 60px;
         font-weight: 700;
         line-height: 1;
         font-family: Georgia, "Times New Roman", serif;
@@ -775,8 +764,8 @@
         text-orientation: mixed;
         transform: rotate(180deg);
         font-weight: 700;
-        letter-spacing: 3px;
-        font-size: 13px;
+        letter-spacing: 2px;
+        font-size: 11px;
         color: #333;
       }
 
@@ -787,16 +776,16 @@
         width: 50%;
         display: flex;
         align-items: center;
-        padding-left: 40px;
+        padding-left: 20px;
       }
 
       .upper-right .list-items {
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        font-size: 18px;
+        gap: 3px;
+        font-size: 14px;
         color: #999;
-        line-height: 1.4;
+        line-height: 1.3;
       }
 
       /* Left side of lower section - Surface finishes list */
@@ -807,16 +796,16 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-right: 40px;
+        padding-right: 20px;
       }
 
       .lower-left .list-items {
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        font-size: 18px;
+        gap: 3px;
+        font-size: 14px;
         color: #999;
-        line-height: 1.4;
+        line-height: 1.3;
         text-align: right;
       }
 
@@ -827,8 +816,8 @@
         width: 50%;
         display: flex;
         align-items: center;
-        gap: 20px;
-        padding-left: 40px;
+        gap: 10px;
+        padding-left: 20px;
       }
 
       .lower-right .vtext {
@@ -836,13 +825,13 @@
         text-orientation: mixed;
         transform: rotate(180deg);
         font-weight: 700;
-        letter-spacing: 3px;
-        font-size: 13px;
+        letter-spacing: 2px;
+        font-size: 11px;
         color: #333;
       }
 
       .lower-right .big-num {
-        font-size: 120px;
+        font-size: 60px;
         font-weight: 700;
         line-height: 1;
         font-family: Georgia, "Times New Roman", serif;
@@ -885,18 +874,16 @@
           font-size: 16px;
         }
 
-        .thickness-tile-container {
-          min-height: 250px;
+        /* 3D Animated Tiles Responsive */
+        .column-4-container .animated-tiles-container {
+          height: auto;
+          min-height: 200px;
           padding: 1rem;
         }
 
-        .thickness-tile-list li a {
-          width: 280px;
-          height: 150px;
-        }
-
-        .thickness-title {
-          font-size: 1.2rem;
+        .animated-tiles-list li a {
+          width: 180px;
+          height: 90px;
         }
       }
 
@@ -1155,7 +1142,7 @@
           <div class="container">
             <div class="row">
               
-              <!-- Left Column - Product Description & Gallery -->
+              <!-- Left Column - Product Description -->
               <div class="col-lg-8">
                 <h1 class="product-title" data-aos="fade-up">Aesthetica Hegel</h1>
                 
@@ -1166,191 +1153,213 @@
                   
                   <p>Aesthetica Hegel is the cooler-toned alternative to Aesthetica Wilde, the ideal choice for those looking for a material of great elegance and refinement in wall and floor coverings for interiors such as living rooms, bedrooms and bathrooms.</p>
                 </div>
-
-                <!-- Applications and Surface Finishes Component -->
-                <div class="specifications-container" data-aos="fade-up" data-aos-delay="300">
-                  <!-- Central vertical line -->
-                  <div class="center-line"></div>
-
-                  <!-- Upper Section: Applications -->
-                  <div class="upper-section">
-                    <!-- Left: 06 and APPLICATIONS vertical text -->
-                    <div class="upper-left">
-                      <div class="big-num">06</div>
-                      <div class="vtext">APPLICATIONS</div>
-                    </div>
-
-                    <!-- Right: Applications list -->
-                    <div class="upper-right">
-                      <div class="list-items">
-                        <div>Kitchen</div>
-                        <div>Outdoor</div>
-                        <div>Bedroom</div>
-                        <div>Bathroom</div>
-                        <div>Living Room</div>
-                        <div>Commercial</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Lower Section: Surface Finishes -->
-                  <div class="lower-section">
-                    <!-- Left: Surface finishes list (right-aligned) -->
-                    <div class="lower-left">
-                      <div class="list-items">
-                        <div>Satin</div>
-                        <div>Matte</div>
-                        <div>Carving</div>
-                        <div>Polished</div>
-                        <div>High Gloss</div>
-                        <div>Matte Carving</div>
-                      </div>
-                    </div>
-
-                    <!-- Right: SURFACE FINISHES vertical text and 06 -->
-                    <div class="lower-right">
-                      <div class="vtext">SURFACE FINISHES</div>
-                      <div class="big-num">06</div>
-                    </div>
-                  </div>
-                </div>
-
-                
               </div>
 
-              <!-- Right Column - Vector Image & Contact Form -->
+              <!-- Right Column - Vector Image -->
               <div class="col-lg-4">
                 <div class="map-container">
                   <img src="assets/img/tiles/aesthetica hegel/vector.jpg" alt="Aesthetica Hegel Vector" class="vector-image">
                 </div>
-
-                <br>
-                <br>
-
-                <!-- Thickness Section -->
-                <div class="thickness-section" data-aos="fade-up" data-aos-delay="400">
-                  <h3 class="thickness-title">Thickness available from <span class="animated-number">6</span> mm</h3>
-                  <div class="thickness-tile-container">
-                    <ul class="thickness-tile-list">
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/tiles/aesthetica hegel/vector.jpg" alt="Thickness Vector">
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-
-
               </div>
 
             </div>
           </div>
         </section>
 
-        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" id="scrollIndicator">
+          <span>Scroll to explore</span>
+        </div>
 
-        <!-- SIZE COMPARISON CHART SECTION -->
-        <section class="py-8" style="background-color: #ffffff;">
-          <div class="container">
-            
-            <!-- Section Title -->
-            <div class="text-center mb-5" data-aos="fade-up">
-              <h2 class="fw-bold mb-2" style="font-size: 2.5rem; color: #1a1a1a;">Tiles Size Reference</h2>
-              <p class="text-muted" style="font-size: 1.1rem;">The sizes are customisable</p>
-            </div>
+        <!-- HORIZONTAL SCROLL SECTION -->
+        <section class="horizontal-scroll-section">
+          <div class="tall-outer-container" id="tallOuterContainer">
+            <div class="sticky-inner-container" id="stickyContainer">
+              <div class="horizontal-translate-container" id="horizontalContainer">
+                <div class="horizontal-content-wrapper">
+                  
+                  <!-- Column 1: Tall Image (tile-x1) -->
+                  <div class="tile-x1-container">
+                    <img src="assets/img/aesthetica-hegel/tile-x1.jpg" alt="Aesthetica Hegel - Main Tile">
+                  </div>
 
-            <!-- Size Comparison Chart -->
-            <div class="size-comparison-wrapper" data-aos="fade-up" data-aos-delay="100">
-              <div style="display: flex; align-items: flex-end; justify-content: center; gap: 40px;">
-                
-                <!-- Left Side: Vertical Line with 04 and SIZES -->
-                <div style="display: flex; align-items: flex-end; gap: 15px; height: 170px;">
-                  <!-- 04 Number and Vertical Section -->
-                  <div style="display: flex; align-items: flex-end; gap: 15px;">
-                    <!-- 04 Number -->
-                    <div style="font-size: 80px; font-weight: 700; line-height: 1; font-family: Georgia, 'Times New Roman', serif; color: #333;">04</div>
-                    
-                    <!-- Vertical Line and SIZES Text Container -->
-                    <div style="display: flex; flex-direction: column; align-items: center; height: 200px; justify-content: flex-end;">
-                      <!-- SIZES Text (Vertical, bottom to top) -->
-                      <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: 13px; color: #333; margin-bottom: 10px;">
-                        SIZES
+                  <!-- Column 2: Two small tiles + Size Comparison -->
+                  <div class="column-2-container">
+                    <!-- Top: Two tiles stacked vertically -->
+                    <div class="top-tiles-container">
+                      <div class="tile-xy1-container">
+                        <img src="assets/img/aesthetica-hegel/tile-xy1.jpg" alt="Aesthetica Hegel - Tile XY1">
                       </div>
-                      <!-- Vertical Line -->
-                      <div style="width: 2px; height: 200px; background-color: #333;"></div>
+                      <div class="tile-xy2-container">
+                        <img src="assets/img/aesthetica-hegel/tile-xy2.jpg" alt="Aesthetica Hegel - Tile XY2">
+                      </div>
+                    </div>
+
+                    <!-- Bottom: Size Comparison Chart -->
+                    <div class="size-comparison-horizontal">
+                      <div class="size-comparison-wrapper">
+                        <div style="display: flex; align-items: flex-end; justify-content: center; gap: 0px !important; width: auto;">
+                          
+                          <!-- Left Side: Vertical Line with 04 and SIZES -->
+                          <div style="display: flex; align-items: flex-end; gap: 8px; margin-right: 5px; margin-bottom: 28px;">
+                            <div style="font-size: 50px; font-weight: 700; line-height: 1; font-family: Georgia, 'Times New Roman', serif; color: #333;">04</div>
+                            <div style="display: flex; flex-direction: column; align-items: center; height: 120px; justify-content: flex-end;">
+                              <div style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); font-weight: 700; letter-spacing: 3px; font-size: 12px; color: #333; margin-bottom: 8px;">SIZES</div>
+                              <div style="width: 2px; height: 120px; background-color: #333;"></div>
+                            </div>
+                          </div>
+
+                          <!-- Size Comparison Container -->
+                          <div class="size-comparison-container" style="margin-left: 0px; padding-left: 0px;">
+                            
+                            <!-- Human Reference -->
+                            <div class="size-item">
+                              <div class="size-visual">
+                                <img src="assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height: 110px; width: auto; max-width: 50px; object-fit: contain; object-position: bottom;">
+                              </div>
+                              <div class="size-label">
+                                <strong>170 cm</strong>
+                                <p>Human</p>
+                              </div>
+                            </div>
+
+                            <!-- Tile 1: 160 x 320 cm -->
+                            <div class="size-item">
+                              <div class="size-visual">
+                                <div class="tile-rectangle" style="width: 55px; height: 110px;"></div>
+                              </div>
+                              <div class="size-label">
+                                <strong>160x320 cm</strong>
+                                <p>Large</p>
+                              </div>
+                            </div>
+
+                            <!-- Tile 2: 120 x 280 cm -->
+                            <div class="size-item">
+                              <div class="size-visual">
+                                <div class="tile-rectangle" style="width: 42px; height: 98px;"></div>
+                              </div>
+                              <div class="size-label">
+                                <strong>120x280 cm</strong>
+                                <p>Extra Large</p>
+                              </div>
+                            </div>
+
+                            <!-- Tile 3: 120 x 120 cm -->
+                            <div class="size-item">
+                              <div class="size-visual">
+                                <div class="tile-rectangle" style="width: 42px; height: 42px;"></div>
+                              </div>
+                              <div class="size-label">
+                                <strong>120x120 cm</strong>
+                                <p>Square</p>
+                              </div>
+                            </div>
+
+                            <!-- Tile 4: 60 x 120 cm -->
+                            <div class="size-item">
+                              <div class="size-visual">
+                                <div class="tile-rectangle" style="width: 21px; height: 42px;"></div>
+                              </div>
+                              <div class="size-label">
+                                <strong>60x120 cm</strong>
+                                <p>Standard</p>
+                              </div>
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Size Comparison Container -->
-                <div class="size-comparison-container">
+                  <!-- Column 3: Specifications + tile-x2y1 -->
+                  <div class="column-3-container">
+                    <!-- Top: Specifications Container -->
+                    <div class="specifications-horizontal">
+                      <div class="specifications-container">
+                        <!-- Central vertical line -->
+                        <div class="center-line"></div>
+
+                        <!-- Upper Section: Applications -->
+                        <div class="upper-section">
+                          <div class="upper-left">
+                            <div class="big-num">06</div>
+                            <div class="vtext">APPLICATIONS</div>
+                          </div>
+                          <div class="upper-right">
+                            <div class="list-items">
+                              <div>Kitchen</div>
+                              <div>Outdoor</div>
+                              <div>Bedroom</div>
+                              <div>Bathroom</div>
+                              <div>Living Room</div>
+                              <div>Commercial</div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Lower Section: Surface Finishes -->
+                        <div class="lower-section">
+                          <div class="lower-left">
+                            <div class="list-items">
+                              <div>Satin</div>
+                              <div>Matte</div>
+                              <div>Carving</div>
+                              <div>Polished</div>
+                              <div>High Gloss</div>
+                              <div>Matte Carving</div>
+                            </div>
+                          </div>
+                          <div class="lower-right">
+                            <div class="vtext">SURFACE FINISHES</div>
+                            <div class="big-num">06</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Bottom: tile-x2y1 -->
+                    <div class="tile-x2y1-container">
+                      <img src="assets/img/aesthetica-hegel/tile-x2y1.jpg" alt="Aesthetica Hegel - Tile X2Y1">
+                    </div>
+                  </div>
+
+                  <!-- Column 4: tile-x3y1 -->
+                  <div class="column-4-container">
                   
-                  <!-- Human Reference (170 cm) -->
-                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
-                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
-                    <img src="assets/img/gallery/human_size.PNG" alt="Human Reference 170cm" style="height: 170px; width: auto; max-width: 60px; object-fit: contain; object-position: bottom;">
+                    <!-- tile-x3y1 -->
+                    <div class="tile-x3y1-container">
+                      <img src="assets/img/aesthetica-hegel/tile-x3y1.jpg" alt="Aesthetica Hegel - Tile X3Y1">
+                    </div>
+
+                    <!-- 3D Animated Tile - Vector -->
+                    <div class="animated-tiles-container" data-aos="fade-up" data-aos-delay="500">
+                      <ul class="animated-tiles-list">
+                        <li>
+                          <a href="#">
+                            <img src="assets/img/tiles/aesthetica hegel/vector.jpg" alt="Aesthetica Hegel Vector">
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="size-label" style="margin-top: 10px; text-align: center;">
-                    <strong style="font-size: 0.9rem; color: #333;">170 cm</strong>
-                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Human Height</p>
-                  </div>
+
+
+
+                  <!-- Thickness section implementation -->
+
+
+
+                  <!-- Thickness -->
+
                 </div>
-
-                <!-- Tile 1: 160 x 320 cm -->
-                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
-                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
-                    <div class="tile-rectangle" style="width: 80px; height: 160px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
-                  </div>
-                  <div class="size-label" style="margin-top: 10px; text-align: center;">
-                    <strong style="font-size: 0.9rem; color: #333;">160 x 320 cm</strong>
-                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Large Format Tile</p>
-                  </div>
-                </div>
-
-                <!-- Tile 2: 120 x 280 cm -->
-                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
-                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
-                    <div class="tile-rectangle" style="width: 60px; height: 140px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
-                  </div>
-                  <div class="size-label" style="margin-top: 10px; text-align: center;">
-                    <strong style="font-size: 0.9rem; color: #333;">120 x 280 cm</strong>
-                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Extra Large Tile</p>
-                  </div>
-                </div>
-
-                <!-- Tile 3: 120 x 120 cm -->
-                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
-                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
-                    <div class="tile-rectangle" style="width: 60px; height: 60px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
-                  </div>
-                  <div class="size-label" style="margin-top: 10px; text-align: center;">
-                    <strong style="font-size: 0.9rem; color: #333;">120 x 120 cm</strong>
-                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Square Tile</p>
-                  </div>
-                </div>
-
-                <!-- Tile 4: 120 x 120 cm -->
-                <div class="size-item" style="display: flex; flex-direction: column; align-items: center;">
-                  <div class="size-visual" style="height: 170px; display: flex; align-items: flex-end; justify-content: center;">
-                    <div class="tile-rectangle" style="width: 30px; height: 60px; background-color: #b0b0b0; border: 2px solid #888; border-radius: 2px;"></div>
-                  </div>
-                  <div class="size-label" style="margin-top: 10px; text-align: center;">
-                    <strong style="font-size: 0.9rem; color: #333;">120 x 120 cm</strong>
-                    <p style="font-size: 0.8rem; color: #666; margin: 0;">Square Tile</p>
-                  </div>
-                </div>
-
-              </div>
-
               </div>
             </div>
-
           </div>
         </section>
-        <!-- END SIZE COMPARISON CHART SECTION -->
-
+        <!-- END HORIZONTAL SCROLL SECTION -->
 
         <!-- FOOTER -->
         <section class="py-0 pt-7" style="background-color: #f9f9f9;">
@@ -1622,23 +1631,11 @@
             contactForm.reset();
           });
         }
-
-        // Animated Number - Morph from 6 to 9
-        const animatedNumber = document.querySelector('.animated-number');
-        if (animatedNumber) {
-          const numbers = [6, 7, 8, 9, 8, 7];
-          let currentIndex = 0;
-          
-          // Start immediately
-          animatedNumber.textContent = numbers[currentIndex];
-          
-          setInterval(function() {
-            currentIndex = (currentIndex + 1) % numbers.length;
-            animatedNumber.textContent = numbers[currentIndex];
-          }, 500); // Change number every 0.5 seconds
-        }
       });
     </script>
+
+    <!-- Horizontal Scroll Script -->
+    <script src="assets/js/horizontal-scroll.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   </body>
