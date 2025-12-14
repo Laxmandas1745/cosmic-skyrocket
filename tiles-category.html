@@ -1,0 +1,2935 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Document Title -->
+    <title>Tiles Category | Cosmic Skyrocket</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/cs-favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Stylesheets -->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Crimson Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Sacramento -->
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Prevent horizontal scroll */
+      html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overflow-y: auto;
+      }
+
+      .main-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Apply Crimson Text font to all headings */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Crimson Text', serif !important;
+      }
+
+      /* Navbar Icons Hover Effect */
+      .text-1000 svg,
+      .text-1000 .feather {
+        transition: stroke 0.3s ease, transform 0.3s ease;
+      }
+
+      .text-1000:hover svg,
+      .text-1000:hover .feather {
+        stroke: #000000 !important;
+        transform: scale(1.15);
+      }
+
+      /* Button hover effects for search and menu */
+      #searchBtn,
+      #hamburgerMenuBtn {
+        transition: transform 0.3s ease;
+      }
+
+      #searchBtn:hover svg,
+      #hamburgerMenuBtn:hover svg {
+        stroke: #000000 !important;
+        transform: scale(1.15);
+      }
+
+      /* Navbar - Shrinked State (No animation, semi-transparent) */
+      #mainNavbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Glass morphism video effect for COSMIC SKYROCKET text */
+      #cosmicBrand {
+        position: relative;
+      }
+      
+      #cosmicBrand .fw-bold {
+        position: relative;
+        z-index: 2;
+        color: #000;
+        font-family: 'Crimson Text', serif !important;
+        font-weight: 600 !important;
+        transition: color 0.3s ease;
+      }
+      
+      #cosmicBrand .fw-bold:hover {
+        color: #6d5a38;
+      }
+      
+      #tagline {
+        color: #666666 !important;
+        font-family: 'Sacramento', cursive !important;
+        font-size: 0.9rem !important;
+      }
+
+      /* Hamburger Menu Styles */
+      .hamburger-menu-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 20000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .hamburger-menu-overlay.active {
+        opacity: 1;
+      }
+
+      .hamburger-menu-panel {
+        position: absolute;
+        top: 0;
+        right: -400px;
+        width: 400px;
+        max-width: 90%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: -2px 0 30px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+        transition: right 0.3s ease;
+        padding: 2rem;
+      }
+
+      .hamburger-menu-overlay.active .hamburger-menu-panel {
+        right: 0;
+      }
+
+      .hamburger-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .hamburger-menu-header h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        font-family: 'Crimson Text', serif;
+        color: #ffffff;
+      }
+
+      .hamburger-menu-content {
+        margin-top: 1rem;
+      }
+
+      .menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-item {
+        margin-bottom: 0.5rem;
+      }
+
+      .menu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+
+      .menu-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+
+      .dropdown-icon {
+        transition: transform 0.3s ease;
+        stroke: #ffffff;
+      }
+
+      .menu-item-has-children.active > .menu-link .dropdown-icon,
+      .submenu-item-has-children.active > .submenu-link .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .submenu,
+      .sub-submenu {
+        list-style: none;
+        padding-left: 1.5rem;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .menu-item-has-children.active > .submenu,
+      .submenu-item-has-children.active > .sub-submenu {
+        max-height: 500px;
+        margin-top: 0.5rem;
+      }
+
+      .submenu-item {
+        margin-bottom: 0.25rem;
+      }
+
+      .submenu-link,
+      .sub-submenu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.6rem 1rem;
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-size: 1rem;
+        border-radius: 6px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+
+      .submenu-link:hover,
+      .sub-submenu-link:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+      }
+
+      .sub-submenu {
+        padding-left: 1rem;
+      }
+
+      .sub-submenu-item {
+        margin-bottom: 0.25rem;
+      }
+
+      /* Search Overlay Styles */
+      .search-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        z-index: 30000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease, backdrop-filter 0.4s ease;
+        pointer-events: none;
+      }
+
+      .search-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.3);
+        pointer-events: all;
+      }
+
+      .search-container {
+        position: fixed;
+        top: 1.5rem;
+        right: 2rem;
+        width: 400px;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        z-index: 30001;
+      }
+
+      .search-overlay.active .search-container {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .search-input-wrapper {
+        position: relative;
+        width: 100%;
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .search-input-wrapper input {
+        width: 100%;
+        padding: 15px 60px 15px 20px;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid #fff;
+        border-radius: 0;
+        background: transparent;
+        color: #fff;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      .search-input-wrapper input:focus {
+        border-bottom-color: #ffffff;
+        box-shadow: none;
+      }
+
+      .search-input-wrapper input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .search-submit-btn {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .search-submit-btn:hover {
+        transform: translateY(-50%) scale(1.1);
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .search-submit-btn i {
+        font-size: 0.9rem;
+      }
+
+      .search-suggestions {
+        margin-top: 0.5rem;
+        background: transparent;
+        border-radius: 0;
+        padding: 1.5rem;
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+      }
+
+      .search-overlay.active .search-suggestions {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      .search-suggestions p {
+        color: #fff;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .search-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-start;
+      }
+
+      .search-tag {
+        padding: 6px 14px;
+        background: transparent;
+        border: 1px solid rgba(224, 224, 224, 0.5);
+        border-radius: 16px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .search-tag:hover {
+        background: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(133, 109, 70, 0.3);
+      }
+
+      /* Breadcrumb Styles */
+      .breadcrumb-section {
+        padding: 2rem 0;
+        background: linear-gradient(135deg, #FFFFFF 0%, #ffffff 100%);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 80px;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Products Section Layout */
+      .products-section {
+        padding: 0;
+        background: #fff;
+        height: 80vh;
+        min-height: 80vh;
+        max-height: 80vh;
+      }
+
+      .products-section .container-fluid {
+        height: 100%;
+        max-height: 100%;
+      }
+
+      /* Footer styles */
+      .footer-section {
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .products-row {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .products-row > .col-lg-3,
+      .products-row > .col-md-4 {
+        height: 100%;
+        flex-shrink: 0;
+      }
+
+      .products-row > .col-lg-9,
+      .products-row > .col-md-8 {
+        height: 100%;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .products-column {
+        padding: 0;
+        height: 100%;
+      }
+
+      .products-content-wrapper {
+        height: 80vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 40px 30px 60px 30px;
+      }
+
+      /* Hide scrollbar for products content */
+      .products-content-wrapper {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+
+      .products-content-wrapper::-webkit-scrollbar {
+        width: 0;
+        display: none; /* Chrome, Safari, Opera */
+      }
+
+      /* Hide scrollbar for tile catalogue sidebar */
+      .tile-catalogue-sidebar {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+
+      .tile-catalogue-sidebar::-webkit-scrollbar {
+        width: 0;
+        display: none; /* Chrome, Safari, Opera */
+      }
+
+      .breadcrumb {
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .breadcrumb-item {
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      .breadcrumb-item + .breadcrumb-item::before {
+        content: ">";
+        color: #000000;
+        padding: 0 0.5rem;
+      }
+
+      .breadcrumb-item a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb-item a:hover {
+        color: #000000;
+      }
+
+      .breadcrumb-item.active {
+        color: #000000;
+        font-weight: 600;
+      }
+
+      /* Tile Catalogue Sidebar Styles */
+      .sidebar-wrapper {
+        padding: 40px 15px 40px 30px;
+        height: 80vh;
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+      }
+
+      .tile-catalogue-sidebar {
+        background: #f8f9fa;
+        padding: 2rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+      }
+
+      /* Active category highlight */
+      .category-section.active .category-title {
+        color: #000;
+        border-left-color: #000;
+        background: rgba(0, 0, 0, 0.05);
+        padding-right: 0.5rem;
+        border-radius: 4px;
+      }
+
+      .catalogue-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #000000;
+      }
+
+      .category-section {
+        margin-bottom: 2rem;
+      }
+
+      .category-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
+        border-left: 4px solid #000000;
+      }
+
+      .category-title .category-link {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s ease;
+        cursor: pointer;
+      }
+
+      .category-title .category-link:hover {
+        color: #000000;
+      }
+
+      .category-section.active .category-title .category-link {
+        color: #000000;
+      }
+
+      .product-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .product-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      .product-list li a {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        color: #666;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        cursor: pointer;
+      }
+
+      .product-list li a:hover {
+        background: #fff;
+        color: #000000;
+        padding-left: 1.25rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-list li a.product-link:hover {
+        font-weight: 500;
+      }
+
+      /* Products Content Area */
+      .products-content {
+        padding-left: 2rem;
+      }
+
+      .products-main-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 1rem;
+      }
+
+      .products-description {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 3rem;
+      }
+
+      .category-products-section {
+        margin-bottom: 4rem;
+        padding-bottom: 3rem;
+        border-bottom: 2px solid #e0e0e0;
+      }
+
+      .category-products-section:last-child {
+        border-bottom: none;
+      }
+
+      .products-category-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 2rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 3px solid #000000;
+        display: inline-block;
+      }
+
+      .product-cards-grid {
+        margin-bottom: 2rem;
+      }
+
+      /* Product Card Styles */
+      .product-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-image-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 120%;
+        overflow: hidden;
+        background: #f5f5f5;
+      }
+
+      .product-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        z-index: 1;
+      }
+
+      .product-image-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(1.1);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        z-index: 2;
+      }
+
+      .product-card:hover .product-image {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      .product-card:hover .product-image-hover {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      .view-details-btn {
+        display: none;
+      }
+
+      .product-info {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #151515;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+      }
+
+      .product-description {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Color Variant Circles */
+      .color-variants {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        display: flex;
+        gap: 8px;
+        z-index: 4;
+        pointer-events: none;
+      }
+
+      .color-circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .product-card:hover .color-circle {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Staggered animation delays */
+      .product-card:hover .color-circle:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      .product-card:hover .color-circle:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      .product-card:hover .color-circle:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      .product-card:hover .color-circle:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+
+      .product-card:hover .color-circle:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+
+      /* Pagination Styles */
+      .pagination {
+        margin-top: 2rem;
+      }
+
+      .page-link {
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 0.5rem 1rem;
+        margin: 0 0.25rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .page-link:hover {
+        background: #f5f5f5;
+        color: #000;
+        border-color: #000;
+      }
+
+      .page-item.active .page-link {
+        background: #000;
+        border-color: #000;
+        color: #fff;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        html, body {
+          overflow-y: auto;
+          height: auto;
+        }
+
+        .main-wrapper,
+        .main {
+          height: auto;
+          overflow: visible;
+        }
+
+        .hamburger-menu-panel {
+          width: 320px;
+        }
+
+        .breadcrumb-section {
+          margin-top: 70px;
+        }
+
+        .search-container {
+          right: 1rem;
+          left: 1rem;
+          width: auto;
+        }
+        
+        .search-input-wrapper input {
+          font-size: 0.95rem;
+          padding: 12px 55px 12px 16px;
+        }
+
+        .search-submit-btn {
+          width: 35px;
+          height: 35px;
+        }
+
+        .search-suggestions {
+          margin-top: 0.5rem;
+          padding: 1rem;
+        }
+        
+        .search-tag {
+          font-size: 0.8rem;
+          padding: 5px 12px;
+        }
+
+        .products-section {
+          flex: none;
+          height: auto;
+          overflow: visible;
+        }
+
+        .products-section .container-fluid {
+          overflow: visible;
+        }
+
+        .products-row {
+          height: auto;
+          flex-wrap: wrap;
+        }
+
+        .products-row > div {
+          height: auto;
+        }
+
+        .products-content-wrapper {
+          height: auto;
+          overflow: visible;
+          padding: 30px 15px;
+        }
+
+        .sidebar-wrapper {
+          height: auto;
+          padding: 30px 15px;
+        }
+
+        .tile-catalogue-sidebar {
+          max-height: none;
+          margin-bottom: 2rem;
+        }
+
+        .products-content {
+          padding-left: 0;
+        }
+
+        .products-main-title {
+          font-size: 2rem;
+        }
+
+        .catalogue-title {
+          font-size: 1.5rem;
+        }
+
+        .category-title {
+          font-size: 1.1rem;
+        }
+
+        .products-category-title {
+          font-size: 1.5rem;
+        }
+
+        .product-name {
+          font-size: 1.1rem;
+        }
+
+        .product-description {
+          font-size: 0.9rem;
+        }
+
+        .product-info {
+          padding: 1.25rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .product-image-wrapper {
+          padding-top: 100%;
+        }
+
+        .view-details-btn {
+          padding: 0.6rem 1.5rem;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <main class="main" id="top">
+        
+        <!-- NAVBAR - Shrinked State -->
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top d-block" data-navbar-on-scroll="data-navbar-on-scroll" style="transition: all 0.3s ease; padding-top: 1rem; padding-bottom: 1rem;">
+          <div class="container d-flex flex-column justify-content-center align-items-center">
+            <a id="cosmicBrand" class="navbar-brand d-inline-flex text-center" href="index.html" style="transition: all 0.3s ease; font-size: 1.5rem; margin: 0;">
+              <span class="fw-bold">COSMIC SKYROCKET</span>
+            </a>
+          </div>
+        </nav>
+        
+        <!-- Fixed Icons in top-right corner -->
+        <div class="position-fixed d-flex align-items-center" style="top: 1.5rem; right: 2rem; z-index: 10000; gap: 1.5rem;">
+          <a class="text-1000" href="index.html" title="Home">
+            <svg class="feather feather-home" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </a>
+          <button id="searchBtn" class="btn btn-link text-1000 p-0" title="Search" style="border: none; background: none;">
+            <svg class="feather feather-search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <button id="hamburgerMenuBtn" class="btn btn-link text-1000 p-0" title="Menu" style="border: none; background: none;">
+            <svg class="feather feather-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Hamburger Menu Overlay -->
+        <div id="hamburgerMenuOverlay" class="hamburger-menu-overlay" style="display: none;">
+          <div class="hamburger-menu-panel">
+            <div class="hamburger-menu-header">
+              <h3 class="mb-0">Cosmic Skyrocket</h3>
+              <button id="closeMenuBtn" class="btn btn-link p-0" style="font-size: 2rem; border: none; background: none; color: #ffffff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <nav class="hamburger-menu-content">
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <a href="index.html" class="menu-link">Home</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link">About us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link">Blogs</a>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#!" class="menu-link menu-dropdown-toggle">
+                    Natural Stone
+                    <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </a>
+                  <ul class="submenu">
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Sandstone</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Limestone</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#!" class="menu-link menu-dropdown-toggle">
+                    Tiles
+                    <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </a>
+                  <ul class="submenu">
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Italian</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#!" class="submenu-link">Material</a>
+                    </li>
+                    <li class="submenu-item submenu-item-has-children">
+                      <a href="#!" class="submenu-link submenu-dropdown-toggle">
+                        Other Stone
+                        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </a>
+                      <ul class="sub-submenu">
+                        <li class="sub-submenu-item">
+                          <a href="#!" class="sub-submenu-link">Morrocan</a>
+                        </li>
+                        <li class="sub-submenu-item">
+                          <a href="#!" class="sub-submenu-link">Wooden</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="#!" class="menu-link">Packaging</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div id="searchOverlay" class="search-overlay">
+          <div class="search-container">
+            <div class="search-input-wrapper">
+              <form id="searchForm" action="#" method="get">
+                <input 
+                  type="text" 
+                  id="searchInput" 
+                  placeholder="Search for tiles, stones, products..." 
+                  autocomplete="off"
+                  autofocus
+                />
+                <button type="submit" class="search-submit-btn" aria-label="Search">
+                  <i class="bi bi-search"></i>
+                </button>
+              </form>
+            </div>
+            
+            <div class="search-suggestions">
+              <p>Popular Searches</p>
+              <div class="search-tags">
+                <a href="#!" class="search-tag">Natural Stone</a>
+                <a href="#!" class="search-tag">Sandstone</a>
+                <a href="#!" class="search-tag">Limestone</a>
+                <a href="#!" class="search-tag">Italian Tiles</a>
+                <a href="#!" class="search-tag">Moroccan Tiles</a>
+                <a href="#!" class="search-tag">Ceramic Tiles</a>
+                <a href="#!" class="search-tag">Porcelain</a>
+                <a href="#!" class="search-tag">Wooden Finish</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breadcrumb Section -->
+        <section class="breadcrumb-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tiles Category</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Content Area - Product List Section -->
+        <section class="products-section">
+          <div class="container-fluid">
+            <div class="row products-row">
+              
+              <!-- Left Sidebar - Tile Catalogue -->
+              <div class="col-lg-3 col-md-4">
+                <div class="sidebar-wrapper">
+                  <div class="tile-catalogue-sidebar">
+                    <h2 class="catalogue-title">Tile Catalogue</h2>
+                  
+                  <!-- Italian Marble -->
+                  <div class="category-section" data-category="italian-marble">
+                    <h3 class="category-title"><a href="#italian-marble" class="category-link">Italian Marble</a></h3>
+                    <ul class="product-list">
+                      <li><a href="#product-aesthetica-wilde" class="product-link">Aesthetica Wilde</a></li>
+                      <li><a href="#product-breccia-argentum" class="product-link">Breccia Argentum</a></li>
+                      <li><a href="#product-aesthetica-hegel" class="product-link">Aesthetica Hegel</a></li>
+                      <li><a href="#product-bronze-armani" class="product-link">Bronze Armani</a></li>
+                      <li><a href="#product-calacatta-oro" class="product-link">Calacatta Oro</a></li>
+                      <li><a href="#product-calacatta" class="product-link">Calacatta</a></li>
+                      <li><a href="#product-statuario" class="product-link">Statuario</a></li>
+                      <li><a href="#product-macchia-antica" class="product-link">Macchia Antica</a></li>
+                      <li><a href="#product-travertino-classic" class="product-link">Travertino Classic</a></li>
+                      <li><a href="#product-statuario-reale" class="product-link">Statuario Reale</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Other Stone -->
+                  <div class="category-section" data-category="other-stone">
+                    <h3 class="category-title"><a href="#other-stone" class="category-link">Other Stone</a></h3>
+                    <ul class="product-list">
+                      <li><a href="#product-imperial" class="product-link">Imperial</a></li>
+                      <li><a href="#product-royal-stone" class="product-link">Royal Stone</a></li>
+                      <li><a href="#product-ardesia" class="product-link">Ardesia</a></li>
+                      <li><a href="#product-borghi-italiani" class="product-link">Borghi Italiani</a></li>
+                      <li><a href="#product-bolgheri-stone" class="product-link">Bolgheri Stone</a></li>
+                      <li><a href="#product-castle" class="product-link">Castle</a></li>
+                      <li><a href="#product-blue-evolution" class="product-link">Blue Evolution</a></li>
+                      <li><a href="#product-chianca" class="product-link">Chianca</a></li>
+                      <li><a href="#product-copacabana-emperor" class="product-link">Copacabana Emperor</a></li>
+                      <li><a href="#product-dolomiti" class="product-link">Dolomiti</a></li>
+                      <li><a href="#product-noble-stone" class="product-link">Noble Stone</a></li>
+                      <li><a href="#product-gemstone" class="product-link">Gemstone</a></li>
+                      <li><a href="#product-jungle-stone" class="product-link">Jungle Stone</a></li>
+                      <li><a href="#product-sahara-noir" class="product-link">Sahara Noir</a></li>
+                      <li><a href="#product-quarzi" class="product-link">Quarzi</a></li>
+                      <li><a href="#product-nautilus" class="product-link">Nautilus</a></li>
+                      <li><a href="#product-storm" class="product-link">Storm</a></li>
+                      <li><a href="#product-irish-onyx" class="product-link">Irish Onyx</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Moroccan -->
+                  <div class="category-section" data-category="moroccan">
+                    <h3 class="category-title"><a href="#moroccan" class="category-link">Moroccan</a></h3>
+                    <ul class="product-list">
+                      <li><a href="#product-aster" class="product-link">Aster</a></li>
+                      <li><a href="#product-bishkek" class="product-link">Bishkek</a></li>
+                      <li><a href="#product-brasilia" class="product-link">Brasilia</a></li>
+                      <li><a href="#product-brussels" class="product-link">Brussels</a></li>
+                      <li><a href="#product-aden" class="product-link">Aden</a></li>
+                      <li><a href="#product-arica" class="product-link">Arica</a></li>
+                      <li><a href="#product-bogota" class="product-link">Bogota</a></li>
+                      <li><a href="#product-elude" class="product-link">Elude</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Material -->
+                  <div class="category-section" data-category="material">
+                    <h3 class="category-title"><a href="#material" class="category-link">Material</a></h3>
+                    <ul class="product-list">
+                      <li><a href="#product-absolute" class="product-link">Absolute</a></li>
+                      <li><a href="#product-agglomerate" class="product-link">Agglomerate</a></li>
+                      <li><a href="#product-artile" class="product-link">Artile</a></li>
+                      <li><a href="#product-cotto-del-castle" class="product-link">Cotto Del Castle</a></li>
+                      <li><a href="#product-hurban" class="product-link">Hurban</a></li>
+                      <li><a href="#product-lascaux" class="product-link">Lascaux</a></li>
+                      <li><a href="#product-le-malte" class="product-link">Le Malte</a></li>
+                      <li><a href="#product-metal" class="product-link">Metal</a></li>
+                      <li><a href="#product-skyline" class="product-link">Skyline</a></li>
+                      <li><a href="#product-space" class="product-link">Space</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Wooden -->
+                  <div class="category-section" data-category="wooden">
+                    <h3 class="category-title"><a href="#wooden" class="category-link">Wooden</a></h3>
+                    <ul class="product-list">
+                      <li><a href="#product-ca-foscari" class="product-link">Ca Foscari</a></li>
+                      <li><a href="#product-il-ceretto" class="product-link">Il Ceretto</a></li>
+                      <li><a href="#product-honeywood" class="product-link">Honeywood</a></li>
+                      <li><a href="#product-amazon" class="product-link">Amazon</a></li>
+                      <li><a href="#product-kauri" class="product-link">Kauri</a></li>
+                    </ul>
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right Content Area - Product Grid -->
+              <div class="col-lg-9 col-md-8 products-column">
+                <div class="products-content-wrapper">
+                  <div class="products-content">
+                  <h1 class="products-main-title">Tiles Category</h1>
+                  <p class="products-description">Explore our extensive collection of premium tiles and stones.</p>
+                  
+                  <!-- Italian Marble Category -->
+                  <div class="category-products-section" id="italian-marble">
+                    <h2 class="products-category-title">Italian Marble</h2>
+                    <div class="row product-cards-grid">
+                      
+                      <!-- Product Card 1 -->
+                      <div class="col-lg-4 col-md-6 mb-4" id="product-aesthetica-wilde">
+                        <a href="product_details/tiles/Italian Marble/Italian_marble_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Italian Marble/aesthetica wilde/vector.jpg" alt="Aesthetica Wilde" class="product-image">
+                              <img src="assets/img/tiles-collage/Italian Marble/aesthetica wilde/int2.jpg" alt="Aesthetica Wilde Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Italian Marble/Italian_marble_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #F5F5DC;"></div>
+                                <div class="color-circle" style="background-color: #D3D3D3;"></div>
+                                <div class="color-circle" style="background-color: #C0C0C0;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Aesthetica Wilde</h3>
+                              <p class="product-description">Premium Italian marble with elegant natural patterns</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 2 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Italian Marble/Italian_marble_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Italian Marble/breccia argentum/vector.jpg" alt="Breccia Argentum" class="product-image">
+                              <img src="assets/img/tiles-collage/Italian Marble/breccia argentum/int2.jpg" alt="Breccia Argentum Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Italian Marble/Italian_marble_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #B0B0B0;"></div>
+                                <div class="color-circle" style="background-color: #E8E8E8;"></div>
+                                <div class="color-circle" style="background-color: #A9A9A9;"></div>
+                                <div class="color-circle" style="background-color: #DCDCDC;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Breccia Argentum</h3>
+                              <p class="product-description">Stunning silver-veined marble finish</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 3 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Italian Marble/Italian_marble_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Italian Marble/aesthetica hegel/vector.jpg" alt="Aesthetica Hegel" class="product-image">
+                              <img src="assets/img/tiles-collage/Italian Marble/aesthetica hegel/int2.jpg" alt="Aesthetica Hegel Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Italian Marble/Italian_marble_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #FFFFFF;"></div>
+                                <div class="color-circle" style="background-color: #F0F0F0;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Aesthetica Hegel</h3>
+                              <p class="product-description">Timeless elegance with translucent finish</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 4 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Italian Marble/Italian_marble_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Italian Marble/bronze armani/vector.jpg" alt="Bronze Armani" class="product-image">
+                              <img src="assets/img/tiles-collage/Italian Marble/bronze armani/int1.jpg" alt="Bronze Armani Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Italian Marble/Italian_marble_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #CD7F32;"></div>
+                                <div class="color-circle" style="background-color: #8B4513;"></div>
+                                <div class="color-circle" style="background-color: #A0826D;"></div>
+                                <div class="color-circle" style="background-color: #D2691E;"></div>
+                                <div class="color-circle" style="background-color: #B87333;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Bronze Armani</h3>
+                              <p class="product-description">Luxurious bronze-toned marble</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 5 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Italian Marble/Italian_marble_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Italian Marble/calacatta oro/vector.jpg" alt="Calacatta Oro" class="product-image">
+                              <img src="assets/img/tiles-collage/Italian Marble/calacatta oro/int2.jpg" alt="Calacatta Oro Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Italian Marble/Italian_marble_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #FFD700;"></div>
+                                <div class="color-circle" style="background-color: #FFF8DC;"></div>
+                                <div class="color-circle" style="background-color: #F5F5DC;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Calacatta Oro</h3>
+                              <p class="product-description">Gold-veined luxury marble</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 6 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Italian Marble/calcatta/vector.png" alt="Calacatta" class="product-image">
+                            <img src="assets/img/tiles-collage/Italian Marble/calcatta/int2.jpg" alt="Calacatta Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Calacatta</h3>
+                            <p class="product-description">Classic Italian marble with bold veining</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                      
+                      <!-- Product Card 8 (Page 2) -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Italian Marble/statuario/statuario vector.png" alt="Statuario" class="product-image">
+                            <img src="assets/img/tiles-collage/Italian Marble/statuario/int1.jpg" alt="Statuario Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Statuario</h3>
+                            <p class="product-description">Distinguished marble with dramatic veining</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Italian Marble/statuario reale/vector.png" alt="Statuario Reale" class="product-image">
+                            <img src="assets/img/tiles-collage/Italian Marble/statuario reale/int1.png" alt="Statuario Reale Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Statuario Reale</h3>
+                            <p class="product-description">White marble with solid dramatic veining</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                     
+                      
+                      <!-- Product Card 10 (Page 2) -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Italian Marble/macchia antica/vector.jpg" alt="Macchia Antica" class="product-image">
+                            <img src="assets/img/tiles-collage/Italian Marble/macchia antica/int2.jpg" alt="Macchia Antica Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Macchia Antica</h3>
+                            <p class="product-description">Dramatic white marble with gold veining</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 11 (Page 2) -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Italian Marble/travertino classic /vector.jpg" alt="travertino classic" class="product-image">
+                            <img src="assets/img/tiles-collage/Italian Marble/travertino classic /int2.webp" alt="travertino classic Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Travertino Classic</h3>
+                            <p class="product-description">Flowing travertino patterns in white marble</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Italian Marble pagination">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                  
+                  <!-- Other Stone Category -->
+                  <div class="category-products-section" id="other-stone">
+                    <h2 class="products-category-title">Other Stone</h2>
+                    <div class="row product-cards-grid">
+                      
+                      <!-- Product Card 1 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Other Stone/Other_stone_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Other Stone/imperial/vector1.jpg" alt="Imperial" class="product-image">
+                              <img src="assets/img/tiles-collage/Other Stone/imperial/int1.jpg" alt="Imperial Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Other Stone/Other_stone_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #8B7355;"></div>
+                                <div class="color-circle" style="background-color: #A0826D;"></div>
+                                <div class="color-circle" style="background-color: #C4A582;"></div>
+                                <div class="color-circle" style="background-color: #DEB887;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Imperial</h3>
+                              <p class="product-description">Regal stone with imperial grandeur</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 2 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Other Stone/Other_stone_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Other Stone/royal stone/vector.jpg" alt="Royal Stone" class="product-image">
+                              <img src="assets/img/tiles-collage/Other Stone/royal stone/int1.jpg" alt="Royal Stone Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Other Stone/Other_stone_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #696969;"></div>
+                                <div class="color-circle" style="background-color: #808080;"></div>
+                                <div class="color-circle" style="background-color: #A9A9A9;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Royal Stone</h3>
+                              <p class="product-description">Majestic stone for luxury spaces</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 3 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Other Stone/Other_stone_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Other Stone/ardesia/vector1.jpg" alt="Ardesia" class="product-image">
+                              <img src="assets/img/tiles-collage/Other Stone/ardesia/int2.jpg" alt="Ardesia Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Other Stone/Other_stone_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #2F4F4F;"></div>
+                                <div class="color-circle" style="background-color: #708090;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Ardesia</h3>
+                              <p class="product-description">Natural slate with contemporary appeal</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 4 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Other Stone/Other_stone_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Other Stone/borghi italiani/vector1.jpg" alt="Borghi Italiani" class="product-image">
+                              <img src="assets/img/tiles-collage/Other Stone/borghi italiani/int1.jpg" alt="Borghi Italiani Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Other Stone/Other_stone_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #D2B48C;"></div>
+                                <div class="color-circle" style="background-color: #BC8F8F;"></div>
+                                <div class="color-circle" style="background-color: #CD853F;"></div>
+                                <div class="color-circle" style="background-color: #F5DEB3;"></div>
+                                <div class="color-circle" style="background-color: #DAA520;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Borghi Italiani</h3>
+                              <p class="product-description">Rustic Italian village-inspired stone</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 5 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Other Stone/Other_stone_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Other Stone/bolgheri stone/vector.jpg" alt="Bolgheri Stone" class="product-image">
+                              <img src="assets/img/tiles-collage/Other Stone/bolgheri stone/int1.jpg" alt="Bolgheri Stone Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Other Stone/Other_stone_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #C8AD7F;"></div>
+                                <div class="color-circle" style="background-color: #B8956A;"></div>
+                                <div class="color-circle" style="background-color: #D3C5AA;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Bolgheri Stone</h3>
+                              <p class="product-description">Elegant stone with natural texture</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 6 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/castle/vector.jpg" alt="Castle" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/castle/int1.jpg" alt="Castle Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Castle</h3>
+                            <p class="product-description">Medieval-inspired stone finish</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 7 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/blue evolution/vector1.jpg" alt="Blue Evolution" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/blue evolution/int1.jpg" alt="Blue Evolution Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Blue Evolution</h3>
+                            <p class="product-description">Modern blue stone with dynamic patterns</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 8 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/chianca/vector1.jpg" alt="Chianca" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/chianca/int1.jpg" alt="Chianca Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Chianca</h3>
+                            <p class="product-description">Traditional Italian stone finish</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 9 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/copacabana emperor/vector.jpg" alt="Copacabana Emperor" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/copacabana emperor/int1.jpg" alt="Copacabana Emperor Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Copacabana Emperor</h3>
+                            <p class="product-description">Exotic stone with bold character</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 10 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/dolomiti/vector1.jpg" alt="Dolomiti" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/dolomiti/int1.jpg" alt="Dolomiti Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Dolomiti</h3>
+                            <p class="product-description">Mountain-inspired stone texture</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 11 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/gemstone/vector.jpg" alt="Gemstone" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/gemstone/int1.jpg" alt="Gemstone Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Gemstone</h3>
+                            <p class="product-description">Precious stone-inspired design</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 12 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/irish onyx/Onice-Iride_Ambra-160x320-Lap-Ret.jpg" alt="Irish Onyx" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/irish onyx/int1.jpeg" alt="Irish Onyx Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Irish Onyx</h3>
+                            <p class="product-description">Elegant onyx with Irish character</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 13 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/jungle stone/vector1.jpg" alt="Jungle Stone" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/jungle stone/int1.jpg" alt="Jungle Stone Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Jungle Stone</h3>
+                            <p class="product-description">Wild natural stone patterns</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 14 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/nautilus/vector.jpg" alt="Nautilus" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/nautilus/int1.jpg" alt="Nautilus Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Nautilus</h3>
+                            <p class="product-description">Spiral-inspired organic stone</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 15 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/noble stone/vector.jpg" alt="Noble Stone" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/noble stone/int1.jpg" alt="Noble Stone Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Noble Stone</h3>
+                            <p class="product-description">Distinguished stone with refined elegance</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 16 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/quarzi/vector1.jpg" alt="Quarzi" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/quarzi/int1.jpg" alt="Quarzi Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Quarzi</h3>
+                            <p class="product-description">Quartz-based contemporary finish</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 17 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/sahara noir/vector.jpg" alt="Sahara Noir" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/sahara noir/int1.jpg" alt="Sahara Noir Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Sahara Noir</h3>
+                            <p class="product-description">Dark desert-inspired stone</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 18 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Other Stone/storm/vector1.jpg" alt="Storm" class="product-image">
+                            <img src="assets/img/tiles-collage/Other Stone/storm/int1.jpg" alt="Storm Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Storm</h3>
+                            <p class="product-description">Dramatic stormy stone patterns</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Other Stone pagination">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                  
+                  <!-- Moroccan Category -->
+                  <div class="category-products-section" id="moroccan">
+                    <h2 class="products-category-title">Moroccan</h2>
+                    <div class="row product-cards-grid">
+                      
+                      <!-- Product Card 1 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Moroccan/Moroccan_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Moroccan/aster/vector.webp" alt="Aster" class="product-image">
+                              <img src="assets/img/tiles-collage/Moroccan/aster/int.webp" alt="Aster Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Moroccan/Moroccan_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #4682B4;"></div>
+                                <div class="color-circle" style="background-color: #F4A460;"></div>
+                                <div class="color-circle" style="background-color: #E6E6FA;"></div>
+                                <div class="color-circle" style="background-color: #FFE4B5;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Aster</h3>
+                              <p class="product-description">Moroccan-inspired decorative tiles</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 2 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Moroccan/Moroccan_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Moroccan/bishkek/vector.webp" alt="Bishkek" class="product-image">
+                              <img src="assets/img/tiles-collage/Moroccan/bishkek/int.webp" alt="Bishkek Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Moroccan/Moroccan_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #DC143C;"></div>
+                                <div class="color-circle" style="background-color: #20B2AA;"></div>
+                                <div class="color-circle" style="background-color: #FFD700;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Bishkek</h3>
+                              <p class="product-description">Exotic pattern with bold colors</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 3 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Moroccan/Moroccan_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Moroccan/brasilia/int.webp" alt="Brasilia" class="product-image">
+                              <img src="assets/img/tiles-collage/Moroccan/brasilia/int.webp" alt="Brasilia Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Moroccan/Moroccan_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #FF6347;"></div>
+                                <div class="color-circle" style="background-color: #4169E1;"></div>
+                                <div class="color-circle" style="background-color: #32CD32;"></div>
+                                <div class="color-circle" style="background-color: #FFD700;"></div>
+                                <div class="color-circle" style="background-color: #FF69B4;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Brasilia</h3>
+                              <p class="product-description">Vibrant Moroccan mosaic design</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 4 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Moroccan/Moroccan_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Moroccan/brussels/vector.webp" alt="Brussels" class="product-image">
+                              <img src="assets/img/tiles-collage/Moroccan/brussels/int1.webp" alt="Brussels Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Moroccan/Moroccan_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #2F4F4F;"></div>
+                                <div class="color-circle" style="background-color: #F5F5DC;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Brussels</h3>
+                              <p class="product-description">Geometric Moroccan patterns</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 5 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Moroccan/Moroccan_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Moroccan/aden/vector.webp" alt="Aden" class="product-image">
+                              <img src="assets/img/tiles-collage/Moroccan/aden/int1.webp" alt="Aden Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Moroccan/Moroccan_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #8B4513;"></div>
+                                <div class="color-circle" style="background-color: #DAA520;"></div>
+                                <div class="color-circle" style="background-color: #CD853F;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Aden</h3>
+                              <p class="product-description">Traditional Moroccan craftsmanship</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 6 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Moroccan/arica/vector.webp" alt="Arica" class="product-image">
+                            <img src="assets/img/tiles-collage/Moroccan/arica/int1.webp" alt="Arica Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Arica</h3>
+                            <p class="product-description">Handcrafted Moroccan tile design</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 7 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Moroccan/bogota/vector.webp" alt="Bogota" class="product-image">
+                            <img src="assets/img/tiles-collage/Moroccan/bogota/int.webp" alt="Bogota Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Bogota</h3>
+                            <p class="product-description">Bold geometric Moroccan patterns</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 8 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Moroccan/elude/vector.webp" alt="Elude" class="product-image">
+                            <img src="assets/img/tiles-collage/Moroccan/elude/int.webp" alt="Elude Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Elude</h3>
+                            <p class="product-description">Intricate Moroccan mosaic art</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Moroccan pagination">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                  
+                  <!-- Material Category -->
+                  <div class="category-products-section" id="material">
+                    <h2 class="products-category-title">Material</h2>
+                    <div class="row product-cards-grid">
+                      
+                      <!-- Product Card 1 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Material/Material_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Material/absolute/vector1.jpg" alt="Absolute" class="product-image">
+                              <img src="assets/img/tiles-collage/Material/absolute/int2.jpg" alt="Absolute Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Material/Material_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #000000;"></div>
+                                <div class="color-circle" style="background-color: #FFFFFF;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Absolute</h3>
+                              <p class="product-description">Pure minimalist material finish</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 2 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Material/Material_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Material/agglomerate/vector1.jpg" alt="Agglomerate" class="product-image">
+                              <img src="assets/img/tiles-collage/Material/agglomerate/int1.jpg" alt="Agglomerate Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Material/Material_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #A9A9A9;"></div>
+                                <div class="color-circle" style="background-color: #D3D3D3;"></div>
+                                <div class="color-circle" style="background-color: #C0C0C0;"></div>
+                                <div class="color-circle" style="background-color: #696969;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Agglomerate</h3>
+                              <p class="product-description">Composite material with durability</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 3 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Material/Material_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Material/artile/vector1.jpg" alt="Artile" class="product-image">
+                              <img src="assets/img/tiles-collage/Material/artile/int1.jpg" alt="Artile Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Material/Material_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #FFE4C4;"></div>
+                                <div class="color-circle" style="background-color: #F0E68C;"></div>
+                                <div class="color-circle" style="background-color: #FFDAB9;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Artile</h3>
+                              <p class="product-description">Artistic material tiles</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 4 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Material/Material_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Material/cotto del castle/1_Cotto-del-Casale_Bruno-Nat.jpg" alt="Cotto Del Castle" class="product-image">
+                              <img src="assets/img/tiles-collage/Material/cotto del castle/int1.jpg" alt="Cotto Del Castle Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Material/Material_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #CD5C5C;"></div>
+                                <div class="color-circle" style="background-color: #E9967A;"></div>
+                                <div class="color-circle" style="background-color: #BC8F8F;"></div>
+                                <div class="color-circle" style="background-color: #D2691E;"></div>
+                                <div class="color-circle" style="background-color: #A0522D;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Cotto Del Castle</h3>
+                              <p class="product-description">Terracotta castle-style tiles</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 5 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Material/Material_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Material/hurban/vector1.jpg" alt="Hurban" class="product-image">
+                              <img src="assets/img/tiles-collage/Material/hurban/int1.jpg" alt="Hurban Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Material/Material_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #808080;"></div>
+                                <div class="color-circle" style="background-color: #2F4F4F;"></div>
+                                <div class="color-circle" style="background-color: #778899;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Hurban</h3>
+                              <p class="product-description">Urban contemporary finish</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 6 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Material/lascaux/1_Lascaux_Naxa-60x120-Nat-Ret.jpg" alt="Lascaux" class="product-image">
+                            <img src="assets/img/tiles-collage/Material/lascaux/int1.jpg" alt="Lascaux Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Lascaux</h3>
+                            <p class="product-description">Cave-inspired natural textures</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 7 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Material/le malte/vector1.jpg" alt="Le Malte" class="product-image">
+                            <img src="assets/img/tiles-collage/Material/le malte/int1.jpg" alt="Le Malte Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Le Malte</h3>
+                            <p class="product-description">Traditional plaster-effect tiles</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 8 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Material/metal/vevtor1.jpg" alt="Metal" class="product-image">
+                            <img src="assets/img/tiles-collage/Material/metal/int1.jpg" alt="Metal Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Metal</h3>
+                            <p class="product-description">Metallic surface finish</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 9 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Material/skyline/vector1.jpg" alt="Skyline" class="product-image">
+                            <img src="assets/img/tiles-collage/Material/skyline/int1.jpg" alt="Skyline Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Skyline</h3>
+                            <p class="product-description">Urban-inspired material tiles</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Product Card 10 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="product-card">
+                          <div class="product-image-wrapper">
+                            <img src="assets/img/tiles-collage/Material/space/vector1.jpg" alt="Space" class="product-image">
+                            <img src="assets/img/tiles-collage/Material/space/int1.jpg" alt="Space Detail" class="product-image-hover">
+                            <div class="product-overlay">
+                              <a href="#!" class="view-details-btn">View Details</a>
+                            </div>
+                          </div>
+                          <div class="product-info">
+                            <h3 class="product-name">Space</h3>
+                            <p class="product-description">Futuristic material design</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Material pagination">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                  
+                  <!-- Wooden Category -->
+                  <div class="category-products-section" id="wooden">
+                    <h2 class="products-category-title">Wooden</h2>
+                    <div class="row product-cards-grid">
+                      
+                      <!-- Product Card 1 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Wooden/wooden_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Wooden/ca foscari/1_Ca-Foscari_Avana_20x120-Nat-Ret.jpg" alt="Ca Foscari" class="product-image">
+                              <img src="assets/img/tiles-collage/Wooden/ca foscari/int1.jpg" alt="Ca Foscari Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Wooden/wooden_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #8B4513;"></div>
+                                <div class="color-circle" style="background-color: #A0522D;"></div>
+                                <div class="color-circle" style="background-color: #D2691E;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Ca Foscari</h3>
+                              <p class="product-description">Venetian-inspired wooden finish</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 2 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Wooden/wooden_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Wooden/il ceretto/1_Il-Cerreto_Amarone-234x148-Nat-Ret.jpg" alt="Il Ceretto" class="product-image">
+                              <img src="assets/img/tiles-collage/Wooden/il ceretto/int1.jpg" alt="Il Ceretto Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Wooden/wooden_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #8B0000;"></div>
+                                <div class="color-circle" style="background-color: #A52A2A;"></div>
+                                <div class="color-circle" style="background-color: #800000;"></div>
+                                <div class="color-circle" style="background-color: #BC8F8F;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Il Ceretto</h3>
+                              <p class="product-description">Rustic Italian wood texture</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 3 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Wooden/wooden_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Wooden/honey wood/1_Honey-Wood_Bricola-40x240-Nat-Ret.jpg" alt="Honeywood" class="product-image">
+                              <img src="assets/img/tiles-collage/Wooden/honey wood/int1.jpg" alt="Honeywood Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Wooden/wooden_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #DAA520;"></div>
+                                <div class="color-circle" style="background-color: #F0E68C;"></div>
+                                <div class="color-circle" style="background-color: #FFD700;"></div>
+                                <div class="color-circle" style="background-color: #B8860B;"></div>
+                                <div class="color-circle" style="background-color: #EEE8AA;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Honeywood</h3>
+                              <p class="product-description">Warm honey-toned wood effect</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 4 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Wooden/wooden_design_2.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Wooden/amazon/1_Amazon_Arara_20x120-Nat-Ret.jpg" alt="Amazon" class="product-image">
+                              <img src="assets/img/tiles-collage/Wooden/amazon/int1.jpg" alt="Amazon Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Wooden/wooden_design_2.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #654321;"></div>
+                                <div class="color-circle" style="background-color: #8B4513;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Amazon</h3>
+                              <p class="product-description">Exotic rainforest wood look</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <!-- Product Card 5 -->
+                      <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="product_details/tiles/Wooden/wooden_design_1.html" class="text-decoration-none">
+                          <div class="product-card">
+                            <div class="product-image-wrapper">
+                              <img src="assets/img/tiles-collage/Wooden/kauri/1_Kauri_Catlins-20x120-Lap-Ret.jpg" alt="Kauri" class="product-image">
+                              <img src="assets/img/tiles-collage/Wooden/kauri/int1.jpg" alt="Kauri Detail" class="product-image-hover">
+                              <div class="product-overlay">
+                                <a href="product_details/tiles/Wooden/wooden_design_1.html" class="view-details-btn">View Details</a>
+                              </div>
+                              <div class="color-variants">
+                                <div class="color-circle" style="background-color: #CD853F;"></div>
+                                <div class="color-circle" style="background-color: #DEB887;"></div>
+                                <div class="color-circle" style="background-color: #D2B48C;"></div>
+                                <div class="color-circle" style="background-color: #BC8F8F;"></div>
+                              </div>
+                            </div>
+                            <div class="product-info">
+                              <h3 class="product-name">Kauri</h3>
+                              <p class="product-description">Ancient wood-inspired tiles</p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      
+                      
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Wooden pagination">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                  
+                  </div>
+
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section class="footer-section py-0 pt-5 pb-3" style="background: linear-gradient(135deg, rgba(240, 240, 245, 0.9), rgba(230, 230, 235, 0.95)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);">
+          <div class="container-fluid px-4">
+            <div class="row">
+              
+              <!-- Company Info -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000" style="font-size: 1rem;">Company Info</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#about" style="font-size: 0.9rem;">About Us</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Our Story</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Careers</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Blog</a></li>
+                </ul>
+              </div>
+
+              <!-- Natural Stones -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000" style="font-size: 1rem;">Natural Stones</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Sandstone</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Limestone</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Marble</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Granite</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Quartzite</a></li>
+                </ul>
+              </div>
+
+              <!-- Tiles -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000" style="font-size: 1rem;">Tiles</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Italian Marble</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Ceramic Tiles</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Porcelain Tiles</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Moroccan Tiles</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Wooden Finish</a></li>
+                </ul>
+              </div>
+
+              <!-- Quick Links -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000" style="font-size: 1rem;">Quick Links</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#services" style="font-size: 0.9rem;">Services</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#global-presence" style="font-size: 0.9rem;">Global Presence</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#faq" style="font-size: 0.9rem;">FAQ</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Contact Us</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Request Quote</a></li>
+                </ul>
+              </div>
+
+              <!-- Legal & Policies -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000" style="font-size: 1rem;">Legal & Policies</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Terms & Conditions</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Privacy Policy</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">CSR Policy</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Shipping Policy</a></li>
+                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!" style="font-size: 0.9rem;">Return Policy</a></li>
+                </ul>
+              </div>
+
+              <!-- Contact Information -->
+              <div class="col-6 col-lg-2 mb-3">
+                <h5 class="lh-lg fw-bold text-1000" style="font-size: 1rem;">Contact Us</h5>
+                <ul class="list-unstyled mb-md-4 mb-lg-0">
+                  <li class="lh-lg mb-2">
+                    <a class="text-800 text-decoration-none d-flex align-items-center" href="tel:+918209851679" style="font-size: 0.9rem;">
+                      <i class="bi bi-telephone me-2 flex-shrink-0"></i><span>+91 82098 51679</span>
+                    </a>
+                  </li>
+                  <li class="lh-lg mb-2">
+                    <a class="text-800 text-decoration-none d-flex align-items-center" href="mailto:info@cosmicskyrocket.in" style="font-size: 0.9rem;">
+                      <i class="bi bi-envelope me-2 flex-shrink-0"></i><span class="text-break">info@cosmicskyrocket.in</span>
+                    </a>
+                  </li>
+                  <li class="lh-lg">
+                    <span class="text-800 d-flex align-items-center" style="font-size: 0.9rem;">
+                      <i class="bi bi-geo-alt me-2 flex-shrink-0"></i><span>Rajasthan, India</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+            
+            <div class="border-bottom border-3 mt-3"></div>
+            
+            <div class="row flex-center my-2">
+              <div class="col-md-6 order-1 order-md-0">
+                <p class="my-2 text-1000 text-center text-md-start" style="font-size: 0.9rem;"> 
+                  &copy; 2024 Cosmic Skyrocket. All Rights Reserved. Made with&nbsp;
+                  <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 16 16">
+                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
+                  </svg>&nbsp;in India
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/feather-icons/feather.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="assets/js/theme.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        offset: 100
+      });
+    </script>
+
+    <!-- Hamburger Menu & Search Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Hamburger Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const menuOverlay = document.getElementById('hamburgerMenuOverlay');
+        
+        // Open menu
+        hamburgerBtn.addEventListener('click', function() {
+          menuOverlay.style.display = 'block';
+          setTimeout(function() {
+            menuOverlay.classList.add('active');
+          }, 10);
+        });
+        
+        // Close menu
+        function closeMenu() {
+          menuOverlay.classList.remove('active');
+          setTimeout(function() {
+            menuOverlay.style.display = 'none';
+          }, 300);
+        }
+        
+        closeMenuBtn.addEventListener('click', closeMenu);
+        
+        // Close menu when clicking overlay
+        menuOverlay.addEventListener('click', function(e) {
+          if (e.target === menuOverlay) {
+            closeMenu();
+          }
+        });
+        
+        // Dropdown Toggle
+        const dropdownToggles = document.querySelectorAll('.menu-dropdown-toggle, .submenu-dropdown-toggle');
+        
+        dropdownToggles.forEach(function(toggle) {
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentItem = this.parentElement;
+            const wasActive = parentItem.classList.contains('active');
+            
+            // Close all sibling dropdowns
+            const siblings = Array.from(parentItem.parentElement.children);
+            siblings.forEach(function(sibling) {
+              if (sibling !== parentItem) {
+                sibling.classList.remove('active');
+              }
+            });
+            
+            // Toggle current dropdown
+            if (wasActive) {
+              parentItem.classList.remove('active');
+            } else {
+              parentItem.classList.add('active');
+            }
+          });
+        });
+        
+        // Search Overlay Functionality
+        const searchBtn = document.getElementById('searchBtn');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const searchInput = document.getElementById('searchInput');
+        const searchForm = document.getElementById('searchForm');
+        const searchContainer = document.querySelector('.search-container');
+        
+        // Open search overlay
+        searchBtn.addEventListener('click', function() {
+          searchOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          setTimeout(() => {
+            searchInput.focus();
+          }, 400);
+        });
+        
+        // Close on overlay click (outside search container and popular searches)
+        searchOverlay.addEventListener('click', function(e) {
+          // Check if click is outside the search container
+          if (!searchContainer.contains(e.target)) {
+            searchOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            searchInput.value = '';
+          }
+        });
+        
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+            searchOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            searchInput.value = '';
+          }
+        });
+        
+        // Handle search form submission
+        searchForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm) {
+            console.log('Searching for:', searchTerm);
+            alert('Searching for: ' + searchTerm);
+          }
+        });
+        
+        // Handle search tag clicks
+        const searchTags = document.querySelectorAll('.search-tag');
+        searchTags.forEach(function(tag) {
+          tag.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tagText = this.textContent;
+            searchInput.value = tagText;
+            searchInput.focus();
+          });
+        });
+
+        // Scroll Spy for Category Sidebar with Auto-scroll
+        const categoryProductsSections = document.querySelectorAll('.category-products-section');
+        const sidebarCategorySections = document.querySelectorAll('.category-section');
+        const productsContentWrapper = document.querySelector('.products-content-wrapper');
+        const tileCatalogueSidebar = document.querySelector('.tile-catalogue-sidebar');
+        
+        function updateActiveCategory() {
+          if (!productsContentWrapper) return;
+          
+          let currentCategory = '';
+          const wrapperRect = productsContentWrapper.getBoundingClientRect();
+          const wrapperTop = wrapperRect.top;
+          
+          // Find which category section is currently at the top of the scroll container
+          categoryProductsSections.forEach(function(section) {
+            const sectionRect = section.getBoundingClientRect();
+            const sectionTop = sectionRect.top - wrapperTop;
+            const sectionBottom = sectionRect.bottom - wrapperTop;
+            
+            // Check if section is visible in the scroll container (check if it's near the top)
+            if (sectionTop <= 100 && sectionBottom >= 100) {
+              currentCategory = section.id;
+            }
+          });
+          
+          // Remove active class from all sidebar categories
+          sidebarCategorySections.forEach(function(section) {
+            section.classList.remove('active');
+          });
+          
+          // Add active class to current category and auto-scroll sidebar
+          if (currentCategory) {
+            const activeSidebarSection = document.querySelector(`.category-section[data-category="${currentCategory}"]`);
+            if (activeSidebarSection) {
+              activeSidebarSection.classList.add('active');
+              
+              // Auto-scroll the sidebar to show the active category
+              if (tileCatalogueSidebar) {
+                const sidebarRect = tileCatalogueSidebar.getBoundingClientRect();
+                const activeRect = activeSidebarSection.getBoundingClientRect();
+                const sidebarScrollTop = tileCatalogueSidebar.scrollTop;
+                const activeOffsetTop = activeRect.top - sidebarRect.top + sidebarScrollTop;
+                
+                // Scroll to position the active category near the top of the sidebar
+                tileCatalogueSidebar.scrollTo({
+                  top: activeOffsetTop - 20, // 20px offset from top
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }
+        }
+        
+        // Update on scroll of the products content wrapper
+        if (productsContentWrapper) {
+          productsContentWrapper.addEventListener('scroll', updateActiveCategory);
+        }
+        
+        // Initial update
+        updateActiveCategory();
+
+        // Pagination Functionality
+        const paginationLinks = document.querySelectorAll('.pagination .page-link');
+        
+        paginationLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the pagination container
+            const paginationNav = this.closest('nav');
+            const categorySection = paginationNav.closest('.category-products-section');
+            const pageNumber = parseInt(this.textContent);
+            
+            if (!categorySection || isNaN(pageNumber)) return;
+            
+            // Get all product cards in this category
+            const productCards = categorySection.querySelectorAll('.product-cards-grid > .col-lg-4');
+            const itemsPerPage = 6;
+            
+            // Calculate which products to show
+            const startIndex = (pageNumber - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            
+            // Hide all products first
+            productCards.forEach(function(card) {
+              card.style.display = 'none';
+            });
+            
+            // Show products for current page
+            for (let i = startIndex; i < endIndex && i < productCards.length; i++) {
+              productCards[i].style.display = 'block';
+            }
+            
+            // Update active pagination button
+            const paginationItems = paginationNav.querySelectorAll('.page-item');
+            paginationItems.forEach(function(item) {
+              item.classList.remove('active');
+            });
+            this.parentElement.classList.add('active');
+            
+            // Scroll to top of the category section
+            if (productsContentWrapper) {
+              const categoryTop = categorySection.offsetTop;
+              productsContentWrapper.scrollTo({
+                top: categoryTop - 20,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+        
+        // Initialize - show only first 6 products for each category
+        const allCategorySections = document.querySelectorAll('.category-products-section');
+        allCategorySections.forEach(function(section) {
+          const productCards = section.querySelectorAll('.product-cards-grid > .col-lg-4');
+          const itemsPerPage = 6;
+          
+          productCards.forEach(function(card, index) {
+            if (index >= itemsPerPage) {
+              card.style.display = 'none';
+            }
+          });
+        });
+
+        // Function to generate slug from product name
+        function generateSlug(text) {
+          return text
+            .toLowerCase()
+            .replace(/\s+/g, '-')        // Replace spaces with -
+            .replace(/[^\w\-]+/g, '')    // Remove all non-word chars
+            .replace(/\-\-+/g, '-')      // Replace multiple - with single -
+            .replace(/^-+/, '')          // Trim - from start of text
+            .replace(/-+$/, '');         // Trim - from end of text
+        }
+
+        // Add IDs to all product cards based on their product names
+        const allProductCards = document.querySelectorAll('.product-card');
+        allProductCards.forEach(function(card) {
+          const productName = card.querySelector('.product-name');
+          if (productName) {
+            const slug = generateSlug(productName.textContent);
+            const productId = 'product-' + slug;
+            // Add ID to the parent col div
+            const colDiv = card.closest('.col-lg-4');
+            if (colDiv && !colDiv.id) {
+              colDiv.id = productId;
+            }
+          }
+        });
+
+        // Smooth Scroll for Category Links
+        const categoryLinks = document.querySelectorAll('.category-link');
+        
+        categoryLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the target section ID from href
+            const targetId = this.getAttribute('href').substring(1); // Remove the # from href
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection && productsContentWrapper) {
+              // Calculate the position of the target section within the scroll container
+              const wrapperRect = productsContentWrapper.getBoundingClientRect();
+              const targetRect = targetSection.getBoundingClientRect();
+              const scrollTop = productsContentWrapper.scrollTop;
+              
+              // Calculate the target scroll position
+              // We want the section to appear at the top of the scroll container
+              const targetScrollTop = scrollTop + (targetRect.top - wrapperRect.top) - 20; // 20px offset
+              
+              // Smooth scroll to the target section
+              productsContentWrapper.scrollTo({
+                top: targetScrollTop,
+                behavior: 'smooth'
+              });
+              
+              // Update the active category immediately
+              setTimeout(function() {
+                updateActiveCategory();
+              }, 100);
+            }
+          });
+        });
+
+        // Smooth Scroll for Product Links (Subcategories)
+        const productLinks = document.querySelectorAll('.product-link');
+        
+        productLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the target product ID from href
+            const targetId = this.getAttribute('href').substring(1); // Remove the # from href
+            const targetProduct = document.getElementById(targetId);
+            
+            if (targetProduct && productsContentWrapper) {
+              // Find the category section this product belongs to
+              const categorySection = targetProduct.closest('.category-products-section');
+              
+              if (categorySection) {
+                // Get all product cards in this category
+                const productCards = categorySection.querySelectorAll('.product-cards-grid > .col-lg-4');
+                const itemsPerPage = 6;
+                
+                // Find the index of the target product
+                let targetIndex = -1;
+                productCards.forEach(function(card, index) {
+                  if (card === targetProduct) {
+                    targetIndex = index;
+                  }
+                });
+                
+                if (targetIndex !== -1) {
+                  // Calculate which page this product is on
+                  const pageNumber = Math.floor(targetIndex / itemsPerPage) + 1;
+                  const startIndex = (pageNumber - 1) * itemsPerPage;
+                  const endIndex = startIndex + itemsPerPage;
+                  
+                  // Show/hide products based on the page
+                  productCards.forEach(function(card, index) {
+                    if (index >= startIndex && index < endIndex) {
+                      card.style.display = 'block';
+                    } else {
+                      card.style.display = 'none';
+                    }
+                  });
+                  
+                  // Update pagination active state
+                  const paginationNav = categorySection.querySelector('nav[aria-label*="pagination"]');
+                  if (paginationNav) {
+                    const paginationItems = paginationNav.querySelectorAll('.page-item');
+                    paginationItems.forEach(function(item, index) {
+                      if (index + 1 === pageNumber) {
+                        item.classList.add('active');
+                      } else {
+                        item.classList.remove('active');
+                      }
+                    });
+                  }
+                }
+              }
+              
+              // Wait a bit for the display changes to take effect, then scroll
+              setTimeout(function() {
+                // Calculate the position of the target product within the scroll container
+                const wrapperRect = productsContentWrapper.getBoundingClientRect();
+                const targetRect = targetProduct.getBoundingClientRect();
+                const scrollTop = productsContentWrapper.scrollTop;
+                
+                // Calculate the target scroll position
+                // Center the product card in the viewport if possible
+                const targetScrollTop = scrollTop + (targetRect.top - wrapperRect.top) - 100; // 100px offset for better visibility
+                
+                // Smooth scroll to the target product
+                productsContentWrapper.scrollTo({
+                  top: targetScrollTop,
+                  behavior: 'smooth'
+                });
+                
+                // Add a temporary highlight effect to the product card
+                const productCard = targetProduct.querySelector('.product-card');
+                if (productCard) {
+                  productCard.style.transition = 'box-shadow 0.3s ease, transform 0.3s ease';
+                  productCard.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.3)';
+                  productCard.style.transform = 'scale(1.02)';
+                  
+                  setTimeout(function() {
+                    productCard.style.boxShadow = '';
+                    productCard.style.transform = '';
+                  }, 1500);
+                }
+                
+                // Update the active category immediately
+                setTimeout(function() {
+                  updateActiveCategory();
+                }, 100);
+              }, 50); // Small delay to let DOM update
+            }
+          });
+        });
+      });
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  </body>
+
+</html>

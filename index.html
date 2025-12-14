@@ -22,6 +22,7 @@
     <link href="assets/css/brand-colors.css" rel="stylesheet" />
     <link href="assets/css/theme.css" rel="stylesheet" />
     <link href="assets/css/3d-cards.css" rel="stylesheet" />
+    <link href="assets/css/circular-nav-cards.css" rel="stylesheet" />
     
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -32,7 +33,39 @@
     <!-- Google Fonts - Cinzel -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Google Fonts - Crimson Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Sacramento -->
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts - Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
     <style>
+      /* Preloader Styles */
+      body {
+        background-color: #FFFFFF;
+      }
+      
+      #preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #preloader img {
+        width: 80px;
+        height: 80px;
+      }
+
       /* Glass morphism video effect for COSMIC SKYROCKET text */
       #cosmicBrand {
         position: relative;
@@ -42,13 +75,14 @@
         position: relative;
         z-index: 2;
         color: #fff;
-        font-family: 'Cinzel', serif !important;
-        font-weight: normal !important;
+        font-family: 'Crimson Text', serif !important;
+        font-weight: 400 !important;
         transition: color 0.7s ease;
       }
       
       #tagline {
-        color: #856D46 !important;
+        color: #000000 !important;
+        font-family: 'Sacramento', cursive !important;
       }
 
       /* Hamburger Menu Styles */
@@ -75,11 +109,16 @@
         width: 400px;
         max-width: 90%;
         height: 100%;
-        background-color: #fff;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: -2px 0 30px rgba(0, 0, 0, 0.2);
         overflow-y: auto;
         transition: right 0.3s ease;
         padding: 2rem;
+        display: flex;
+        flex-direction: column;
       }
 
       .hamburger-menu-overlay.active .hamburger-menu-panel {
@@ -92,17 +131,21 @@
         align-items: center;
         margin-bottom: 2rem;
         padding-bottom: 1rem;
-        border-bottom: 2px solid #f0f0f0;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
       }
 
       .hamburger-menu-header h3 {
         font-size: 1.8rem;
-        font-weight: 700;
-        color: #000;
+        font-weight: 400;
+        font-family: 'Crimson Text', serif;
+        color: #ffffff;
       }
 
       .hamburger-menu-content {
         margin-top: 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       }
 
       .menu-list {
@@ -120,7 +163,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0.75rem 1rem;
-        color: #000;
+        color: #ffffff;
         text-decoration: none;
         font-size: 1.1rem;
         font-weight: 500;
@@ -129,8 +172,8 @@
       }
 
       .menu-link:hover {
-        background-color: #f8f9fa;
-        color: #856D46;
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #ffffff;
       }
 
       .dropdown-icon {
@@ -168,7 +211,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0.6rem 1rem;
-        color: #666;
+        color: rgba(255, 255, 255, 0.9);
         text-decoration: none;
         font-size: 1rem;
         border-radius: 6px;
@@ -177,8 +220,8 @@
 
       .submenu-link:hover,
       .sub-submenu-link:hover {
-        background-color: #f8f9fa;
-        color: #856D46;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
       }
 
       .sub-submenu {
@@ -189,10 +232,151 @@
         margin-bottom: 0.25rem;
       }
 
+      /* Social Icons in Menu */
+      .menu-social-icons {
+        margin-top: auto;
+        padding-top: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .menu-social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 1.3rem;
+        transition: all 0.3s ease;
+      }
+
+      .menu-social-icons a:hover {
+        background: #ffffff;
+        color: #000000;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Navbar Icons Hover Effect */
+      .text-1000 svg,
+      .text-1000 .feather {
+        transition: stroke 0.3s ease, transform 0.3s ease;
+      }
+
+      .text-1000:hover svg,
+      .text-1000:hover .feather {
+        stroke: #000000 !important;
+        transform: scale(1.15);
+      }
+
+      /* Scroll to Top Button */
+      #scrollToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #000000 0%, #333333 100%);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 10000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      #scrollToTop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      #scrollToTop:hover {
+        background: linear-gradient(135deg, #333333 0%, #000000 100%);
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      #scrollToTop i {
+        font-size: 1.5rem;
+        color: #ffffff;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+      }
+
+      #scrollToTop:not(.launching) i {
+        animation: rocketBounce 2s ease-in-out infinite;
+      }
+
+      #scrollToTop.launching i {
+        transform: rotate(-45deg) !important;
+        animation: rocketLaunchStraight 0.6s ease-out forwards !important;
+      }
+
+      @keyframes rocketBounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @keyframes rocketLaunchStraight {
+        0% {
+          transform: rotate(-45deg) translateY(0);
+        }
+        50% {
+          transform: rotate(-45deg) translateY(-15px);
+        }
+        100% {
+          transform: rotate(-45deg) translateY(0);
+        }
+      }
+
+      #scrollToTop:hover:not(.launching) i {
+        animation: rocketLaunch 0.6s ease-out forwards;
+      }
+
+      @keyframes rocketLaunch {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(-5deg);
+        }
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+
       /* Responsive adjustments */
       @media (max-width: 768px) {
         .hamburger-menu-panel {
           width: 320px;
+        }
+
+        #scrollToTop {
+          bottom: 20px;
+          right: 20px;
+          width: 45px;
+          height: 45px;
+        }
+
+        #scrollToTop i {
+          font-size: 1.3rem;
         }
       }
 
@@ -203,89 +387,103 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.95);
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
         z-index: 30000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
+        transition: opacity 0.4s ease, visibility 0.4s ease, backdrop-filter 0.4s ease;
+        pointer-events: none;
       }
 
       .search-overlay.active {
         opacity: 1;
         visibility: visible;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.3);
+        pointer-events: all;
       }
 
       .search-container {
-        position: relative;
-        width: 90%;
-        max-width: 800px;
-        transform: translateY(-50px);
-        transition: transform 0.4s ease;
+        position: fixed;
+        top: 1.5rem;
+        right: 2rem;
+        width: 400px;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        z-index: 30001;
       }
 
       .search-overlay.active .search-container {
         transform: translateY(0);
+        opacity: 1;
       }
 
       .search-close-btn {
         position: absolute;
-        top: -60px;
-        right: 0;
+        top: 10px;
+        right: 10px;
         background: none;
         border: none;
-        color: #fff;
-        font-size: 2.5rem;
+        color: #666;
+        font-size: 1.5rem;
         cursor: pointer;
         transition: transform 0.3s ease, color 0.3s ease;
         padding: 0;
         line-height: 1;
+        z-index: 10;
       }
 
       .search-close-btn:hover {
         transform: rotate(90deg);
-        color: #856D46;
+        color: #000000;
       }
 
       .search-input-wrapper {
         position: relative;
         width: 100%;
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
       }
 
       .search-input-wrapper input {
         width: 100%;
-        padding: 25px 70px 25px 30px;
-        font-size: 1.5rem;
-        border: 3px solid #856D46;
-        border-radius: 50px;
-        background: #fff;
-        color: #151515;
+        padding: 15px 60px 15px 20px;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 2px solid #fff;
+        border-radius: 0;
+        background: transparent;
+        color: #fff;
         outline: none;
         transition: all 0.3s ease;
-        box-shadow: 0 10px 40px rgba(133, 109, 70, 0.3);
       }
 
       .search-input-wrapper input:focus {
-        border-color: #856D46;
-        box-shadow: 0 15px 60px rgba(133, 109, 70, 0.5);
-        transform: scale(1.02);
+        border-bottom-color: #ffffff;
+        box-shadow: none;
       }
 
       .search-input-wrapper input::placeholder {
-        color: rgba(21, 21, 21, 0.4);
+        color: rgba(255, 255, 255, 0.6);
       }
 
       .search-submit-btn {
         position: absolute;
-        right: 10px;
+        right: 8px;
         top: 50%;
         transform: translateY(-50%);
-        background: linear-gradient(135deg, #856D46, #6d5a38);
-        border: none;
-        width: 50px;
-        height: 50px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
         color: #fff;
         cursor: pointer;
@@ -297,71 +495,98 @@
 
       .search-submit-btn:hover {
         transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 5px 20px rgba(255, 161, 92, 0.6);
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
       }
 
       .search-submit-btn i {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
       .search-suggestions {
-        margin-top: 2rem;
-        text-align: center;
+        margin-top: 0.5rem;
+        background: transparent;
+        border-radius: 0;
+        padding: 1.5rem;
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+      }
+
+      .search-overlay.active .search-suggestions {
+        max-height: 500px;
+        opacity: 1;
       }
 
       .search-suggestions p {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.9rem;
+        color: #fff;
+        font-size: 0.75rem;
         margin-bottom: 1rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
+        font-weight: 600;
       }
 
       .search-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
+        gap: 8px;
+        justify-content: flex-start;
       }
 
       .search-tag {
-        padding: 8px 20px;
-        background: rgba(133, 109, 70, 0.2);
-        border: 1px solid rgba(133, 109, 70, 0.5);
-        border-radius: 20px;
-        color: #856D46;
+        padding: 6px 14px;
+        background: transparent;
+        border: 1px solid rgba(224, 224, 224, 0.5);
+        border-radius: 16px;
+        color: #ffffff;
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         transition: all 0.3s ease;
         cursor: pointer;
       }
 
       .search-tag:hover {
-        background: #856D46;
-        color: #fff;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(133, 109, 70, 0.4);
+        background: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(133, 109, 70, 0.3);
       }
 
       /* Responsive search overlay */
       @media (max-width: 768px) {
+        .search-container {
+          right: 1rem;
+          left: 1rem;
+          width: auto;
+        }
+        
         .search-input-wrapper input {
-          font-size: 1.2rem;
-          padding: 20px 60px 20px 20px;
+          font-size: 0.95rem;
+          padding: 12px 55px 12px 16px;
         }
 
         .search-close-btn {
-          font-size: 2rem;
-          top: -50px;
+          font-size: 1.3rem;
         }
 
         .search-submit-btn {
-          width: 45px;
-          height: 45px;
+          width: 35px;
+          height: 35px;
         }
 
         .search-suggestions {
-          margin-top: 1.5rem;
+          margin-top: 0.5rem;
+          padding: 1rem;
+        }
+        
+        .search-tag {
+          font-size: 0.8rem;
+          padding: 5px 12px;
         }
       }
 
@@ -377,9 +602,10 @@
 
       .stats .stats-item i {
         font-size: 44px;
-        color: #856D46;
+        color: #000000;
         line-height: 0;
         margin-right: 15px;
+        margin-bottom: 20px;
       }
 
       .stats .stats-item .purecounter {
@@ -392,7 +618,7 @@
 
       .stats .stats-item .purecounter::after {
         content: '+';
-        color: #856D46;
+        color: #000000;
       }
 
       .stats .stats-item p {
@@ -410,12 +636,14 @@
       /* About Section Styles */
       .about-section {
         padding: 60px 0;
-        background-color: #f9f9f9;
+        background-color: #FFFFFF;
       }
 
       .about .content h3 {
         font-size: 1.75rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         margin-bottom: 1rem;
         position: relative;
@@ -425,7 +653,7 @@
       .about .content h3::first-letter {
         font-size: 2.5rem;
         font-weight: 900;
-        color: #856D46;
+        color: #000000;
       }
 
       .about .content h3::after {
@@ -435,7 +663,7 @@
         left: 0;
         width: 60px;
         height: 3px;
-        background-color: #856D46;
+        background-color: #000000;
         transition: width 0.3s ease;
       }
 
@@ -451,15 +679,13 @@
       }
 
       .about .content ul {
-        list-style: none;
-        padding: 0;
+        list-style: disc;
+        padding-left: 1.5rem;
         margin: 1.5rem 0;
       }
 
       .about .content ul li {
         padding: 10px 0 0 0;
-        display: flex;
-        align-items: flex-start;
         transition: transform 0.3s ease, padding-left 0.3s ease;
       }
 
@@ -468,19 +694,9 @@
         padding-left: 10px;
       }
 
-      .about .content ul i {
-        color: #856D46;
-        margin-right: 0.5rem;
-        line-height: 1.2;
-        font-size: 1.25rem;
-        flex-shrink: 0;
-        margin-top: 2px;
-        transition: transform 0.3s ease, color 0.3s ease;
-      }
-
-      .about .content ul li:hover i {
-        transform: scale(1.2);
-        color: #856D46;
+      .about .content ul li::marker {
+        color: #000000;
+        font-size: 1.2rem;
       }
 
       .about .content p:last-child {
@@ -511,7 +727,9 @@
 
       .section-title-wrapper h2 {
         font-size: 3rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         margin-bottom: 1rem;
         position: relative;
@@ -527,12 +745,12 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, transparent, #856D46, transparent);
+        background: linear-gradient(90deg, transparent, #000000, transparent);
         border-radius: 2px;
       }
 
       .section-title-wrapper h2 span {
-        color: #856D46;
+        color: #000000;
       }
 
       .section-title-wrapper p {
@@ -551,7 +769,7 @@
         top: 50%;
         width: 60px;
         height: 2px;
-        background: linear-gradient(90deg, #856D46, transparent);
+        background: linear-gradient(90deg, #000000, transparent);
       }
 
       .section-title-wrapper::before {
@@ -597,7 +815,9 @@
 
       .faq .section-title h2 {
         font-size: 2.5rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         margin-bottom: 1rem;
       }
@@ -607,19 +827,21 @@
         font-size: 1.1rem;
       }
 
+      .faq .faq-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
       .faq .faq-container .faq-item {
         background-color: #ffffff;
         position: relative;
         padding: 20px;
-        margin-bottom: 15px;
-        border: 1px solid rgba(68, 68, 68, 0.15);
+        margin-bottom: 0;
+        border: none;
         border-radius: 5px;
         overflow: hidden;
         transition: border-color 0.3s ease;
-      }
-
-      .faq .faq-container .faq-item:last-child {
-        margin-bottom: 0;
       }
 
       .faq .faq-container .faq-item h3 {
@@ -635,7 +857,7 @@
       }
 
       .faq .faq-container .faq-item h3:hover {
-        color: #856D46;
+        color: #000000;
       }
 
       .faq .faq-container .faq-item .faq-content {
@@ -665,15 +887,15 @@
       }
 
       .faq .faq-container .faq-item .faq-toggle:hover {
-        color: #856D46;
+        color: #000000;
       }
 
       .faq .faq-container .faq-active {
-        border-color: #856D46;
+        border-color: #000000;
       }
 
       .faq .faq-container .faq-active h3 {
-        color: #856D46;
+        color: #000000;
       }
 
       .faq .faq-container .faq-active .faq-content {
@@ -685,13 +907,26 @@
 
       .faq .faq-container .faq-active .faq-toggle {
         transform: rotate(90deg);
-        color: #856D46;
+        color: #000000;
+      }
+
+      /* FAQ Responsive Styles */
+      @media (max-width: 992px) {
+        .faq .faq-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .faq .faq-container {
+          grid-template-columns: 1fr;
+        }
       }
 
       /* Service Section Styles */
       .service-section {
         padding: 60px 0;
-        background-color: #f9f9f9;
+        background-color: #FFFFFF;
       }
 
       .service-title {
@@ -700,22 +935,24 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(135deg, rgba(255, 161, 92, 0.95) 0%, rgba(255, 140, 60, 0.95) 100%);
+        background: #F3F0ED;
         border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(255, 161, 92, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       .service-title h1 {
         font-size: 2.5rem;
-        font-weight: 700;
-        color: #fff;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
+        color: #151515;
         margin-bottom: 1.5rem;
         line-height: 1.2;
       }
 
       .service-title p {
         font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.95);
+        color: rgba(68, 68, 68, 0.8);
         margin-bottom: 0;
         line-height: 1.8;
       }
@@ -735,7 +972,7 @@
       .service-item:hover {
         transform: translateY(-15px);
         box-shadow: 0 15px 40px rgba(133, 109, 70, 0.25);
-        border-color: #856D46;
+        border-color: #000000;
       }
 
       .service-item .btn-square {
@@ -752,12 +989,12 @@
       }
 
       .service-item:hover .btn-square {
-        background-color: #856D46;
+        background-color: #000000;
         transform: scale(1.1);
       }
 
       .service-item .btn-square i {
-        color: #856D46;
+        color: #000000;
         transition: color 0.3s ease;
       }
 
@@ -767,14 +1004,16 @@
 
       .service-item h3 {
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         margin-bottom: 1rem;
         transition: color 0.3s ease;
       }
 
       .service-item:hover h3 {
-        color: #856D46;
+        color: #000000;
       }
 
       .service-item p {
@@ -790,7 +1029,7 @@
         font-size: 14px;
         line-height: 14px;
         text-transform: uppercase;
-        color: #856D46;
+        color: #000000;
         text-decoration: none;
         font-weight: 600;
         transition: 0.3s;
@@ -798,7 +1037,7 @@
       }
 
       .service-item a:hover {
-        color: #856D46;
+        color: #000000;
         padding-left: 5px;
       }
 
@@ -809,7 +1048,7 @@
         height: 2px;
         left: 0;
         bottom: -3px;
-        background-color: #856D46;
+        background-color: #000000;
         transition: width 0.3s ease;
       }
 
@@ -845,7 +1084,7 @@
       /* Interactive Map Section Styles */
       .map-section {
         padding: 80px 0;
-        background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+        background: linear-gradient(135deg, #FFFFFF 0%, #ffffff 100%);
         position: relative;
         overflow: hidden;
       }
@@ -857,7 +1096,9 @@
 
       .map-section-title h2 {
         font-size: 3rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
@@ -865,7 +1106,7 @@
       }
 
       .map-section-title h2 span {
-        color: #856D46;
+        color: #000000;
         font-weight: 900;
       }
 
@@ -883,6 +1124,7 @@
         margin: 0 auto;
         padding: 20px;
         box-sizing: border-box;
+        pointer-events: none;
       }
 
       .distribution-map > img {
@@ -891,6 +1133,7 @@
         margin: 0;
         padding: 0;
         filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+        pointer-events: none;
       }
 
       /* Map Hotspot Points */
@@ -901,7 +1144,7 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        border: 3px solid #856D46;
+        border: 3px solid #000000;
         background-color: rgba(133, 109, 70, 0.3);
         cursor: pointer;
         box-shadow: 0 0 0 rgba(133, 109, 70, 0.7);
@@ -909,6 +1152,7 @@
         transition: all 0.25s ease-in-out;
         overflow: hidden;
         padding: 0;
+        pointer-events: auto;
       }
 
       @keyframes pulse {
@@ -933,7 +1177,7 @@
         z-index: 10;
         animation: none;
         background-color: #fff;
-        border: 2px solid #856D46;
+        border: 2px solid #000000;
         box-shadow: 0 10px 40px rgba(133, 109, 70, 0.3);
         padding: 20px;
       }
@@ -981,7 +1225,7 @@
       .distribution-map .map-point .content .region-label {
         display: inline-block;
         background-color: rgba(133, 109, 70, 0.1);
-        color: #856D46;
+        color: #000000;
         padding: 4px 10px;
         border-radius: 20px;
         font-size: 0.75rem;
@@ -1085,7 +1329,9 @@
 
       .business-categories .category-title {
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
@@ -1094,13 +1340,13 @@
       }
 
       .business-categories .category-item:hover .category-title {
-        color: #856D46;
+        color: #000000;
         transform: scale(1.05);
       }
 
       .business-categories .category-subtitle {
         font-size: 0.95rem;
-        color: #856D46;
+        color: #000000;
         font-weight: 600;
         font-style: italic;
         transition: transform 0.3s ease;
@@ -1113,7 +1359,7 @@
       .business-categories .divider {
         width: 3px;
         height: 80px;
-        background: linear-gradient(180deg, transparent, #856D46 20%, #856D46 80%, transparent);
+        background: linear-gradient(180deg, transparent, #000000 20%, #000000 80%, transparent);
         position: relative;
         flex-shrink: 0;
         opacity: 0;
@@ -1137,7 +1383,7 @@
         transform: translate(-50%, -50%);
         width: 14px;
         height: 14px;
-        background: #856D46;
+        background: #000000;
         border-radius: 50%;
         box-shadow: 0 0 0 4px rgba(133, 109, 70, 0.2);
         animation: pulse 2s ease-in-out infinite;
@@ -1154,7 +1400,9 @@
 
       .business-categories .common-text {
         font-size: 1.15rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         text-transform: uppercase;
         letter-spacing: 1.5px;
@@ -1172,7 +1420,7 @@
         top: 50%;
         width: 50px;
         height: 2px;
-        background: linear-gradient(90deg, transparent, #856D46);
+        background: linear-gradient(90deg, transparent, #000000);
         animation: expandWidth 0.8s ease forwards 1s;
         width: 0;
       }
@@ -1187,11 +1435,11 @@
       }
 
       .business-categories .common-text::before {
-        left: 0;
+        left: -60px;
       }
 
       .business-categories .common-text::after {
-        right: 0;
+        right: -60px;
         transform: rotate(180deg);
       }
 
@@ -1237,7 +1485,9 @@
 
       .blog-section-title h2 {
         font-size: 3rem;
-        font-weight: 700;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
         color: #151515;
         margin-bottom: 1rem;
         position: relative;
@@ -1247,7 +1497,7 @@
       }
 
       .blog-section-title h2 span {
-        color: #856D46;
+        color: #000000;
         font-weight: 900;
       }
 
@@ -1259,7 +1509,7 @@
         transform: translateX(-50%);
         width: 100px;
         height: 4px;
-        background: linear-gradient(90deg, transparent, #856D46, transparent);
+        background: linear-gradient(90deg, transparent, #000000, transparent);
         border-radius: 2px;
       }
 
@@ -1281,7 +1531,7 @@
         top: 50%;
         width: 80px;
         height: 2px;
-        background: linear-gradient(90deg, #856D46, transparent);
+        background: linear-gradient(90deg, #000000, transparent);
         opacity: 0.5;
       }
 
@@ -1321,17 +1571,31 @@
       .card-span {
         overflow: hidden;
         position: relative;
+        background-color: #e7e7e740;
+        border-radius: 12px;
+        min-height: 450px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
       }
 
-      .card-span .card-img {
+      .card-span:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+      }
+
+      .card-span .card-img,
+      .card-span .img-card {
         transition: transform 0.6s ease;
         transform-origin: center center;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 12px;
       }
 
-      .card-span:hover .card-img {
+      .card-span:hover .card-img,
+      .card-span:hover .img-card {
         transform: scale(1.1);
       }
 
@@ -1360,12 +1624,13 @@
   <body>
 
     <!-- PRELOADER -->
-    <img id="preloader" src="assets/img/cosmic-icons/preloader.gif" alt="Loading..." />
+    <div id="preloader">
+      <img src="assets/img/cosmic-icons/preloader.gif" alt="Loading..." />
+    </div>
     <!-- //PRELOADER -->
 
-    <div class="preloader_hide">
-      <!-- Main Content -->
-      <main class="main" id="top">
+    <!-- Main Content -->
+    <main class="main" id="top">
         
         <!-- NAVBAR -->
         <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light fixed-top d-block" data-navbar-on-scroll="data-navbar-on-scroll" style="transition: all 0.7s ease; padding-top: 16rem; padding-bottom: 3rem;">
@@ -1405,7 +1670,7 @@
           <div class="hamburger-menu-panel">
             <div class="hamburger-menu-header">
               <h3 class="mb-0">Cosmic Skyrocket</h3>
-              <button id="closeMenuBtn" class="btn btn-link text-dark p-0" style="font-size: 2rem; border: none; background: none;">
+              <button id="closeMenuBtn" class="btn btn-link p-0" style="font-size: 2rem; border: none; background: none; color: #ffffff;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1445,26 +1710,19 @@
                   </a>
                   <ul class="submenu">
                     <li class="submenu-item">
-                      <a href="#!" class="submenu-link">Italian</a>
+                      <a href="tiles-category.html#italian-marble" class="submenu-link">Italian Marble</a>
                     </li>
                     <li class="submenu-item">
-                      <a href="#!" class="submenu-link">Material</a>
+                      <a href="tiles-category.html#other-stone" class="submenu-link">Other Stone</a>
                     </li>
-                    <li class="submenu-item submenu-item-has-children">
-                      <a href="#!" class="submenu-link submenu-dropdown-toggle">
-                        Other Stone
-                        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </a>
-                      <ul class="sub-submenu">
-                        <li class="sub-submenu-item">
-                          <a href="#!" class="sub-submenu-link">Morrocan</a>
-                        </li>
-                        <li class="sub-submenu-item">
-                          <a href="#!" class="sub-submenu-link">Wooden</a>
-                        </li>
-                      </ul>
+                    <li class="submenu-item">
+                      <a href="tiles-category.html#moroccan" class="submenu-link">Moroccan</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="tiles-category.html#material" class="submenu-link">Material</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="tiles-category.html#wooden" class="submenu-link">Wooden</a>
                     </li>
                   </ul>
                 </li>
@@ -1472,6 +1730,18 @@
                   <a href="#!" class="menu-link">Packaging</a>
                 </li>
               </ul>
+              <!-- Social Media Icons -->
+              <div class="menu-social-icons">
+                <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/your-company" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="mailto:your-email@example.com" aria-label="Email">
+                  <i class="bi bi-envelope"></i>
+                </a>
+              </div>
             </nav>
           </div>
         </div>
@@ -1479,13 +1749,6 @@
         <!-- Search Overlay -->
         <div id="searchOverlay" class="search-overlay">
           <div class="search-container">
-            <button id="closeSearchBtn" class="search-close-btn" aria-label="Close Search">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-            
             <div class="search-input-wrapper">
               <form id="searchForm" action="#" method="get">
                 <input 
@@ -1518,9 +1781,9 @@
         </div>
         
         <!-- HERO BANNER WITH VIDEO BACKGROUND -->
-        <section class="py-11 bg-light-gradient border-bottom border-white border-5" style="position: relative; overflow: hidden; min-height: 90vh; padding-top: 8rem !important; padding-bottom: 8rem !important;">
+        <section class="py-11 bg-light-gradient border-bottom border-white border-5" style="position: relative; overflow: hidden; height: 110vh; width: 100vw; margin-left: calc(-50vw + 50%); padding-top: 8rem !important; padding-bottom: 8rem !important;">
           <!-- Video Background -->
-          <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover;">
+          <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; object-fit: cover;">
             <source src="assets/img/cosmic-video/background-video-mines.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -1542,8 +1805,34 @@
         <section class="py-0" id="header" style="margin-top: -5rem !important; transition: margin-top 0.7s ease;">
           <div class="container">
             <div class="row g-0 justify-content-center" style="gap: 20px;">
-              <div class="col-md-5 col-lg-4 d-flex justify-content-center">
-                <div class="card-3d">
+              
+              <div class="col-md-5 col-lg-4 d-flex justify-content-center card-3d-container">
+                <a href="tiles-category.html" class="card-3d-link">
+                  <div class="card-3d" id="tiles-card">
+                    <div class="wrapper">
+                      <img src="assets/img/cosmic-fe/Tile.jpg" class="cover-image" alt="Tile" />
+                    </div>
+                    <div class="title">
+                      <h2 class="title-text">Tiles</h2>
+                    </div>
+                    <img src="assets/img/cosmic-fe/tile3D.PNG" class="character" alt="Tile 3D" />
+                  </div>
+                </a>
+                
+                <!-- Circular Navigation for Tiles -->
+                <div class="cn-wrapper-tiles" id="cn-wrapper-tiles">
+                  <ul>
+                    <li><a href="tiles-category.html#italian-marble"><span>Italian Marble</span></a></li>
+                    <li><a href="tiles-category.html#other-stone"><span>Other Stone</span></a></li>
+                    <li><a href="tiles-category.html#moroccan"><span>Moroccan</span></a></li>
+                    <li><a href="tiles-category.html#material"><span>Material</span></a></li>
+                    <li><a href="tiles-category.html#wooden"><span>Wooden</span></a></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="col-md-5 col-lg-4 d-flex justify-content-center card-3d-container">
+                <div class="card-3d" id="stones-card">
                   <div class="wrapper">
                     <img src="assets/img/cosmic-fe/Stone.jpg" class="cover-image" alt="Stone" />
                   </div>
@@ -1552,16 +1841,13 @@
                   </div>
                   <img src="assets/img/cosmic-fe/stone3D.PNG" class="character" alt="Stone 3D" />
                 </div>
-              </div>
-              <div class="col-md-5 col-lg-4 d-flex justify-content-center">
-                <div class="card-3d">
-                  <div class="wrapper">
-                    <img src="assets/img/cosmic-fe/Tile.jpg" class="cover-image" alt="Tile" />
-                  </div>
-                  <div class="title">
-                    <h2 class="title-text">Tiles</h2>
-                  </div>
-                  <img src="assets/img/cosmic-fe/tile3D.PNG" class="character" alt="Tile 3D" />
+                
+                <!-- Circular Navigation for Stones -->
+                <div class="cn-wrapper-stones" id="cn-wrapper-stones">
+                  <ul>
+                    <li><a href="#!"><span>Sandstone</span></a></li>
+                    <li><a href="#!"><span>Limestone</span></a></li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -1617,15 +1903,12 @@
                 </p>
                 <ul>
                   <li data-aos="fade-right" data-aos-delay="60">
-                    <i class="bi bi-check2-all"></i> 
                     <span>Premium quality natural stones including sandstone, limestone, and exclusive varieties hand-picked from the best quarries.</span>
                   </li>
                   <li data-aos="fade-right" data-aos-delay="90">
-                    <i class="bi bi-check2-all"></i> 
                     <span>Extensive tile collection featuring Italian, Moroccan, and wooden designs to suit every aesthetic.</span>
                   </li>
                   <li data-aos="fade-right" data-aos-delay="120">
-                    <i class="bi bi-check2-all"></i> 
                     <span>Expert guidance and professional support throughout your project, from selection to installation, ensuring perfect results every time.</span>
                   </li>
                 </ul>
@@ -1741,154 +2024,83 @@
 
         <!-- Services end -->
 
-        <!-- MAP SECTION -->
-        <section class="map-section" id="global-presence">
-          <div class="container">
-            
-            <!-- Map Section Title -->
-            <div class="map-section-title" data-aos="fade-up">
-              <h2>COSMIC SKYROCKET AROUND THE <span>WORLD</span></h2>
-              <p>Delivering premium natural stones and tiles across 6 major regions globally</p>
-            </div>
+        <!-- WORLD MAP SECTION -->
 
-            <!-- Interactive Map -->
-            <div class="distribution-map" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/gallery/map.png" alt="World Map - Cosmic Skyrocket Global Presence" />
-              
-              <!-- Schengen Region (Europe) -->
-              <button class="map-point" style="top:25%;left:48%">
-                <div class="content">
-                  <div class="centered-y">
-                    <h3>Schengen Region</h3>
-                    <p>Serving European markets with premium tiles and natural stones, ensuring seamless cross-border trade.</p>
-                    <span class="region-label">Europe</span>
-                  </div>
-                </div>
-              </button>
-
-              <!-- Gulf Region (Middle East - Saudi, UAE, etc.) -->
-              <button class="map-point" style="top:35%;left:58%">
-                <div class="content">
-                  <div class="centered-y">
-                    <h3>Gulf Region</h3>
-                    <p>Supplying high-quality stones and tiles to Saudi Arabia, UAE, Kuwait, and surrounding Gulf nations.</p>
-                    <span class="region-label">Gulf</span>
-                  </div>
-                </div>
-              </button>
-
-              <!-- Middle East (Broader Middle East) -->
-              <button class="map-point" style="top:32%;left:55%">
-                <div class="content">
-                  <div class="centered-y">
-                    <h3>Middle East</h3>
-                    <p>Extensive reach across Jordan, Lebanon, Israel, and other Middle Eastern countries with premium materials.</p>
-                    <span class="region-label">Middle East</span>
-                  </div>
-                </div>
-              </button>
-
-              <!-- Mediterranean Region -->
-              <button class="map-point" style="top:28%;left:50%">
-                <div class="content">
-                  <div class="centered-y">
-                    <h3>Mediterranean Region</h3>
-                    <p>Delivering to Mediterranean coastal nations including Greece, Turkey, Spain, and North African countries.</p>
-                    <span class="region-label">Mediterranean</span>
-                  </div>
-                </div>
-              </button>
-
-              <!-- Asia-Pacific Region -->
-              <button class="map-point" style="top:38%;left:75%">
-                <div class="content">
-                  <div class="centered-y">
-                    <h3>Asia-Pacific</h3>
-                    <p>Strong presence in Southeast Asia, Australia, and Pacific islands with diverse stone and tile collections.</p>
-                    <span class="region-label">Asia-Pacific</span>
-                  </div>
-                </div>
-              </button>
-
-              <!-- Latin America -->
-              <button class="map-point" style="top:55%;left:22%">
-                <div class="content">
-                  <div class="centered-y">
-                    <h3>Latin America</h3>
-                    <p>Serving Central and South American markets with premium natural stones and customized tile solutions.</p>
-                    <span class="region-label">Latin America</span>
-                  </div>
-                </div>
-              </button>
-
-            </div>
-
-          </div>
-        </section>
-        <!-- END MAP SECTION -->
+        
 
         <!-- STATS SECTION -->
         <section id="stats" class="stats stats-section">
           <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row gy-4 align-items-center justify-content-between">
+            <div class="text-center mb-5">
+              <h3 class="fw-bold fs-2 mb-3" style="font-family: 'Lora', serif; font-weight: 500; font-style: italic;">Excellence in Natural Stone & Tiles</h3>
+              <p class="mb-4">
+                With years of expertise in sourcing and delivering premium natural stones and tiles, 
+                we've built a reputation for quality, reliability, and exceptional customer service. 
+                Our commitment to excellence drives everything we do.
+              </p>
+            </div>
 
-              <div class="col-lg-5">
-                <img src="assets/img/gallery/factory-workers-work-wear-yellow-helmets-walking-through-industrial-production-hall-sharing-ideas-about-organization.jpg" alt="Cosmic Skyrocket Excellence" class="img-fluid rounded">
-              </div>
+            <div class="row gy-4 justify-content-center">
 
-              <div class="col-lg-6">
-                <h3 class="fw-bold fs-2 mb-3">Excellence in Natural Stone & Tiles</h3>
-                <p class="mb-4">
-                  With years of expertise in sourcing and delivering premium natural stones and tiles, 
-                  we've built a reputation for quality, reliability, and exceptional customer service. 
-                  Our commitment to excellence drives everything we do.
-                </p>
-
-                <div class="row gy-4">
-
-                  <div class="col-lg-6">
-                    <div class="stats-item d-flex">
-                      <i class="bi bi-people flex-shrink-0"></i>
-                      <div>
-                        <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Skilled Manpower</strong> <span>delivering expert craftsmanship and operational excellence</span></p>
-                      </div>
-                    </div>
-                  </div><!-- End Stats Item -->
-
-                  <div class="col-lg-6">
-                    <div class="stats-item d-flex">
-                      <i class="bi bi-grid-3x3 flex-shrink-0"></i>
-                      <div>
-                        <span data-purecounter-start="0" data-purecounter-end="37000" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>sq. m/day Tile Production</strong> <span>ensuring large-scale and timely supply</span></p>
-                      </div>
-                    </div>
-                  </div><!-- End Stats Item -->
-
-                  <div class="col-lg-6">
-                    <div class="stats-item d-flex">
-                      <i class="bi bi-gem flex-shrink-0"></i>
-                      <div>
-                        <span data-purecounter-start="0" data-purecounter-end="230" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>cu. m/day Stone Extraction</strong> <span>for consistent premium-quality supply</span></p>
-                      </div>
-                    </div>
-                  </div><!-- End Stats Item -->
-
-                  <div class="col-lg-6">
-                    <div class="stats-item d-flex">
-                      <i class="bi bi-globe flex-shrink-0"></i>
-                      <div>
-                        <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
-                        <p><strong>Countries Served</strong> <span>across Schengen, Gulf, Asia-Pacific, Latin America, Middle East & Mediterranean</span></p>
-                      </div>
-                    </div>
-                  </div><!-- End Stats Item -->
-
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-people flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>Skilled Manpower</strong> <span>delivering expert craftsmanship</span></p>
+                  </div>
                 </div>
+              </div><!-- End Stats Item -->
 
-              </div>
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-grid-3x3 flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="37000" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>sq. m/day Tile Production</strong> <span>ensuring timely supply</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-gem flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="230" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>cu. m/day Stone Extraction</strong> <span>premium-quality supply</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-globe flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>Countries Served</strong> <span>global reach</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-award flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>Placeholder 1</strong> <span>description here</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-star flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="1000" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>Placeholder 2</strong> <span>description here</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
 
             </div>
           </div>
@@ -1938,9 +2150,9 @@
               <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
                 <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog.jpeg" alt="..." />
                   <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-                    <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
+                    <!-- <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
                       <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
-                    </div>
+                    </div> -->
                     
                     <h3 class="fw-bold text-1000 mt-5 text-truncate">How much impact do surfaces have on a space?</h3>
                     <p class="text-900 mt-3">More than we realize. The tiles and natural stones we choose speak volumes about our taste, lifestyle, and the ambience we want to create. From subtle textures to bold patterns, every finish tells a story — one that shapes how people experience your home, office...</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
@@ -1953,9 +2165,9 @@
               <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
                 <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog-2.jpg" alt="..." />
                   <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-                    <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
+                    <!-- <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
                       <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
-                    </div>
+                    </div> -->
                     
                     <h3 class="fw-bold text-1000 mt-5 text-truncate">Can a tile transform the way a space feels?</h3>
                     <p class="text-900 mt-3">Absolutely. The surfaces around us silently express who we are — our style, personality, and vision. From premium natural stones to intricate tile designs, these materials reflect craftsmanship and character.
@@ -1969,9 +2181,9 @@ Every day, homeowners, architects, and designers rely on textures and surface...
               <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
                 <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog-3.webp" alt="..." />
                   <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-                    <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
+                    <!-- <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
                       <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
-                    </div>
+                    </div> -->
                     
                     <h3 class="fw-bold text-1000 mt-5 text-truncate">How much do tiles influence the design of a &amp; space?</h3>
                     <p class="text-900 mt-3">More than you think. Surfaces define mood, aesthetics, and even functionality. The colors, patterns, and finishes we choose become the first thing people notice — and often the detail they remember.
@@ -1983,6 +2195,19 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Global Distribution Map Section -->
+        <section id="global-presence" class="map-section">
+          <div class="container-fluid px-0">
+            <div class="map-section-title">
+              <h2>Our <span>Global</span> Presence</h2>
+              <p>Delivering premium tiles and natural stones across continents</p>
+            </div>
+            
+            <!-- amCharts Map Container -->
+            <div id="chartdiv" style="width: 100%; height: 600px;"></div>
           </div>
         </section>
 
@@ -2133,7 +2358,7 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
         
 
         <!-- FOOTER -->
-        <section class="py-0 pt-7" style="background-color: #f9f9f9;">
+        <section class="py-0 pt-7" style="background: linear-gradient(135deg, rgba(240, 240, 245, 0.9), rgba(230, 230, 235, 0.95)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);">
           <div class="container">
             <div class="row">
               
@@ -2197,7 +2422,7 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
               </div>
 
               <!-- Contact Information -->
-              <div class="col-12 col-md-6 col-lg-3 mb-3">
+              <div class="col-6 col-lg-2 mb-3">
                 <h5 class="lh-lg fw-bold text-1000">Contact Us</h5>
                 <ul class="list-unstyled mb-md-4 mb-lg-0">
                   <li class="lh-lg mb-2">
@@ -2226,11 +2451,12 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
               <div class="col-md-6 order-1 order-md-0">
                 <p class="my-2 text-1000 text-center text-md-start"> 
                   &copy; 2024 Cosmic Skyrocket. All Rights Reserved. Made with&nbsp;
-                  <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#856D46" viewBox="0 0 16 16">
+                  <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 16 16">
                     <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
                   </svg>&nbsp;in India
                 </p>
               </div>
+              <!-- Social Media Icons - Commented Out
               <div class="col-md-6">
                 <div class="text-center text-md-end">
                   <a href="#!" class="text-decoration-none me-3" title="Facebook"><span data-feather="facebook"></span></a>
@@ -2240,13 +2466,17 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
                   <a href="#!" class="text-decoration-none" title="YouTube"><span data-feather="youtube"></span></a>
                 </div>
               </div>
+              -->
             </div>
           </div>
         </section>
 
       </main>
+
+    <!-- Scroll to Top Button -->
+    <div id="scrollToTop" aria-label="Scroll to top">
+      <i class="bi bi-rocket-takeoff-fill"></i>
     </div>
-    <!-- //preloader_hide -->
 
     <!-- JavaScripts -->
     <script src="vendors/@popperjs/popper.min.js"></script>
@@ -2264,6 +2494,1161 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- amCharts Map Script -->
+    <script src="https://cdn.amcharts.com/lib/editor/map/5/viewer.js"></script>
+    <script>
+      /**
+       * amCharts Map Configuration
+       */
+      am5viewer.create("chartdiv", {
+        "settings": {
+          "editor": {
+            "themeTags": [
+              "dark"
+            ],
+            "userData": {
+              "projection": "geoMercator",
+              "geodata": "worldLow"
+            },
+            "polygonStroke": {
+              "type": "Color",
+              "value": "#7e7e7e"
+            },
+            "lineStrokeDashLength": 8,
+            "linePointScale": 0.03,
+            "linePointTypeKey": "custom",
+            "pointScale": 5,
+            "pointTypeKey": "custom",
+            "pointPinned": false,
+            "pointSvgPath": "M520-200 80-480l440-280-137 240h497v80H383l137 240Z",
+            "linePointSvgPath": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z"
+          },
+          "editor.map": {
+            "minZoomLevel": 1,
+            "maxZoomLevel": 1,
+            "projection": "geoMercator",
+            "panX": "rotateX",
+            "wheelable": false,
+            "zoomControl": {
+              "type": "ZoomControl",
+              "settings": {
+                "visible": false,
+                "position": "absolute",
+                "layout": {
+                  "type": "VerticalLayout"
+                },
+                "themeTags": [
+                  "zoomtools"
+                ],
+                "layer": 30
+              }
+            },
+            "background": {
+              "type": "Rectangle",
+              "settings": {
+                "fill": {
+                  "type": "Color",
+                  "value": "#1a1a1a"
+                },
+                "fillOpacity": 1,
+                "width": 1440,
+                "height": 812,
+                "x": 0,
+                "y": 0,
+                "fillPattern": {
+                  "type": "GrainPattern",
+                  "settings": {
+                    "maxOpacity": 0.08,
+                    "density": 0.2,
+                    "colors": [
+                      {
+                        "type": "Color",
+                        "value": "#aaaaaa"
+                      }
+                    ]
+                  }
+                },
+                "isMeasured": false
+              }
+            },
+            "themeTags": [
+              "map"
+            ],
+            "translateX": 720,
+            "translateY": 556.3955242786215,
+            "rotationX": -1.0235832804926572
+          },
+          "editor.pointTemplate": {
+            "toggleKey": "active",
+            "centerX": {
+              "type": "Percent",
+              "value": 50
+            },
+            "centerY": {
+              "type": "Percent",
+              "value": 50
+            },
+            "tooltipText": "{name}"
+          },
+          "editor.bubbleTemplate": {
+            "toggleKey": "active",
+            "tooltipText": "{name}: {value}"
+          },
+          "editor.pixelTemplate": {
+            "tooltipText": "{name}",
+            "toggleKey": "active"
+          },
+          "editor.linePointTemplate": {
+            "toggleKey": "active",
+            "centerX": {
+              "type": "Percent",
+              "value": 50
+            },
+            "centerY": {
+              "type": "Percent",
+              "value": 50
+            },
+            "tooltipText": "{name}"
+          },
+          "editor.labelTemplate": {
+            "toggleKey": "active",
+            "tooltipText": "{name}"
+          },
+          "editor.polygonSeries": {
+            "valueField": "value",
+            "calculateAggregates": true,
+            "id": "polygonseries",
+            "exclude": [
+              "AQ"
+            ],
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.lineSeries": {
+            "layer": 30,
+            "id": "lineseries",
+            "lineTypeField": "lineType",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.pointSeries": {
+            "fixedField": "fixed",
+            "id": "pointseries",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.labelSeries": {
+            "fixedField": "fixed",
+            "id": "labelseries",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.bubbleSeries": {
+            "calculateAggregates": true,
+            "valueField": "value",
+            "polygonIdField": "id",
+            "id": "bubbleseries",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.gridSeries": {
+            "themeTags": [
+              "grid"
+            ],
+            "affectsBounds": false,
+            "lineTypeField": "lineType",
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id",
+            "clipExtent": true
+          },
+          "editor.backgroundSeries": {
+            "visible": false,
+            "themeTags": [
+              "polygon",
+              "background"
+            ],
+            "affectsBounds": false,
+            "geometryField": "geometry",
+            "geometryTypeField": "geometryType",
+            "idField": "id"
+          },
+          "editor.backgroundSeries.mapPolygons.template": {
+            "forceInactive": true
+          },
+          "editor.gridSeries.mapLines.template": {
+            "forceInactive": true
+          }
+        },
+        "data": {
+          "editor.polygonSeries": [
+            {
+              "id": "ZA",
+              "name": "South Africa",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "US",
+              "name": "United States",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  },
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#7e7e7e"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "TH",
+              "name": "Thailand",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "SA",
+              "name": "Saudi Arabia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "RU",
+              "name": "Russia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "RO",
+              "name": "Romania",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "PT",
+              "name": "Portugal",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "PL",
+              "name": "Poland",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "NG",
+              "name": "Nigeria",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "NA",
+              "name": "Namibia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "MX",
+              "name": "Mexico",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "LY",
+              "name": "Libya",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "IT",
+              "name": "Italy",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "IN",
+              "name": "India",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#0c406b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "ID",
+              "name": "Indonesia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "HU",
+              "name": "Hungary",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "GR",
+              "name": "Greece",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "FR",
+              "name": "France",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "ET",
+              "name": "Ethiopia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "ES",
+              "name": "Spain",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "GB",
+              "name": "United Kingdom",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "EG",
+              "name": "Egypt",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "DZ",
+              "name": "Algeria",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "DE",
+              "name": "Germany",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CZ",
+              "name": "Czechia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CO",
+              "name": "Colombia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CH",
+              "name": "Switzerland",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "CA",
+              "name": "Canada",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  },
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#7e7e7e"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "BR",
+              "name": "Brazil",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "AU",
+              "name": "Australia",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            },
+            {
+              "id": "AO",
+              "name": "Angola",
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "fill": {
+                    "type": "Color",
+                    "value": "#5f493b"
+                  }
+                }
+              },
+              "__parse": true
+            }
+          ],
+          "editor.lineSeries": [
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_9"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          -81.89225,
+                          38.88164
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 292
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.60872,
+                          23.26153
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_1",
+              "name": "Line 1",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_10"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          -44.51805,
+                          -6.89666
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 328
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.50703,
+                          23.19787
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.72,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_2",
+              "name": "Line 2",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_11"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          106.88288,
+                          60.85089
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 130
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.45116,
+                          23.09923
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_3",
+              "name": "Line 3",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_12"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          1.73875,
+                          53.21537
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.3193,
+                          23.08586
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_4",
+              "name": "Line 4",
+              "__parse": true
+            },
+            {
+              "settings": {
+                "type": "Template",
+                "settings": {
+                  "stroke": {
+                    "type": "Color",
+                    "value": "#ffffff"
+                  },
+                  "strokeOpacity": 0.5,
+                  "strokeWidth": 1,
+                  "strokeDasharray": [
+                    8,
+                    8
+                  ]
+                }
+              },
+              "linePointSeries": {
+                "type": "MapPointSeries",
+                "settings": {
+                  "geometryField": "geometry",
+                  "geometryTypeField": "geometryType",
+                  "idField": "id",
+                  "id": "linepointseries_13"
+                },
+                "properties": {
+                  "data": [
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          122.99873,
+                          -22.63022
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_1",
+                      "name": "Point 1",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.03,
+                          "strokeWidth": 0.5,
+                          "rotation": 223
+                        }
+                      },
+                      "pointType": "custom",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    },
+                    {
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          74.45563,
+                          22.86055
+                        ],
+                        "__parse": false
+                      },
+                      "id": "linepoint_2",
+                      "name": "Point 2",
+                      "settings": {
+                        "type": "Template",
+                        "settings": {
+                          "fillOpacity": 1,
+                          "fill": {
+                            "type": "Color",
+                            "value": "#fbad26"
+                          },
+                          "stroke": {
+                            "type": "Color",
+                            "value": "#000000"
+                          },
+                          "strokeOpacity": 0.5,
+                          "scale": 0.7,
+                          "strokeWidth": 0.5
+                        }
+                      },
+                      "pointType": "Target",
+                      "path": "M480-240 96-480l384-240-122 204h506v72H358l122 204Z",
+                      "__parse": true
+                    }
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Line",
+                "__parse": false
+              },
+              "id": "line_5",
+              "name": "Line 5",
+              "__parse": true
+            }
+          ],
+          "editor.pointSeries": [],
+          "editor.labelSeries": [],
+          "editor.bubbleSeries": [],
+          "editor.gridSeries": []
+        }
+      });
+    </script>
 
     <!-- Initialize AOS and PureCounter -->
     <script>
@@ -2339,9 +3724,9 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
         // Search Overlay Functionality
         const searchBtn = document.getElementById('searchBtn');
         const searchOverlay = document.getElementById('searchOverlay');
-        const closeSearchBtn = document.getElementById('closeSearchBtn');
         const searchInput = document.getElementById('searchInput');
         const searchForm = document.getElementById('searchForm');
+        const searchContainer = document.querySelector('.search-container');
         
         // Open search overlay
         searchBtn.addEventListener('click', function() {
@@ -2352,16 +3737,10 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
           }, 400);
         });
         
-        // Close search overlay
-        closeSearchBtn.addEventListener('click', function() {
-          searchOverlay.classList.remove('active');
-          document.body.style.overflow = ''; // Restore scrolling
-          searchInput.value = ''; // Clear input
-        });
-        
-        // Close on overlay click (outside search container)
+        // Close on overlay click (outside search container and popular searches)
         searchOverlay.addEventListener('click', function(e) {
-          if (e.target === searchOverlay) {
+          // Check if click is outside the search container
+          if (!searchContainer.contains(e.target)) {
             searchOverlay.classList.remove('active');
             document.body.style.overflow = '';
             searchInput.value = '';
@@ -2415,34 +3794,37 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
     <script>
       document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
         faqItem.addEventListener('click', () => {
-          faqItem.parentNode.classList.toggle('faq-active');
+          const faqParent = faqItem.parentNode;
+          const wasActive = faqParent.classList.contains('faq-active');
+          
+          // Toggle the active state
+          faqParent.classList.toggle('faq-active');
+          
+          // If opening (not closing), apply typing effect
+          if (!wasActive) {
+            const faqContent = faqParent.querySelector('.faq-content p');
+            if (faqContent && !faqContent.hasAttribute('data-typed')) {
+              const originalText = faqContent.textContent;
+              faqContent.textContent = '';
+              faqContent.setAttribute('data-typed', 'true');
+              
+              let charIndex = 0;
+              const typingSpeed = 1; // milliseconds per character (very fast)
+              
+              function typeChar() {
+                if (charIndex < originalText.length) {
+                  faqContent.textContent += originalText.charAt(charIndex);
+                  charIndex++;
+                  setTimeout(typeChar, typingSpeed);
+                }
+              }
+              
+              typeChar();
+            }
+          }
         });
       });
     </script>
-
-    <!-- Preloader Styles -->
-    <style>
-      /* Preloader Styles */
-      .preloader_hide {
-        opacity: 0;
-      }
-
-      #preloader {
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        width: 32px;
-        height: 32px;
-        margin: -16px 0 0 -16px;
-        display: block;
-        z-index: 9999;
-        background-color: #f8f9fa;
-      }
-
-      body {
-        background-color: #f8f9fa;
-      }
-    </style>
 
     <!-- jQuery (required for preloader) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -2450,24 +3832,136 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
     <!-- Preloader Script -->
     <script>
       /* PRELOADER */
-      jQuery(window).on('load', function () {
-        // Preloader fade out after 800ms
-        setTimeout(() => {
-          jQuery('#preloader').animate({'opacity': '0'}, 300, function() {
-            jQuery('#preloader').hide();
-          });
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          // Fade out and hide preloader
+          var preloader = document.getElementById('preloader');
+          preloader.style.opacity = '0';
+          preloader.style.transition = 'opacity 0.3s ease';
+          setTimeout(function() {
+            preloader.style.display = 'none';
+          }, 300);
         }, 800);
-        
-        // Content fade in after 800ms
-        setTimeout(() => {
-          jQuery('.preloader_hide').animate({'opacity': '1'}, 500);
-        }, 800);
-        
-        // Footer fade in
-        setTimeout(() => {
-          jQuery('footer').animate({'opacity': '1'}, 500);
-        }, 2000);
       });
+    </script>
+
+    <!-- Classie Polyfill for circular navigation -->
+    <script>
+      /*!
+       * classie - class helper functions
+       */
+      (function(window) {
+        'use strict';
+
+        function classReg(className) {
+          return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+        }
+
+        var hasClass, addClass, removeClass;
+
+        if ('classList' in document.documentElement) {
+          hasClass = function(elem, c) {
+            return elem.classList.contains(c);
+          };
+          addClass = function(elem, c) {
+            elem.classList.add(c);
+          };
+          removeClass = function(elem, c) {
+            elem.classList.remove(c);
+          };
+        } else {
+          hasClass = function(elem, c) {
+            return classReg(c).test(elem.className);
+          };
+          addClass = function(elem, c) {
+            if (!hasClass(elem, c)) {
+              elem.className = elem.className + ' ' + c;
+            }
+          };
+          removeClass = function(elem, c) {
+            elem.className = elem.className.replace(classReg(c), ' ');
+          };
+        }
+
+        function toggleClass(elem, c) {
+          var fn = hasClass(elem, c) ? removeClass : addClass;
+          fn(elem, c);
+        }
+
+        var classie = {
+          hasClass: hasClass,
+          addClass: addClass,
+          removeClass: removeClass,
+          toggleClass: toggleClass,
+          has: hasClass,
+          add: addClass,
+          remove: removeClass,
+          toggle: toggleClass
+        };
+
+        if (typeof define === 'function' && define.amd) {
+          define(classie);
+        } else {
+          window.classie = classie;
+        }
+      })(window);
+    </script>
+
+    <!-- Circular Navigation for 3D Cards -->
+    <script>
+      (function(){
+        // Tiles Card (Left)
+        var tilesCard = document.getElementById('tiles-card'),
+            wrapperTiles = document.getElementById('cn-wrapper-tiles');
+
+        if (tilesCard && wrapperTiles) {
+          // Open menu on hover
+          tilesCard.addEventListener('mouseenter', openMenuTiles, false);
+          wrapperTiles.addEventListener('mouseenter', openMenuTiles, false);
+          wrapperTiles.addEventListener('mouseleave', closeMenuTiles, false);
+          tilesCard.addEventListener('mouseleave', function(e) {
+            // Check if mouse is moving to the wrapper
+            var toElement = e.relatedTarget || e.toElement;
+            if (!wrapperTiles.contains(toElement)) {
+              closeMenuTiles();
+            }
+          }, false);
+
+          function openMenuTiles(){
+            classie.add(wrapperTiles, 'opened-nav-tiles');
+          }
+          
+          function closeMenuTiles(){
+            classie.remove(wrapperTiles, 'opened-nav-tiles');
+          }
+        }
+
+        // Stones Card (Right)
+        var stonesCard = document.getElementById('stones-card'),
+            wrapperStones = document.getElementById('cn-wrapper-stones');
+
+        if (stonesCard && wrapperStones) {
+          // Open menu on hover
+          stonesCard.addEventListener('mouseenter', openMenuStones, false);
+          wrapperStones.addEventListener('mouseenter', openMenuStones, false);
+          wrapperStones.addEventListener('mouseleave', closeMenuStones, false);
+          stonesCard.addEventListener('mouseleave', function(e) {
+            // Check if mouse is moving to the wrapper
+            var toElement = e.relatedTarget || e.toElement;
+            if (!wrapperStones.contains(toElement)) {
+              closeMenuStones();
+            }
+          }, false);
+
+          function openMenuStones(){
+            classie.add(wrapperStones, 'opened-nav-stones');
+          }
+          
+          function closeMenuStones(){
+            classie.remove(wrapperStones, 'opened-nav-stones');
+          }
+        }
+      })();
     </script>
 
     <!-- Navbar Scroll Animation -->
@@ -2500,9 +3994,9 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
           navbar.style.paddingTop = '16rem';
           navbar.style.paddingBottom = '3rem';
           brand.style.fontSize = '7rem';
-          // Change text color to white and restore 3D effect
+          // Change text color to white and remove shadow
           brandText.style.color = '#fff';
-          brandText.style.textShadow = '0px 1px 0px rgba(0,0,0,0.4), 0px 2px 0px rgba(0,0,0,0.3), 0px 3px 0px rgba(0,0,0,0.2), 0px 4px 0px rgba(0,0,0,0.1), 0px 5px 0px rgba(0,0,0,0.05), 0px 6px 10px rgba(0,0,0,0.3)';
+          brandText.style.textShadow = 'none';
           // Show tagline
           tagline.style.display = 'block';
           // Return cards section to original position
@@ -2516,6 +4010,31 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
           navbar.classList.remove('backdrop');
           navbar.classList.remove('shadow-transition');
         }
+      });
+
+      // Scroll to Top Button Functionality
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      
+      // Show button when user scrolls down 300px
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+          // Remove launching class when back at top
+          scrollToTopBtn.classList.remove('launching');
+        }
+      });
+
+      // Scroll to top when button is clicked
+      scrollToTopBtn.addEventListener('click', function() {
+        // Add launching class to rotate rocket straight up
+        scrollToTopBtn.classList.add('launching');
+        
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     </script>
 
