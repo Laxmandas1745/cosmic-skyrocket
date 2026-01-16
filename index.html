@@ -45,7 +45,8 @@
     <style>
       /* Preloader Styles */
       body {
-        background-color: #FFFFFF;
+        background-color: #000000;
+        color: #FFFFFF;
       }
       
       #preloader {
@@ -55,7 +56,7 @@
         width: 100%;
         height: 100%;
         z-index: 99999;
-        background-color: #FFFFFF;
+        background-color: #000000;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -104,16 +105,17 @@
 
       .hamburger-menu-panel {
         position: absolute;
-        top: 0;
-        right: -400px;
-        width: 400px;
-        max-width: 90%;
-        height: 100%;
+        top: 1rem;
+        right: -420px;
+        width: 380px;
+        max-width: 85%;
+        height: calc(100% - 2rem);
         background: rgba(255, 255, 255, 0.25);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-left: 1px solid rgba(255, 255, 255, 0.4);
-        box-shadow: -2px 0 30px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 20px;
+        box-shadow: -5px 5px 40px rgba(0, 0, 0, 0.3);
         overflow-y: auto;
         transition: right 0.3s ease;
         padding: 2rem;
@@ -122,7 +124,7 @@
       }
 
       .hamburger-menu-overlay.active .hamburger-menu-panel {
-        right: 0;
+        right: 1rem;
       }
 
       .hamburger-menu-header {
@@ -273,6 +275,11 @@
       .text-1000:hover svg,
       .text-1000:hover .feather {
         stroke: #000000 !important;
+        transform: scale(1.15);
+      }
+
+      /* Contact Button Hover Effect */
+      #contactBtn:hover {
         transform: scale(1.15);
       }
 
@@ -592,44 +599,44 @@
 
       /* Stats Section Styles */
       .stats-section {
-        padding: 60px 0;
-        background-color: #ffffff;
+        padding: 30px 0;
+        background-color: #000000;
       }
 
       .stats .stats-item {
-        padding: 10px;
+        padding: 8px;
       }
 
       .stats .stats-item i {
-        font-size: 44px;
-        color: #000000;
+        font-size: 36px;
+        color: #FFFFFF;
         line-height: 0;
-        margin-right: 15px;
-        margin-bottom: 20px;
+        margin-right: 12px;
+        margin-bottom: 15px;
       }
 
       .stats .stats-item .purecounter {
-        color: #151515;
-        font-size: 40px;
+        color: #FFFFFF;
+        font-size: 32px;
         display: block;
         font-weight: 700;
-        line-height: 40px;
+        line-height: 32px;
       }
 
       .stats .stats-item .purecounter::after {
         content: '+';
-        color: #000000;
+        color: #FFFFFF;
       }
 
       .stats .stats-item p {
-        color: rgba(68, 68, 68, 0.6);
-        padding: 15px 0 0 0;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 12px 0 0 0;
         margin: 0;
-        font-size: 14px;
+        font-size: 13px;
       }
 
       .stats .stats-item p strong {
-        color: #151515;
+        color: #FFFFFF;
         font-weight: 600;
       }
 
@@ -805,7 +812,7 @@
       /* FAQ Section Styles */
       .faq {
         padding: 60px 0;
-        background-color: #ffffff;
+        background-color: #000000;
       }
 
       .faq .section-title {
@@ -818,12 +825,12 @@
         font-weight: 500;
         font-style: italic;
         font-family: 'Lora', serif;
-        color: #151515;
+        color: #FFFFFF;
         margin-bottom: 1rem;
       }
 
       .faq .section-title p {
-        color: rgba(68, 68, 68, 0.7);
+        color: rgba(255, 255, 255, 0.8);
         font-size: 1.1rem;
       }
 
@@ -834,11 +841,11 @@
       }
 
       .faq .faq-container .faq-item {
-        background-color: #ffffff;
+        background-color: #1a1a1a;
         position: relative;
         padding: 20px;
         margin-bottom: 0;
-        border: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 5px;
         overflow: hidden;
         transition: border-color 0.3s ease;
@@ -853,11 +860,11 @@
         cursor: pointer;
         display: flex;
         align-items: center;
-        color: #151515;
+        color: #FFFFFF;
       }
 
       .faq .faq-container .faq-item h3:hover {
-        color: #000000;
+        color: #CCCCCC;
       }
 
       .faq .faq-container .faq-item .faq-content {
@@ -871,7 +878,7 @@
       .faq .faq-container .faq-item .faq-content p {
         margin-bottom: 0;
         overflow: hidden;
-        color: #444444;
+        color: rgba(255, 255, 255, 0.8);
         line-height: 1.8;
       }
 
@@ -883,19 +890,19 @@
         line-height: 0;
         transition: 0.3s;
         cursor: pointer;
-        color: #151515;
+        color: #FFFFFF;
       }
 
       .faq .faq-container .faq-item .faq-toggle:hover {
-        color: #000000;
+        color: #CCCCCC;
       }
 
       .faq .faq-container .faq-active {
-        border-color: #000000;
+        border-color: #FFFFFF;
       }
 
       .faq .faq-container .faq-active h3 {
-        color: #000000;
+        color: #FFFFFF;
       }
 
       .faq .faq-container .faq-active .faq-content {
@@ -907,7 +914,7 @@
 
       .faq .faq-container .faq-active .faq-toggle {
         transform: rotate(90deg);
-        color: #000000;
+        color: #FFFFFF;
       }
 
       /* FAQ Responsive Styles */
@@ -925,44 +932,44 @@
 
       /* Service Section Styles */
       .service-section {
-        padding: 60px 0;
-        background-color: #FFFFFF;
+        padding: 30px 0;
+        background-color: #000000;
       }
 
       .service-title {
         height: 100%;
-        padding: 40px 30px;
+        padding: 30px 25px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: #F3F0ED;
+        background: #1a1a1a;
         border-radius: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .service-title h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 500;
         font-style: italic;
         font-family: 'Lora', serif;
-        color: #151515;
-        margin-bottom: 1.5rem;
+        color: #FFFFFF;
+        margin-bottom: 1rem;
         line-height: 1.2;
       }
 
       .service-title p {
-        font-size: 1.1rem;
-        color: rgba(68, 68, 68, 0.8);
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
         margin-bottom: 0;
-        line-height: 1.8;
+        line-height: 1.6;
       }
 
       .service-item {
         overflow: hidden;
-        padding: 30px;
-        background: #ffffff;
+        padding: 25px;
+        background: #1a1a1a;
         border-radius: 10px;
-        border: 1px solid rgba(68, 68, 68, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         transition: all 0.4s ease;
         height: 100%;
         display: flex;
@@ -971,56 +978,65 @@
 
       .service-item:hover {
         transform: translateY(-15px);
-        box-shadow: 0 15px 40px rgba(133, 109, 70, 0.25);
-        border-color: #000000;
+        box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+        border-color: #FFFFFF;
+      }
+
+      .service-item-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
       }
 
       .service-item .btn-square {
-        width: 65px;
-        height: 65px;
+        width: 55px;
+        height: 55px;
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba(133, 109, 70, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
-        margin-bottom: 1.5rem;
+        flex-shrink: 0;
         transition: all 0.3s ease;
       }
 
       .service-item:hover .btn-square {
-        background-color: #000000;
+        background-color: #FFFFFF;
         transform: scale(1.1);
       }
 
       .service-item .btn-square i {
-        color: #000000;
+        color: #FFFFFF;
         transition: color 0.3s ease;
       }
 
       .service-item:hover .btn-square i {
-        color: #fff;
-      }
-
-      .service-item h3 {
-        font-size: 1.3rem;
-        font-weight: 500;
-        font-style: italic;
-        font-family: 'Lora', serif;
-        color: #151515;
-        margin-bottom: 1rem;
-        transition: color 0.3s ease;
-      }
-
-      .service-item:hover h3 {
         color: #000000;
       }
 
+      .service-item h3 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        font-style: italic;
+        font-family: 'Lora', serif;
+        color: #FFFFFF;
+        margin-bottom: 0;
+        transition: color 0.3s ease;
+        flex: 1;
+      }
+
+      .service-item:hover h3 {
+        color: #FFFFFF;
+      }
+
       .service-item p {
-        color: #444444;
-        line-height: 1.8;
-        margin-bottom: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
         flex-grow: 1;
+        font-size: 0.95rem;
       }
 
       .service-item a {
@@ -1029,7 +1045,7 @@
         font-size: 14px;
         line-height: 14px;
         text-transform: uppercase;
-        color: #000000;
+        color: #FFFFFF;
         text-decoration: none;
         font-weight: 600;
         transition: 0.3s;
@@ -1037,7 +1053,7 @@
       }
 
       .service-item a:hover {
-        color: #000000;
+        color: #CCCCCC;
         padding-left: 5px;
       }
 
@@ -1048,7 +1064,7 @@
         height: 2px;
         left: 0;
         bottom: -3px;
-        background-color: #000000;
+        background-color: #FFFFFF;
         transition: width 0.3s ease;
       }
 
@@ -1084,14 +1100,14 @@
       /* Interactive Map Section Styles */
       .map-section {
         padding: 80px 0;
-        background: linear-gradient(135deg, #FFFFFF 0%, #ffffff 100%);
+        background: #000000;
         position: relative;
         overflow: hidden;
       }
 
       .map-section-title {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
       }
 
       .map-section-title h2 {
@@ -1099,21 +1115,22 @@
         font-weight: 500;
         font-style: italic;
         font-family: 'Lora', serif;
-        color: #151515;
+        color: #FFFFFF;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
         letter-spacing: 2px;
       }
 
       .map-section-title h2 span {
-        color: #000000;
+        color: #FFFFFF;
         font-weight: 900;
       }
 
       .map-section-title p {
-        color: rgba(68, 68, 68, 0.7);
+        color: rgba(255, 255, 255, 0.8);
         font-size: 1.1rem;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
       }
 
       /* Distribution Map Container */
@@ -1287,16 +1304,21 @@
       /* Business Categories Section */
       .business-categories {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         position: relative;
+        background-color: #000000;
+        padding: 2rem 2rem;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        width: 100vw;
       }
 
       .business-categories .categories-row {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 3rem;
-        margin-bottom: 1.5rem;
+        gap: 2rem;
+        margin-bottom: 1rem;
         flex-wrap: nowrap;
       }
 
@@ -1328,25 +1350,25 @@
       }
 
       .business-categories .category-title {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 500;
         font-style: italic;
         font-family: 'Lora', serif;
-        color: #151515;
-        margin-bottom: 0.5rem;
+        color: #FFFFFF;
+        margin-bottom: 0.3rem;
         text-transform: uppercase;
         letter-spacing: 1px;
         transition: color 0.3s ease, transform 0.3s ease;
       }
 
       .business-categories .category-item:hover .category-title {
-        color: #000000;
+        color: #CCCCCC;
         transform: scale(1.05);
       }
 
       .business-categories .category-subtitle {
-        font-size: 0.95rem;
-        color: #000000;
+        font-size: 0.85rem;
+        color: #FFFFFF;
         font-weight: 600;
         font-style: italic;
         transition: transform 0.3s ease;
@@ -1358,8 +1380,8 @@
 
       .business-categories .divider {
         width: 3px;
-        height: 80px;
-        background: linear-gradient(180deg, transparent, #000000 20%, #000000 80%, transparent);
+        height: 60px;
+        background: linear-gradient(180deg, transparent, #FFFFFF 20%, #FFFFFF 80%, transparent);
         position: relative;
         flex-shrink: 0;
         opacity: 0;
@@ -1383,27 +1405,27 @@
         transform: translate(-50%, -50%);
         width: 14px;
         height: 14px;
-        background: #000000;
+        background: #FFFFFF;
         border-radius: 50%;
-        box-shadow: 0 0 0 4px rgba(133, 109, 70, 0.2);
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
         animation: pulse 2s ease-in-out infinite;
       }
 
       @keyframes pulse {
         0%, 100% {
-          box-shadow: 0 0 0 4px rgba(255, 161, 92, 0.2);
+          box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
         }
         50% {
-          box-shadow: 0 0 0 8px rgba(255, 161, 92, 0.1);
+          box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1);
         }
       }
 
       .business-categories .common-text {
-        font-size: 1.15rem;
+        font-size: 1rem;
         font-weight: 500;
         font-style: italic;
         font-family: 'Lora', serif;
-        color: #151515;
+        color: #FFFFFF;
         text-transform: uppercase;
         letter-spacing: 1.5px;
         position: relative;
@@ -1420,7 +1442,7 @@
         top: 50%;
         width: 50px;
         height: 2px;
-        background: linear-gradient(90deg, transparent, #000000);
+        background: linear-gradient(90deg, transparent, #FFFFFF);
         animation: expandWidth 0.8s ease forwards 1s;
         width: 0;
       }
@@ -1617,6 +1639,102 @@
         bottom: 0;
         z-index: 3;
       }
+
+      /* Fullpage Scroll Snap Styles */
+      html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: auto;
+        overflow-y: scroll;
+        height: 100%;
+      }
+
+      body {
+        height: 100%;
+      }
+
+      /* Pop-up animation keyframes */
+      @keyframes popUp {
+        0% {
+          opacity: 0;
+          transform: scale(0.9) translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      /* Baseline up animation keyframes */
+      @keyframes baselineUp {
+        0% {
+          transform: scaleY(0);
+          transform-origin: bottom;
+        }
+        100% {
+          transform: scaleY(1);
+          transform-origin: bottom;
+        }
+      }
+
+      .fullpage-section {
+        min-height: 90vh;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      /* Baseline decorator */
+      .fullpage-section::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleY(0);
+        width: 80%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+        animation: none;
+      }
+
+      .fullpage-section.animated::before {
+        animation: baselineUp 0.8s ease-out 0.3s forwards;
+      }
+
+      /* Ensure hero section takes reduced viewport */
+      .fullpage-section.hero-section {
+        height: 95vh;
+        min-height: 95vh;
+      }
+
+      /* About section with categories and 3D cards */
+      .fullpage-section.about-combined-section {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 0;
+      }
+
+      /* Ensure sections don't overflow */
+      .fullpage-section > * {
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 768px) {
+        html {
+          scroll-snap-type: none;
+        }
+        
+        .fullpage-section {
+          min-height: auto;
+          scroll-snap-align: none;
+        }
+      }
     </style>
 
   </head>
@@ -1641,6 +1759,13 @@
             <p id="tagline" class="text-center mb-0" style="font-size: 3rem; margin-top: 0.1rem; color: black;">Elevate Spaces, Inspire Designs</p>
           </div>
         </nav>
+        
+        <!-- Fixed Contact Button in top-left corner -->
+        <div class="position-fixed d-flex align-items-center" style="top: 1rem; left: 7rem; z-index: 10000;">
+          <a id="contactBtn" href="#contact" title="Contact" style="padding: 6px 14px; background: transparent; border: 1.5px solid rgba(0, 0, 0, 0.3); border-radius: 30px; color: #000000; text-decoration: none; font-size: 0.85rem; font-weight: regular; transition: all 0.3s ease; cursor: pointer; display: inline-block; padding-left: 20px; padding-right: 20px;">
+            Contact
+          </a>
+        </div>
         
         <!-- Fixed Icons in top-right corner -->
         <div class="position-fixed d-flex align-items-center" style="top: 1.5rem; right: 2rem; z-index: 10000; gap: 1.5rem;">
@@ -1781,7 +1906,7 @@
         </div>
         
         <!-- HERO BANNER WITH VIDEO BACKGROUND -->
-        <section class="py-11 bg-light-gradient border-bottom border-white border-5" style="position: relative; overflow: hidden; height: 110vh; width: 100vw; margin-left: calc(-50vw + 50%); padding-top: 8rem !important; padding-bottom: 8rem !important;">
+        <section class="fullpage-section hero-section py-11 bg-light-gradient border-bottom border-white border-5" style="position: relative; overflow: hidden; height: 90vh; width: 100vw; margin-left: calc(-50vw + 50%); padding-top: 5rem !important; padding-bottom: 5rem !important;">
           <!-- Video Background -->
           <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; object-fit: cover;">
             <source src="assets/img/cosmic-video/background-video-mines.mp4" type="video/mp4">
@@ -1801,10 +1926,46 @@
           </div>
         </section>
 
-        <!-- 3D CARDS SECTION - STONES AND TILES -->
-        <section class="py-0" id="header" style="margin-top: -5rem !important; transition: margin-top 0.7s ease;">
+        <!-- SLIDE 2: Business Categories & 3D Cards Section -->
+        <section class="fullpage-section about-combined-section">
+          <div class="container" style="width: 100%;">
+    
+    <!-- ABOUT SECTION -->
+        <section id="about" class="about about-section" style="padding: 0; margin: 0;">
           <div class="container">
-            <div class="row g-0 justify-content-center" style="gap: 20px;">
+            
+            <!-- Business Categories -->
+            <div class="business-categories" data-aos="fade-up" data-aos-delay="0">
+              <div class="categories-row">
+                <!-- Natural Stone Category -->
+                <div class="category-item">
+                  <div class="category-title">Natural Stone</div>
+                  <div class="category-subtitle">( quarry owner )</div>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider"></div>
+
+                <!-- Ceramic & Porcelain Tiles Category -->
+                <div class="category-item">
+                  <div class="category-title">Ceramic & Porcelain Tiles</div>
+                  <div class="category-subtitle">( manufacturers )</div>
+                </div>
+              </div>
+
+              <!-- Common Text Below -->
+              <div class="common-text">
+                Wholesalers, Distributors and Market Breakers
+              </div>
+            </div>
+
+          </div>
+        </section><!-- /About Section -->
+
+        <!-- 3D CARDS SECTION - STONES AND TILES -->
+        <section class="py-1" style="margin-top: -4rem !important; margin-bottom: 0 !important;">
+          <div class="container">
+            <div class="row g-0 justify-content-center" style="gap: 15px;">
               
               <div class="col-md-5 col-lg-4 d-flex justify-content-center card-3d-container">
                 <a href="tiles-category.html" class="card-3d-link">
@@ -1853,46 +2014,20 @@
             </div>
           </div>
         </section>
+          </div>
+        </section>
+        <!-- End of Slide 2 -->
 
-        
-
-        <br>
-        <br>
-        <br>
-        <br>
-    <!-- ABOUT SECTION -->
-        <section id="about" class="about about-section">
+        <!-- SLIDE 3: Transforming Spaces Section -->
+        <section class="fullpage-section py-1" id="transforming-spaces-section">
           <div class="container">
-            
-            <!-- Business Categories -->
-            <div class="business-categories" data-aos="fade-up" data-aos-delay="0">
-              <div class="categories-row">
-                <!-- Natural Stone Category -->
-                <div class="category-item">
-                  <div class="category-title">Natural Stone</div>
-                  <div class="category-subtitle">( quarry owner )</div>
-                </div>
-
-                <!-- Divider -->
-                <div class="divider"></div>
-
-                <!-- Ceramic & Porcelain Tiles Category -->
-                <div class="category-item">
-                  <div class="category-title">Ceramic & Porcelain Tiles</div>
-                  <div class="category-subtitle">( manufacturers )</div>
-                </div>
-              </div>
-
-              <!-- Common Text Below -->
-              <div class="common-text">
-                Wholesalers, Distributors and Market Breakers
-              </div>
-            </div>
-
-            <div class="row gy-4 align-items-center">
+            <div class="row gy-2 align-items-center">
               
               <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="0">
-                <img src="assets/img/gallery/tiler-working-renovation-apartment.jpg" class="img-fluid rounded" alt="Cosmic Skyrocket - Premium Natural Stones & Tiles">
+                <video id="transforming-video" class="img-fluid rounded" style="width: 90%; height: auto; object-fit: cover; margin: 0 auto; display: block;" muted playsinline>
+                  <source src="assets/img/cosmic-video/elevate-tiles.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
               </div>
 
               <div class="col-lg-6 order-2 order-lg-1 content">
@@ -1921,17 +2056,18 @@
 
             </div>
           </div>
-        </section><!-- /About Section -->
+        </section><!-- /Transforming Spaces Section -->
 
+        <!-- SLIDE 4: Services Section -->
         <!-- Services start -->
 
         <!-- SERVICE SECTION -->
-        <section id="services" class="service-section">
+        <section id="services" class="fullpage-section service-section">
           <div class="container">
-            <div class="row g-5">
+            <div class="row g-2">
               
               <!-- Service Title Column -->
-              <div class="col-md-12 col-lg-4 col-xl-3" data-aos="fade-right" data-aos-delay="0">
+              <div class="col-12 mb-1" data-aos="fade-right" data-aos-delay="0">
                 <div class="service-title">
                   <h1>Our Services</h1>
                   <p>Comprehensive solutions from sourcing to delivery, tailored to elevate your architectural vision.</p>
@@ -1939,77 +2075,61 @@
               </div>
 
               <!-- Service Items Column -->
-              <div class="col-md-12 col-lg-8 col-xl-9">
-                <div class="row g-4">
+              <div class="col-12">
+                <div class="row g-3">
                   
                   <!-- Service Item 1: Global Tile & Natural Stone Sourcing -->
-                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="0">
+                  <div class="col-sm-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
                     <div class="service-item">
-                      <div class="btn-square">
-                        <i class="bi bi-gem" style="font-size: 2rem;"></i>
+                      <div class="service-item-header">
+                        <div class="btn-square">
+                          <i class="bi bi-gem" style="font-size: 1.8rem;"></i>
+                        </div>
+                        <h3>Global Tile & Natural Stone Sourcing</h3>
                       </div>
-                      <h3>Global Tile & Natural Stone Sourcing</h3>
                       <p>We provide a premium selection of ceramic tiles, porcelain tiles, and Indian natural stones such as sandstone and limestone, sourced and crafted with uncompromising quality standards.</p>
                       <a href="#!">Learn More</a>
                     </div>
                   </div>
 
                   <!-- Service Item 2: Customized Design & Manufacturing -->
-                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="col-sm-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-item">
-                      <div class="btn-square">
-                        <i class="bi bi-palette" style="font-size: 2rem;"></i>
+                      <div class="service-item-header">
+                        <div class="btn-square">
+                          <i class="bi bi-palette" style="font-size: 1.8rem;"></i>
+                        </div>
+                        <h3>Customized Design & Manufacturing</h3>
                       </div>
-                      <h3>Customized Design & Manufacturing</h3>
                       <p>From unique sizes to exclusive finishes and tailored textures, we offer fully customized tile and stone solutions to match the exact requirements of architects, designers, and builders.</p>
                       <a href="#!">Learn More</a>
                     </div>
                   </div>
 
                   <!-- Service Item 3: End-to-End Export & Logistics Support -->
-                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="col-sm-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-item">
-                      <div class="btn-square">
-                        <i class="bi bi-truck" style="font-size: 2rem;"></i>
+                      <div class="service-item-header">
+                        <div class="btn-square">
+                          <i class="bi bi-truck" style="font-size: 1.8rem;"></i>
+                        </div>
+                        <h3>End-to-End Export & Logistics Support</h3>
                       </div>
-                      <h3>End-to-End Export & Logistics Support</h3>
                       <p>We handle the complete export process—including documentation, packing, port handling, and coordination—ensuring smooth, timely, and hassle-free global deliveries.</p>
                       <a href="#!">Learn More</a>
                     </div>
                   </div>
 
                   <!-- Service Item 4: Quality Assurance & Inspection -->
-                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="0">
+                  <div class="col-sm-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-item">
-                      <div class="btn-square">
-                        <i class="bi bi-shield-check" style="font-size: 2rem;"></i>
+                      <div class="service-item-header">
+                        <div class="btn-square">
+                          <i class="bi bi-shield-check" style="font-size: 1.8rem;"></i>
+                        </div>
+                        <h3>Quality Assurance & Inspection</h3>
                       </div>
-                      <h3>Quality Assurance & Inspection</h3>
                       <p>Each product undergoes strict quality checks at every stage of production and packaging to ensure durability, aesthetic excellence, and international compliance.</p>
-                      <a href="#!">Learn More</a>
-                    </div>
-                  </div>
-
-                  <!-- Service Item 5: Sustainable & Ethical Production -->
-                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-item">
-                      <div class="btn-square">
-                        <i class="bi bi-flower3" style="font-size: 2rem;"></i>
-                      </div>
-                      <h3>Sustainable & Ethical Production</h3>
-                      <p>We follow environmentally responsible manufacturing practices, using eco-friendly materials and sustainable extraction methods to minimize environmental impact.</p>
-                      <a href="#!">Learn More</a>
-                    </div>
-                  </div>
-
-                  <!-- Service Item 6: Dedicated Client Support & Consultation -->
-                  <div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item">
-                      <div class="btn-square">
-                        <i class="bi bi-headset" style="font-size: 2rem;"></i>
-                      </div>
-                      <h3>Dedicated Client Support & Consultation</h3>
-                      <p>Our team provides personalized guidance, seamless communication, and continuous support from material selection to shipment, making us a trusted long-term partner worldwide.</p>
                       <a href="#!">Learn More</a>
                     </div>
                   </div>
@@ -2024,25 +2144,27 @@
 
         <!-- Services end -->
 
+        <!-- SLIDE 5: Stats Section -->
         <!-- WORLD MAP SECTION -->
 
         
 
         <!-- STATS SECTION -->
-        <section id="stats" class="stats stats-section">
+        <section id="stats" class="fullpage-section stats stats-section">
           <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-center mb-5">
-              <h3 class="fw-bold fs-2 mb-3" style="font-family: 'Lora', serif; font-weight: 500; font-style: italic;">Excellence in Natural Stone & Tiles</h3>
-              <p class="mb-4">
+            <div class="text-center mb-3">
+              <h3 class="fw-bold fs-3 mb-2" style="font-family: 'Lora', serif; font-weight: 500; font-style: italic; color: #FFFFFF;">Excellence in Natural Stone & Tiles</h3>
+              <p class="mb-3" style="font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8);">
                 With years of expertise in sourcing and delivering premium natural stones and tiles, 
                 we've built a reputation for quality, reliability, and exceptional customer service. 
                 Our commitment to excellence drives everything we do.
               </p>
             </div>
 
-            <div class="row gy-4 justify-content-center">
+            <!-- First Row: 3 items -->
+            <div class="row gy-3 justify-content-center mb-3">
 
-              <div class="col-lg-2 col-md-4 col-sm-6">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="stats-item d-flex flex-column align-items-center text-center">
                   <i class="bi bi-people flex-shrink-0"></i>
                   <div>
@@ -2052,7 +2174,7 @@
                 </div>
               </div><!-- End Stats Item -->
 
-              <div class="col-lg-2 col-md-4 col-sm-6">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="stats-item d-flex flex-column align-items-center text-center">
                   <i class="bi bi-grid-3x3 flex-shrink-0"></i>
                   <div>
@@ -2062,7 +2184,7 @@
                 </div>
               </div><!-- End Stats Item -->
 
-              <div class="col-lg-2 col-md-4 col-sm-6">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="stats-item d-flex flex-column align-items-center text-center">
                   <i class="bi bi-gem flex-shrink-0"></i>
                   <div>
@@ -2072,7 +2194,12 @@
                 </div>
               </div><!-- End Stats Item -->
 
-              <div class="col-lg-2 col-md-4 col-sm-6">
+            </div>
+
+            <!-- Second Row: 2 items -->
+            <div class="row gy-3 justify-content-center mb-3">
+
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="stats-item d-flex flex-column align-items-center text-center">
                   <i class="bi bi-globe flex-shrink-0"></i>
                   <div>
@@ -2082,7 +2209,7 @@
                 </div>
               </div><!-- End Stats Item -->
 
-              <div class="col-lg-2 col-md-4 col-sm-6">
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="stats-item d-flex flex-column align-items-center text-center">
                   <i class="bi bi-award flex-shrink-0"></i>
                   <div>
@@ -2092,7 +2219,12 @@
                 </div>
               </div><!-- End Stats Item -->
 
-              <div class="col-lg-2 col-md-4 col-sm-6">
+            </div>
+
+            <!-- Third Row: 3 items -->
+            <div class="row gy-3 justify-content-center">
+
+              <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="stats-item d-flex flex-column align-items-center text-center">
                   <i class="bi bi-star flex-shrink-0"></i>
                   <div>
@@ -2102,12 +2234,34 @@
                 </div>
               </div><!-- End Stats Item -->
 
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-box-seam flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>Placeholder 3</strong> <span>description here</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="stats-item d-flex flex-column align-items-center text-center">
+                  <i class="bi bi-trophy flex-shrink-0"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="750" data-purecounter-duration="3" class="purecounter"></span>
+                    <p><strong>Placeholder 4</strong> <span>description here</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
             </div>
+
           </div>
         </section><!-- /Stats Section -->
 
+        <!-- SLIDE 6: Urban Stories Collection -->
         <!-- URBAN STORIES SECTION -->
-        <section class="py-0" id="collection" style="padding-top: 5rem !important; padding-bottom: 5rem !important;">
+        <section class="fullpage-section py-0" id="collection" style="padding-top: 3rem !important; padding-bottom: 3rem !important;">
           <div class="container">
             <div class="row h-100 gx-2">
               <div class="col-md-6">
@@ -2136,11 +2290,12 @@
 
         
 
-        <!-- BLOG SECTION -->
-        <section class="py-0 pb-8">
+        <!-- SLIDE 7: Blog Section -->
+        <!-- BLOG SECTION - COMMENTED OUT -->
+        <!--
+        <section class="fullpage-section py-0 pb-6">
           <div class="container-fluid container-lg">
             
-            <!-- Blog Section Title -->
             <div class="blog-section-title" data-aos="fade-up">
               <h2>OUR <span>BLOGS</span></h2>
               <p>Discover insights, trends, and expert advice on tiles, natural stones, and architectural design</p>
@@ -2150,9 +2305,6 @@
               <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
                 <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog.jpeg" alt="..." />
                   <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-                    <!-- <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
-                      <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
-                    </div> -->
                     
                     <h3 class="fw-bold text-1000 mt-5 text-truncate">How much impact do surfaces have on a space?</h3>
                     <p class="text-900 mt-3">More than we realize. The tiles and natural stones we choose speak volumes about our taste, lifestyle, and the ambience we want to create. From subtle textures to bold patterns, every finish tells a story — one that shapes how people experience your home, office...</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
@@ -2165,9 +2317,6 @@
               <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
                 <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog-2.jpg" alt="..." />
                   <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-                    <!-- <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
-                      <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
-                    </div> -->
                     
                     <h3 class="fw-bold text-1000 mt-5 text-truncate">Can a tile transform the way a space feels?</h3>
                     <p class="text-900 mt-3">Absolutely. The surfaces around us silently express who we are — our style, personality, and vision. From premium natural stones to intricate tile designs, these materials reflect craftsmanship and character.
@@ -2181,9 +2330,6 @@ Every day, homeowners, architects, and designers rely on textures and surface...
               <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
                 <div class="card card-span text-white h-100"><img class="img-card h-100" src="assets/img/gallery/tile-blog-3.webp" alt="..." />
                   <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
-                    <!-- <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto">
-                      <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i data-feather="eye"> </i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i data-feather="heart"> </i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i data-feather="corner-up-right"> </i><span class="text-900 ms-2">14</span></span></div>
-                    </div> -->
                     
                     <h3 class="fw-bold text-1000 mt-5 text-truncate">How much do tiles influence the design of a &amp; space?</h3>
                     <p class="text-900 mt-3">More than you think. Surfaces define mood, aesthetics, and even functionality. The colors, patterns, and finishes we choose become the first thing people notice — and often the detail they remember.
@@ -2197,9 +2343,10 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
             </div>
           </div>
         </section>
+        -->
 
         <!-- Global Distribution Map Section -->
-        <section id="global-presence" class="map-section">
+        <section id="global-presence" class="fullpage-section map-section">
           <div class="container-fluid px-0">
             <div class="map-section-title">
               <h2>Our <span>Global</span> Presence</h2>
@@ -2207,12 +2354,15 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
             </div>
             
             <!-- amCharts Map Container -->
-            <div id="chartdiv" style="width: 100%; height: 600px;"></div>
+            <div style="padding: 0 15%;">
+              <div id="chartdiv" style="width: 90%; height: 540px; margin: 0 auto;"></div>
+            </div>
           </div>
         </section>
 
+        <!-- SLIDE 8: FAQ Section -->
         <!-- FAQ Section -->
-        <section id="faq" class="faq section">
+        <section id="faq" class="fullpage-section faq section">
 
           <!-- Section Title -->
           <div class="container section-title" data-aos="fade-up">
@@ -4035,6 +4185,53 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
           top: 0,
           behavior: 'smooth'
         });
+      });
+
+      // Video autoplay on scroll into view
+      const transformingVideo = document.getElementById('transforming-video');
+      
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Reset video to beginning and play when section is in view
+            transformingVideo.currentTime = 0;
+            transformingVideo.play().catch(err => {
+              console.log('Video play failed:', err);
+            });
+          } else {
+            // Pause video when section is out of view
+            transformingVideo.pause();
+          }
+        });
+      }, {
+        threshold: 0.5 // Trigger when 50% of the section is visible
+      });
+
+      // Observe the transforming spaces section
+      const transformingSection = document.getElementById('transforming-spaces-section');
+      if (transformingSection) {
+        videoObserver.observe(transformingSection);
+      }
+
+      // Pop-up animation for sections on scroll
+      const popUpObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'popUp 0.6s ease-out forwards';
+            entry.target.classList.add('animated');
+          }
+        });
+      }, {
+        threshold: 0.3,
+        rootMargin: '0px'
+      });
+
+      // Observe all fullpage sections
+      const sections = document.querySelectorAll('.fullpage-section');
+      sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.animation = 'none';
+        popUpObserver.observe(section);
       });
     </script>
 
