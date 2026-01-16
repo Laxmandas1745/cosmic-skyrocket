@@ -56,7 +56,7 @@
         width: 100%;
         height: 100%;
         z-index: 99999;
-        background-color: #000000;
+        background-color: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1656,7 +1656,7 @@
       @keyframes popUp {
         0% {
           opacity: 0;
-          transform: scale(0.9) translateY(30px);
+          transform: scale(0.85) translateY(80px);
         }
         100% {
           opacity: 1;
@@ -1664,16 +1664,47 @@
         }
       }
 
-      /* Baseline up animation keyframes */
+      /* Baseline up animation for section contents */
       @keyframes baselineUp {
         0% {
-          transform: scaleY(0);
-          transform-origin: bottom;
+          opacity: 0;
+          transform: translateY(100px);
         }
         100% {
-          transform: scaleY(1);
-          transform-origin: bottom;
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
+
+      /* Apply baseline animation to section children */
+      .fullpage-section.animate-in > * {
+        opacity: 0;
+        animation: baselineUp 0.6s ease-out forwards;
+      }
+
+      /* Stagger the children animations */
+      .fullpage-section.animate-in > *:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .fullpage-section.animate-in > *:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+
+      .fullpage-section.animate-in > *:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      .fullpage-section.animate-in > *:nth-child(4) {
+        animation-delay: 0.25s;
+      }
+
+      .fullpage-section.animate-in > *:nth-child(5) {
+        animation-delay: 0.3s;
+      }
+
+      .fullpage-section.animate-in > *:nth-child(6) {
+        animation-delay: 0.35s;
       }
 
       .fullpage-section {
@@ -1686,23 +1717,6 @@
         justify-content: center;
         padding-top: 2rem;
         padding-bottom: 2rem;
-      }
-
-      /* Baseline decorator */
-      .fullpage-section::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) scaleY(0);
-        width: 80%;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-        animation: none;
-      }
-
-      .fullpage-section.animated::before {
-        animation: baselineUp 0.8s ease-out 0.3s forwards;
       }
 
       /* Ensure hero section takes reduced viewport */
@@ -2508,80 +2522,80 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
         
 
         <!-- FOOTER -->
-        <section class="py-0 pt-7" style="background: linear-gradient(135deg, rgba(240, 240, 245, 0.9), rgba(230, 230, 235, 0.95)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);">
+        <section class="fullpage-section py-0 pt-7" style="background: #000000; border-top: 1px solid rgba(255, 255, 255, 0.2);">
           <div class="container">
             <div class="row">
               
               <!-- Company Info -->
               <div class="col-6 col-lg-2 mb-3">
-                <h5 class="lh-lg fw-bold text-1000">Company Info</h5>
+                <h5 class="lh-lg fw-bold" style="color: #FFFFFF;">Company Info</h5>
                 <ul class="list-unstyled mb-md-4 mb-lg-0">
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#about">About Us</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Our Story</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Careers</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Blog</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#about">About Us</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Our Story</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Careers</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Blog</a></li>
                 </ul>
               </div>
 
               <!-- Natural Stones -->
               <div class="col-6 col-lg-2 mb-3">
-                <h5 class="lh-lg fw-bold text-1000">Natural Stones</h5>
+                <h5 class="lh-lg fw-bold" style="color: #FFFFFF;">Natural Stones</h5>
                 <ul class="list-unstyled mb-md-4 mb-lg-0">
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Sandstone</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Limestone</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Marble</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Granite</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Quartzite</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Sandstone</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Limestone</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Marble</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Granite</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Quartzite</a></li>
                 </ul>
               </div>
 
               <!-- Tiles -->
               <div class="col-6 col-lg-2 mb-3">
-                <h5 class="lh-lg fw-bold text-1000">Tiles</h5>
+                <h5 class="lh-lg fw-bold" style="color: #FFFFFF;">Tiles</h5>
                 <ul class="list-unstyled mb-md-4 mb-lg-0">
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Italian Marble</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Ceramic Tiles</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Porcelain Tiles</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Moroccan Tiles</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Wooden Finish</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Italian Marble</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Ceramic Tiles</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Porcelain Tiles</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Moroccan Tiles</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Wooden Finish</a></li>
                 </ul>
               </div>
 
               <!-- Quick Links -->
               <div class="col-6 col-lg-2 mb-3">
-                <h5 class="lh-lg fw-bold text-1000">Quick Links</h5>
+                <h5 class="lh-lg fw-bold" style="color: #FFFFFF;">Quick Links</h5>
                 <ul class="list-unstyled mb-md-4 mb-lg-0">
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#services">Services</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#global-presence">Global Presence</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#faq">FAQ</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Contact Us</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Request Quote</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#services">Services</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#global-presence">Global Presence</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#faq">FAQ</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Contact Us</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Request Quote</a></li>
                 </ul>
               </div>
 
               <!-- Legal & Policies -->
               <div class="col-6 col-lg-2 mb-3">
-                <h5 class="lh-lg fw-bold text-1000">Legal & Policies</h5>
+                <h5 class="lh-lg fw-bold" style="color: #FFFFFF;">Legal & Policies</h5>
                 <ul class="list-unstyled mb-md-4 mb-lg-0">
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Terms & Conditions</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Privacy Policy</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">CSR Policy</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Shipping Policy</a></li>
-                  <li class="lh-lg"><a class="text-800 text-decoration-none" href="#!">Return Policy</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Terms & Conditions</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Privacy Policy</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">CSR Policy</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Shipping Policy</a></li>
+                  <li class="lh-lg"><a class="text-decoration-none" style="color: rgba(255, 255, 255, 0.8);" href="#!">Return Policy</a></li>
                 </ul>
               </div>
 
               <!-- Contact Information -->
               <div class="col-6 col-lg-2 mb-3">
-                <h5 class="lh-lg fw-bold text-1000">Contact Us</h5>
+                <h5 class="lh-lg fw-bold" style="color: #FFFFFF;">Contact Us</h5>
                 <ul class="list-unstyled mb-md-4 mb-lg-0">
                   <li class="lh-lg mb-2">
-                    <a class="text-800 text-decoration-none d-flex align-items-center" href="tel:+918209851679">
+                    <a class="text-decoration-none d-flex align-items-center" style="color: rgba(255, 255, 255, 0.8);" href="tel:+918209851679">
                       <i class="bi bi-telephone me-2 flex-shrink-0"></i><span>+91 82098 51679</span>
                     </a>
                   </li>
                   <li class="lh-lg mb-2">
-                    <a class="text-800 text-decoration-none d-flex align-items-center" href="mailto:info@cosmicskyrocket.in">
+                    <a class="text-decoration-none d-flex align-items-center" style="color: rgba(255, 255, 255, 0.8);" href="mailto:info@cosmicskyrocket.in">
                       <i class="bi bi-envelope me-2 flex-shrink-0"></i><span class="text-break">info@cosmicskyrocket.in</span>
                     </a>
                   </li>
@@ -4162,6 +4176,21 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
         }
       });
 
+      // Always scroll to top on page load/refresh
+      window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+      });
+
+      // Force scroll to top on page load
+      if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+      }
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          window.scrollTo(0, 0);
+        }, 0);
+      });
+
       // Scroll to Top Button Functionality
       const scrollToTopBtn = document.getElementById('scrollToTop');
       
@@ -4218,7 +4247,10 @@ In this blog, we explore global design trends, innovative materials....</p><a cl
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.style.animation = 'popUp 0.6s ease-out forwards';
-            entry.target.classList.add('animated');
+            // Add animate-in class to trigger baseline-up animation for children
+            setTimeout(() => {
+              entry.target.classList.add('animate-in');
+            }, 100);
           }
         });
       }, {
