@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Skyrocket Parallax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400&family=Jost:ital,wght@0,400;1,400&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- White screen split container -->
+    <div class="split-container">
+        <div class="split-half split-top"></div>
+        <div class="split-half split-bottom"></div>
+    </div>
+
+    <!-- Black background that expands from center -->
+    <div class="black-background"></div>
+
+    <!-- ABOUT US text with parallax effects -->
+    <div class="text-container">
+        <ul class="about-us-text">
+            <li style="--i:1" data-direction="left">A</li>
+            <li style="--i:1.3" data-direction="top">B</li>
+            <li style="--i:1.6" data-direction="right">O</li>
+            <li style="--i:1.9" data-direction="left">U</li>
+            <li style="--i:2.2" data-direction="bottom">T</li>
+            <li style="--i:2.5" data-direction="right" class="space">&nbsp;</li>
+            <li style="--i:2.8" data-direction="left">U</li>
+            <li style="--i:3.1" data-direction="top">S</li>
+        </ul>
+    </div>
+
+    <!-- Vertical divider line -->
+    <div class="vertical-line"></div>
+
+    <!-- Horizontal line below vertical line -->
+    <div class="horizontal-line"></div>
+
+    <!-- Split reveal text section -->
+    <div class="split-text-container">
+        <!-- Left column -->
+        <div class="text-column left-column">
+            <div class="text-wrapper top-text-wrapper">
+                <div class="text-content top-text">
+                    <div class="text-line">Natural Stone</div>
+                    <div class="text-line subtitle">( quarry owner )</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="text-column right-column">
+            <div class="text-wrapper top-text-wrapper">
+                <div class="text-content top-text">
+                    <div class="text-line">Ceramic & Porcelain Tiles</div>
+                    <div class="text-line subtitle">( manufacturers )</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wholesaler text (single, centered below horizontal line) -->
+    <div class="wholesaler-container">
+        <div class="text-wrapper wholesaler-text-wrapper">
+            <div class="text-content wholesaler-text">
+                <div class="text-line">Wholesalers, Distributors and Market Breakers</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pinned horizontal scroll text section -->
+    <div class="pinned-text-section">
+        <div class="pinned-text-container">
+            <div class="scroll-text-line line-1">work-work-work-work-work</div>
+            <div class="scroll-text-line line-2">experience-experience-experience</div>
+        </div>
+    </div>
+
+    <!-- Scroll trigger area -->
+    <div class="scroll-content"></div>
+
+    <!-- Stack Cards Section -->
+    <div class="stack-cards-section">
+        <div class="stack-cards-container">
+            <div class="stack-cards__item" data-index="0">
+                <div class="card-content">
+                    <h3>Global Tile & Natural Stone Sourcing</h3>
+                    <p>We provide a premium selection of ceramic tiles, porcelain tiles, and Indian natural stones such as sandstone and limestone, sourced and crafted with uncompromising quality standards.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+            <div class="stack-cards__item" data-index="1">
+                <div class="card-content">
+                    <h3>Customized Design & Manufacturing</h3>
+                    <p>From unique sizes to exclusive finishes and tailored textures, we offer fully customized tile and stone solutions to match the exact requirements of architects, designers, and builders.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+            <div class="stack-cards__item" data-index="2">
+                <div class="card-content">
+                    <h3>End-to-End Export & Logistics Support</h3>
+                    <p>We handle the complete export process—including documentation, packing, port handling, and coordination—ensuring smooth, timely, and hassle-free global deliveries.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+            <div class="stack-cards__item" data-index="3">
+                <div class="card-content">
+                    <h3>Quality Assurance & Inspection</h3>
+                    <p>Each product undergoes strict quality checks at every stage of production and packaging to ensure durability, aesthetic excellence, and international compliance.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP (GreenSock Animation Platform) - Best for parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
