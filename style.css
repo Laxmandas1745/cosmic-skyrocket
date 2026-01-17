@@ -471,11 +471,32 @@ body {
     z-index: 35;
     padding-top: 20vh;
     margin-top: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5vw;
+}
+
+/* Vertical "Our Services" label */
+.services-label {
+    position: fixed;
+    left: -2vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center center;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    z-index: 40;
+    white-space: nowrap;
+    pointer-events: none;
 }
 
 .stack-cards-container {
     position: relative;
-    width: 100%;
+    width: 75vw;
     min-height: 200vh;
     display: flex;
     flex-direction: column;
@@ -488,7 +509,7 @@ body {
 .stack-cards__item {
     position: sticky;
     top: 10vh;
-    width: 85vw;
+    width: 100%;
     max-width: 600px;
     min-height: 400px;
     background: rgba(255, 255, 255, 0.1);
@@ -589,8 +610,23 @@ body {
 
 /* Responsive cards */
 @media (max-width: 768px) {
-    .stack-cards__item {
+    .stack-cards-section {
+        justify-content: center;
+        padding-right: 0;
+    }
+    
+    .services-label {
+        left: 2vw;
+        font-size: clamp(1.5rem, 3vw, 3rem);
+        letter-spacing: 0.3rem;
+    }
+    
+    .stack-cards-container {
         width: 90vw;
+    }
+    
+    .stack-cards__item {
+        width: 100%;
         min-height: 350px;
         padding: 2rem;
         top: 8vh;
@@ -610,8 +646,17 @@ body {
 }
 
 @media (max-width: 480px) {
-    .stack-cards__item {
+    .services-label {
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
+        letter-spacing: 0.2rem;
+    }
+    
+    .stack-cards-container {
         width: 92vw;
+    }
+    
+    .stack-cards__item {
+        width: 100%;
         min-height: 320px;
         padding: 1.5rem;
         top: 5vh;
