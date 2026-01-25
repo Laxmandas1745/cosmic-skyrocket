@@ -1171,7 +1171,7 @@ body {
 }
 
 .map-heading {
-    font-family: 'Inter', SemiBold;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     color: #fff;
     text-align: center;
