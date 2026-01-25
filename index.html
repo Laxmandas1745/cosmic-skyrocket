@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Skyrocket Parallax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400&family=Jost:ital,wght@0,400;1,400&family=Oswald:wght@700&family=Montserrat:wght@400;700&family=Russo+One&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <img src="videos/preloader.gif" alt="Loading" class="preloader-gif">
+            <div class="preloader-percentage">0%</div>
+            <div class="preloader-bar-container">
+                <div class="preloader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- White screen split container -->
+    <div class="split-container">
+        <div class="split-half split-top"></div>
+        <div class="split-half split-bottom"></div>
+    </div>
+
+    <!-- Black background that expands from center -->
+    <div class="black-background"></div>
+
+    <!-- ABOUT US text with parallax effects -->
+    <div class="text-container">
+        <ul class="about-us-text">
+            <li style="--i:1" data-direction="left">A</li>
+            <li style="--i:1.3" data-direction="top">B</li>
+            <li style="--i:1.6" data-direction="right">O</li>
+            <li style="--i:1.9" data-direction="left">U</li>
+            <li style="--i:2.2" data-direction="bottom">T</li>
+            <li style="--i:2.5" data-direction="right" class="space">&nbsp;</li>
+            <li style="--i:2.8" data-direction="left">U</li>
+            <li style="--i:3.1" data-direction="top">S</li>
+        </ul>
+    </div>
+
+    <!-- Vertical divider line -->
+    <div class="vertical-line"></div>
+
+    <!-- Horizontal line below vertical line -->
+    <div class="horizontal-line"></div>
+
+    <!-- Split reveal text section -->
+    <div class="split-text-container">
+        <!-- Left column -->
+        <div class="text-column left-column">
+            <div class="text-wrapper top-text-wrapper">
+                <div class="text-content top-text">
+                    <div class="text-line">Natural Stone</div>
+                    <div class="text-line subtitle">( quarry owner )</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="text-column right-column">
+            <div class="text-wrapper top-text-wrapper">
+                <div class="text-content top-text">
+                    <div class="text-line">Ceramic & Porcelain Tiles</div>
+                    <div class="text-line subtitle">( manufacturers )</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wholesaler text (single, centered below horizontal line) -->
+    <div class="wholesaler-container">
+        <div class="text-wrapper wholesaler-text-wrapper">
+            <div class="text-content wholesaler-text">
+                <div class="text-line">Wholesalers, Distributors and Market Breakers</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll trigger area -->
+    <div class="scroll-content"></div>
+
+    <!-- Stack Cards Section -->
+    <div class="stack-cards-section">
+        <!-- Vertical "Our Services" text on the left -->
+        <div class="services-label">OUR SERVICES</div>
+        
+        <!-- White line connecting label to image -->
+        <div class="services-connector-line"></div>
+        
+        <!-- Grabbing machine image -->
+        <div class="grabbing-machine">
+            <img src="imgs/grabbing-machine-hand.png" alt="Grabbing Machine">
+        </div>
+        
+        <div class="stack-cards-container">
+            <div class="stack-cards__item" data-index="0">
+                <div class="card-content">
+                    <h3>Global Tile & Natural Stone Sourcing</h3>
+                    <p>We provide a premium selection of ceramic tiles, porcelain tiles, and Indian natural stones such as sandstone and limestone, sourced and crafted with uncompromising quality standards.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+            <div class="stack-cards__item" data-index="1">
+                <div class="card-content">
+                    <h3>Customized Design & Manufacturing</h3>
+                    <p>From unique sizes to exclusive finishes and tailored textures, we offer fully customized tile and stone solutions to match the exact requirements of architects, designers, and builders.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+            <div class="stack-cards__item" data-index="2">
+                <div class="card-content">
+                    <h3>End-to-End Export & Logistics Support</h3>
+                    <p>We handle the complete export process—including documentation, packing, port handling, and coordination—ensuring smooth, timely, and hassle-free global deliveries.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+            <div class="stack-cards__item" data-index="3">
+                <div class="card-content">
+                    <h3>Quality Assurance & Inspection</h3>
+                    <p>Each product undergoes strict quality checks at every stage of production and packaging to ensure durability, aesthetic excellence, and international compliance.</p>
+                    <a href="#" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Numbers Section -->
+    <div class="numbers-section">
+        <video class="numbers-video-bg" muted loop playsinline>
+            <source src="videos/Untitled design (3).mp4" type="video/mp4">
+        </video>
+        <div class="numbers-content">
+            <h2 class="numbers-heading">Excellence in Natural Stone & Tiles</h2>
+            <p class="numbers-subheading">With years of expertise in sourcing and delivering premium natural stones and tiles, we've built a reputation for quality, reliability, and exceptional customer service. Our commitment to excellence drives everything we do.</p>
+            
+            <!-- Row 1: 3 numbers -->
+            <div class="numbers-row row-3">
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="300">0</span><span class="number-plus">+</span>
+                    </div>
+                    <p class="number-label">Skilled Manpower delivering expert craftsmanship</p>
+                </div>
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="37000">0</span><span class="number-plus">+</span>
+                    </div>
+                    <span class="number-unit">sq. m/day</span>
+                    <p class="number-label">Tile Production ensuring timely supply</p>
+                </div>
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="230">0</span><span class="number-plus">+</span>
+                    </div>
+                    <span class="number-unit">cu. m/day</span>
+                    <p class="number-label">Stone Extraction premium-quality supply</p>
+                </div>
+            </div>
+            
+            <!-- Row 2: 2 numbers -->
+            <div class="numbers-row row-2">
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="26">0</span><span class="number-plus">+</span>
+                    </div>
+                    <p class="number-label">Countries Served global reach</p>
+                </div>
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="1000">0</span><span class="number-plus">+</span>
+                    </div>
+                    <p class="number-label">Placeholder 1 description here</p>
+                </div>
+            </div>
+            
+            <!-- Row 3: 3 numbers -->
+            <div class="numbers-row row-3">
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="1000">0</span><span class="number-plus">+</span>
+                    </div>
+                    <p class="number-label">Placeholder 2 description here</p>
+                </div>
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="500">0</span><span class="number-plus">+</span>
+                    </div>
+                    <p class="number-label">Placeholder 3 description here</p>
+                </div>
+                <div class="number-item">
+                    <div class="number-wrapper">
+                        <span class="number" data-target="750">0</span><span class="number-plus">+</span>
+                    </div>
+                    <p class="number-label">Placeholder 4 description here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Venn Diagram Section -->
+    <div class="venn-section">
+        <div class="venn-container">
+            <svg class="venn-diagram" viewBox="-30 -30 660 730" xmlns="http://www.w3.org/2000/svg">
+                <!-- Circle 1 (Top - alone) -->
+                <circle class="venn-circle circle-1" cx="300" cy="220" r="220" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.6"/>
+                
+                <!-- Circle 2 (Bottom left) -->
+                <circle class="venn-circle circle-2" cx="200" cy="420" r="220" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.6"/>
+                
+                <!-- Circle 3 (Bottom right) -->
+                <circle class="venn-circle circle-3" cx="400" cy="420" r="220" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.6"/>
+                
+                <!-- Dot for Circle 1 (Top) - starts at angle 0 (right side of circle) -->
+                <circle class="dot dot-1" cx="520" cy="220" r="5" fill="#fff"/>
+                
+                <!-- Dot for Circle 2 (Bottom left) - starts at angle 0 (right side of circle) -->
+                <circle class="dot dot-2" cx="420" cy="420" r="5" fill="#fff"/>
+                
+                <!-- Dot for Circle 3 (Bottom right) - starts at angle 0 (right side of circle) -->
+                <circle class="dot dot-3" cx="620" cy="420" r="5" fill="#fff"/>
+            </svg>
+            
+            <!-- Images that pop from circles -->
+            <div class="circle-image circle-image-1">
+                <img src="pop-up/IMG_8803.PNG" alt="Stone Product 1">
+            </div>
+            <div class="circle-image circle-image-2">
+                <img src="pop-up/IMG_8804.PNG" alt="Stone Product 2">
+            </div>
+            <div class="circle-image circle-image-3">
+                <img src="pop-up/IMG_8807.PNG" alt="Stone Product 3">
+            </div>
+            <div class="circle-image circle-image-4">
+                <img src="pop-up/IMG_8809.PNG" alt="Stone Product 4">
+            </div>
+            <div class="circle-image circle-image-5">
+                <img src="pop-up/IMG_8810.PNG" alt="Stone Product 5">
+            </div>
+            <div class="circle-image circle-image-6">
+                <img src="pop-up/Onice-Iride_Cobalto-160x320-Lap-Ret.jpg" alt="Onice Iride Cobalto">
+            </div>
+            <div class="circle-image circle-image-7">
+                <img src="pop-up/Onice-Iride_Malaga-160x320-Lap-Ret.jpg" alt="Onice Iride Malaga">
+            </div>
+            <div class="circle-image circle-image-8">
+                <img src="pop-up/vector copy 2.jpg" alt="Vector Tiles 1">
+            </div>
+            <div class="circle-image circle-image-9">
+                <img src="pop-up/vector copy.jpg" alt="Vector Tiles 2">
+            </div>
+            <div class="circle-image circle-image-10">
+                <img src="pop-up/vector1 copy.jpg" alt="Vector Tiles 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Playbook Scroll Animation Section -->
+    <section class="playbook-scroll-section">
+        <div class="content">
+            <div class="grid">
+                <div class="layer">
+                    <div><img src="collage/IMG_8811.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8812.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8813.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8814.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8815.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8816.JPG" alt=""></div>
+                </div>
+                <div class="layer">
+                    <div><img src="collage/IMG_8817.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8818.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8819.WEBP" alt=""></div>
+                    <div><img src="collage/IMG_8825.JPG" alt=""></div>
+                    <div><img src="collage/IMG_8821.WEBP" alt=""></div>
+                    <div><img src="collage/IMG_8822.JPG" alt=""></div>
+                </div>
+                <div class="layer">
+                    <div><img src="collage/IMG_8823.WEBP" alt=""></div>
+                    <div><img src="collage/IMG_8824.JPG" alt=""></div>
+                </div>
+                <div class="scaler">
+                    <img src="collage/IMG_8820.WEBP" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section class="world-map-section">
+        <h2 class="map-heading">Our Global Reach</h2>
+        <div id="worldMapContainer"></div>
+    </section>
+
+    <!-- Sliding Text Effect Section -->
+    <div class="sliding-text-section">
+        <div class="wrap">
+            <div class="line">
+                <div class="left">
+                    <div class="content">
+                        <span class="spanSlow">Which</span>
+                    </div>
+                </div><!--
+                --><div class="right">
+                    <div class="content">
+                        <span class="spanSlow">Which</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="left">
+                    <div class="content">
+                        <span class="spanSlow">Describes your</span>
+                    </div>
+                </div><!--
+                --><div class="right">
+                    <div class="content">
+                        <span class="spanSlow">Describes your</span>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="left">
+                    <div class="content">
+                        <span class="spanFast">Business Best?</span>
+                    </div>
+                </div><!--
+                --><div class="right">
+                    <div class="content">
+                        <span class="spanFast">Business Best?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stone image with hover effect -->
+        <div class="stone-image-container">
+            <div class="image-label-container stone-label">
+                <svg viewBox="0 0 600 300">
+                    <text x="50%" y="35%" text-anchor="middle">Natural</text>
+                    <text x="50%" y="65%" text-anchor="middle">Stone</text>
+                </svg>
+            </div>
+            <img src="imgs/black-white-stone.png" alt="Stone" class="stone-image stone-bw">
+            <img src="imgs/colored-stone.png" alt="Stone Color" class="stone-image stone-color">
+        </div>
+        
+        <!-- Tiles image with hover effect -->
+        <div class="tiles-image-container">
+            <div class="image-label-container tiles-label">
+                <svg viewBox="0 0 500 150">
+                    <text x="50%" y="50%" dy=".35em" text-anchor="middle">Tiles</text>
+                </svg>
+            </div>
+            <img src="imgs/black-white-tiles.png" alt="Tiles" class="tiles-image tiles-bw">
+            <img src="imgs/colored-tiles.PNG" alt="Tiles Color" class="tiles-image tiles-color">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Company Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Natural Stones -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Natural Stones</h3>
+                    <ul class="footer-links">
+                        <li><a href="#sandstone">Sandstone</a></li>
+                        <li><a href="#limestone">Limestone</a></li>
+                        <li><a href="#marble">Marble</a></li>
+                        <li><a href="#granite">Granite</a></li>
+                        <li><a href="#quartzite">Quartzite</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tiles -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Tiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#italian-marble">Italian Marble</a></li>
+                        <li><a href="#ceramic">Ceramic Tiles</a></li>
+                        <li><a href="#porcelain">Porcelain Tiles</a></li>
+                        <li><a href="#moroccan">Moroccan Tiles</a></li>
+                        <li><a href="#wooden">Wooden Finish</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#global">Global Presence</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#quote">Request Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Policies -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Legal & Policies</h3>
+                    <ul class="footer-links">
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#csr">CSR Policy</a></li>
+                        <li><a href="#shipping">Shipping Policy</a></li>
+                        <li><a href="#return">Return Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><a href="tel:+918209851679">+91 82098 51679</a></li>
+                        <li><a href="mailto:info@cosmicskyrocket.in">info@cosmicskyrocket.in</a></li>
+                        <li>Rajasthan, India</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2024 Cosmic Skyrocket. All Rights Reserved. Made with ❤️ in India</p>
+            </div>
+        </div>
+
+        <!-- Footer Video -->
+        <div class="footer-video-container">
+            <video class="footer-video" autoplay muted loop playsinline>
+                <source src="videos/ASAP!.mov" type="video/mp4">
+            </video>
+        </div>
+    </footer>
+
+    <!-- GSAP (GreenSock Animation Platform) - Best for parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- amCharts for World Map -->
+    <script src="https://cdn.amcharts.com/lib/editor/map/5/viewer.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
