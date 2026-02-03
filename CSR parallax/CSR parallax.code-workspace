@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Downloads/cosmic-skyrocket-feature-new-changes"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "CSR parallax",
+		"liveServer.settings.port": 5503
+	}
+}
