@@ -1,0 +1,400 @@
+/*
+==============================================================
+SEARCH AND MENU COMPONENTS
+Integrated from cosmic-skyrocket-feature-new-changes
+==============================================================
+*/
+
+/* Search Overlay Styles */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, backdrop-filter 0.4s ease;
+  pointer-events: none;
+}
+
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: all;
+}
+
+.search-container {
+  position: fixed;
+  top: 5rem;
+  right: 2rem;
+  width: 400px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 30001;
+}
+
+.search-overlay.active .search-container {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.search-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding: 0;
+  line-height: 1;
+  z-index: 10;
+}
+
+.search-close-btn:hover {
+  transform: rotate(90deg);
+  color: #000000;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 15px 60px 15px 20px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input-wrapper input:focus {
+  border-bottom-color: #ffffff;
+  box-shadow: none;
+}
+
+.search-input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-submit-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.search-submit-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.search-suggestions {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-suggestions p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search-tag {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.search-tag:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 20000;
+  opacity: 0;
+  transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+  pointer-events: none;
+}
+
+.hamburger-menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hamburger-menu-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 85vh;
+  max-height: 85vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+  transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 20001;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 0 20px;
+  margin-top: 7.5vh;
+}
+
+.hamburger-menu-overlay.active .hamburger-menu-panel {
+  right: 0;
+}
+
+.hamburger-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.hamburger-menu-header h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.hamburger-menu-header button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-menu-header button:hover {
+  transform: rotate(90deg);
+}
+
+.hamburger-menu-content {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Menu List Styles */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 0.5rem;
+}
+
+.menu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.menu-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding-left: 1.3rem;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+.menu-item-has-children.active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Submenu Styles */
+.submenu,
+.sub-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), margin-top 0.3s ease;
+}
+
+.menu-item-has-children.active > .submenu,
+.submenu-item-has-children.active > .sub-submenu {
+  max-height: 500px;
+  margin-top: 0.5rem;
+}
+
+.submenu-item {
+  margin-bottom: 0.25rem;
+}
+
+.submenu-link,
+.sub-submenu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submenu-link:hover,
+.sub-submenu-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.sub-submenu {
+  padding-left: 1rem;
+}
+
+.sub-submenu-item {
+  margin-bottom: 0.25rem;
+}
+
+/* Social Icons in Menu */
+.menu-social-icons {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.menu-social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu-social-icons a:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-container {
+    width: calc(100% - 2rem);
+    right: 1rem;
+    top: 4.5rem;
+  }
+
+  .hamburger-menu-panel {
+    width: 85%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    width: calc(100% - 1rem);
+    right: 0.5rem;
+  }
+
+  .hamburger-menu-panel {
+    width: 90%;
+  }
+}
