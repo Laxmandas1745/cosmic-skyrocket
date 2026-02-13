@@ -282,7 +282,7 @@ function handleAboutAnimation() {
         } else if (animationProgress <= 0.66) {
             // Stage 2: Vertical movement and shrinking
             const stage2Progress = (animationProgress - 0.33) / 0.33;
-            const verticalPosition = 5 + (85 * stage2Progress); // From 5vh (bottom) to 90vh (bottom)
+            const verticalPosition = 17 + (55 * stage2Progress); // From 5vh (bottom) to 90vh (bottom)
             const fontSize = 27 - (15 * stage2Progress); // From 20vh to 5vh
             
             aboutTitle.style.top = 'auto';
