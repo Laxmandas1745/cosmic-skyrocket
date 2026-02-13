@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSR Canva - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar (initially hidden) -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-title" id="navbarTitle">COSMIC SKYROCKET&reg;</div>
+        <div class="navbar-icons" id="navbarIcons">
+            <button class="nav-icon" id="homeIcon" aria-label="Home">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </button>
+            <button class="nav-icon" id="searchIcon" aria-label="Search">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+            <button class="nav-icon" id="menuIcon" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Banner Section -->
+    <!-- Hero Section Container -->
+    <div class="hero-container" id="heroContainer">
+        <section class="hero-banner" id="heroBanner">
+            <video muted playsinline class="hero-video" id="heroVideo">
+                <source src="videos/hero-bg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-fade-gradient" id="heroFadeGradient"></div>
+            <div class="hero-text" id="heroText">
+                <h1 id="mainTitle">COSMIC SKYROCKET</h1>
+            </div>
+        </section>
+
+        <!-- Spacer to enable scrolling through video -->
+        <div class="scroll-spacer"></div>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="aboutSection">
+        <div class="about-spacer"></div>
+        <div class="about-content" id="aboutContent">
+            <h2 id="aboutTitle">ABOUT US</h2>
+            <p id="aboutDescription" class="about-description"><span>Backed by <span class="about-highlight">28+ years<img id="signatureLine" class="signature-line" src="Images/Signature_line.PNG" alt="" /></span> of industry experience, we specialize in delivering premium tiles and natural stones that excel in quality, durability, and timeless aesthetics. More than a supplier, Cosmic Skyrocket is a long-term partner to architects, designers, builders, and retailers!</span></p>
+        </div>
+    </section>
+
+    <section class="next-section" id="nextSection">
+        <div class="next-content">
+            <h2>NEXT SECTION</h2>
+            <p>Add your content here.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
