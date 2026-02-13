@@ -20,7 +20,7 @@ body {
 /* Navbar Styles */
 .navbar {
     position: fixed;
-    top: 2vh;
+    top: 1.55vh;
     left: 50%;
     transform: translateX(-50%);
     width: 80vw;
@@ -29,7 +29,7 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0.73vw;
+    border-radius: 0.97vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +51,7 @@ body {
     font-weight: 700;
     color: white;
     letter-spacing: 0.05em;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); */
     transition: opacity 0.1s ease;
 }
 
@@ -162,7 +162,7 @@ body {
 
 .hero-text h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 7rem;
+    font-size: 14vh;
     font-weight: 700;
     color: white;
     letter-spacing: 0.05em;
@@ -204,7 +204,7 @@ body {
 
 .about-content h2 {
     font-family: 'Inter', sans-serif;
-    font-size: 20vh;
+    font-size: 27vh;
     font-weight: 700;
     color: white;
     margin: 0;
